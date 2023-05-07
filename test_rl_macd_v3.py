@@ -92,7 +92,7 @@ class StockTradingEnv(gym.Env):
         # self.HOLD_REWARD_LOOK_FORWARD = 200
 
         if interval == 'no':
-            self.stock = None
+            self.ss = None
             self.c2 = None
         else:
             #short = 12
@@ -434,7 +434,8 @@ class StockTradingEnv(gym.Env):
         # Set the current step to a random point within the data frame
         self.current_step = random.randint(
             #60, 400)
-            5, len(self.c2.loc[:, 'open'].values) - 10)
+            #5, len(self.c2.loc[:, 'open'].values) - 10)
+            5, len(self.c2.loc[:, 'open'].values) - 2)
 
         #print('reset', self.current_step)
 
@@ -745,7 +746,8 @@ class StockRL:
 
     def run(self, save_flag=None, run_id=0):
         obs = self.stock_env.reset()
-        self.stock_env.current_step = 10
+        #self.stock_env.current_step = 10
+        self.stock_env.current_step = 6
         # info = [{'step': 0}]
         i = 1
         # while info[0]['step'] < len(stock_env.c.loc[:, 'open'].values) - 2:
@@ -801,6 +803,7 @@ class StockRL:
             'buy_and_hold_gain': buy_and_hold_gain,
             'buy_and_hold_perf': buy_and_hold_perf,
             'model_score': model_perf / buy_and_hold_perf,
+            'model_gain_score': model_gain / buy_and_hold_gain,
             'predict_date': self.stock_env.c2.loc[self.stock_env.current_step, 'date'].strftime("%Y-%m-%d"),
             'predict_macd_accum':  self.stock_env.c2.loc[self.stock_env.current_step, 'accum'],
             'predict_macd_len':  int(self.stock_env.c2.loc[self.stock_env.current_step, 'len']),
@@ -808,6 +811,10 @@ class StockRL:
             'predict_vol': float(action[1])
         }
         #print(result)
+
+        mr = self.run_macd()
+        result['MACD_gain'] = mr['MACD_gain']
+        result['MACD_perf'] = mr['MACD_perf']
 
         if save_flag == 'screen':
             # print(f'Model Perf:         {start_date} - {end_date}   {dur}   {end / start}     {model_perf}')
@@ -827,7 +834,7 @@ class StockRL:
         if save_flag == 'df':
             return self.stock_env.render_list, result
 
-        if save_flag == 'stock_rl_macd_perf_results':
+        if save_flag == 'stock_min_rl_macd_perf_results':
             result['symbol'] = self.ticker
             result['run_id'] = run_id
             result['short'] = self.short
@@ -838,7 +845,7 @@ class StockRL:
 
             #print(result)
             mongo = MongoExplorer()
-            mongo.mongoDB['stock_rl_macd_perf_results'].replace_one({'symbol': self.ticker, 'run_id': run_id}, result, upsert=True)
+            mongo.mongoDB['stock_min_rl_macd_perf_results'].replace_one({'symbol': self.ticker, 'run_id': run_id}, result, upsert=True)
 
             r = {
                 'symbol': self.ticker,
@@ -849,6 +856,7 @@ class StockRL:
                 'macd_threshold': self.macd_threshold,
                 'macd_min_len': self.macd_min_len,
                 'model_score': model_perf / buy_and_hold_perf,
+                'model_gain_score': model_gain / buy_and_hold_gain,
                 'model_run_date': self.stock_env.run_date,
                 'start_date': start_date.strftime("%Y-%m-%d"),
                 'end_date': end_date.strftime("%Y-%m-%d"),
@@ -856,15 +864,18 @@ class StockRL:
                 'model_gain': model_gain,
                 'model_perf': model_perf,
                 'buy_and_hold_gain': buy_and_hold_gain,
-                'buy_and_hold_perf': buy_and_hold_perf
-                }
+                'buy_and_hold_perf': buy_and_hold_perf,
+                'macd_gain': mr['MACD_gain'],
+                'macd_perf': mr['MACD_perf']
+            }
             result = pd.DataFrame.from_records([r])
 
         return result
 
     def run_macd(self, save_flag=None, run_id=0):
         obs = self.stock_env.reset()
-        self.stock_env.current_step = 10
+        #self.stock_env.current_step = 10
+        self.stock_env.current_step = 6
         i = 1
         # while info[0]['step'] < len(stock_env.c.loc[:, 'open'].values) - 2:
         while self.stock_env.current_step < len(self.stock_env.c2.loc[:, 'open'].values) - 1:
@@ -892,32 +903,44 @@ class StockRL:
         end_date = self.stock_env.c2.loc[self.stock_env.current_step - 1, "date"]
         end_price = self.stock_env.c2.loc[self.stock_env.current_step - 1, "close"]
         dur = (end_date - start_date).total_seconds() / (365 * 24 * 60 * 60)
-        #macd_gain = end / start
+        macd_gain = end / start
         macd_perf = 10 ** (np.log10(end / start) / dur)
 
         if save_flag == 'screen':
             print(f'MACD Perf:          {start_date} - {end_date}   {dur}   {end / start}     {macd_perf}')
             #print(json.dumps(result))
 
+        result = {
+            'MACD_run_date': self.stock_env.run_date,
+            'start_date': start_date.strftime("%Y-%m-%d"),
+            'end_date': end_date.strftime("%Y-%m-%d"),
+            'duration': dur,
+            'MACD_gain': macd_gain,
+            'MACD_perf': macd_perf,
+        }
+        return result
+
 if __name__ == '__main__':
     ticker = 'TSLA'     #'GOOGL'     #'EVBG'     #'BAND'     #'NFLX'         #'APPN'     #'GRWG'     #'ACMR'     #'MDB'     #'CDLX'       #'RCM'     #'FB'     #'AAPL'     #'ANTM'     #'AMZN'     #'TSLA'   #'BAND'     #'ROKU'     #'SHOP'     #'TWLO'
 
     #s = StockRL(ticker, 0, 3, 7, 19, interval='1d')
-    s = StockRL(ticker, 0, 3, 7, 19, save_loc='./rl_min/test_rl_', interval='1m')
+    #s = StockRL(ticker, 0, 3, 7, 19, save_loc='./rl_min/test_rl_', interval='1m')
+    s = StockRL(ticker, 0, 6, 13, 9, save_loc='./rl_min/test_rl_', interval='1m')
     #s.train(save=True)
     #s.retrain(save=True)
     #s.reload()
     #print(s.run())
     #print(s.run('db'))
     file_path = s.save_loc + ticker + '.zip'
-    s.retrain(save=True) if os.path.exists(file_path) else s.train(save=True)
+    #s.retrain(save=True) if os.path.exists(file_path) else s.train(save=True)
+    s.train(save=True)
 
     re = s.run('screen')
     s.run_macd('screen')
     print(re)
 
 '''
-TSLA
+TSLA - min data 3,7,19
 MACD Perf:          2023-03-28 10:36:00-04:00 - 2023-03-28 15:49:00-04:00   0.0005955098934550989   1.0019196278381348     25.038454920315033
 {'model_run_date': '2023-03-28-16-19-06', 'start_date': '2023-03-28', 'end_date': '2023-03-28', 'duration': 0.0005955098934550989, 'model_gain': 1.0082538691711427, 'model_perf': 987848.0344487781, 'buy_and_hold_gain': 1.0034528867258263, 'buy_and_hold_perf': 326.4297727029072, 'model_score': 3026.219165822984, 'predict_date': '2023-03-28', 'predict_macd_accum': 0.25225727021455585, 'predict_macd_len': 5, 'predict_action': 1.4587864875793457, 'predict_vol': 0.05342584848403931}
 
@@ -936,15 +959,75 @@ MACD Perf:          2023-03-24 10:37:00-04:00 - 2023-04-03 15:53:00-04:00   0.02
 MACD Perf:          2023-03-27 10:42:00-04:00 - 2023-04-04 15:44:00-04:00   0.022492389649923897   0.9822555549621582     0.45113342842917303
 {'model_run_date': '2023-04-04-19-58-44', 'start_date': '2023-03-27', 'end_date': '2023-04-04', 'duration': 0.022492389649923897, 'model_gain': 1.1171802711486816, 'model_perf': 137.8907467865706, 'buy_and_hold_gain': 0.9857933530291569, 'buy_and_hold_perf': 0.5293265592828444, 'model_score': 260.5022256457171, 'predict_date': '2023-04-04', 'predict_macd_accum': -0.11946180559247808, 'predict_macd_len': 3, 'predict_action': 0.31994548439979553, 'predict_vol': 0.6549206972122192}
 
+MACD Perf:          2023-03-28 10:36:00-04:00 - 2023-04-05 15:46:00-04:00   0.022507610350076104   0.9727125560676015     0.292522527287329
+{'model_run_date': '2023-04-05-17-49-28', 'start_date': '2023-03-28', 'end_date': '2023-04-05', 'duration': 0.022507610350076104, 'model_gain': 1.0682699756762561, 'model_perf': 18.80533611169515, 'buy_and_hold_gain': 0.9880193132069512, 'buy_and_hold_perf': 0.5853711112016603, 'model_score': 32.12549398464714, 'predict_date': '2023-04-05', 'predict_macd_accum': 0.0019879559347803083, 'predict_macd_len': 1, 'predict_action': 0.32943400740623474, 'predict_vol': 0.0}
+
+MACD Perf:          2023-03-29 11:06:00-04:00 - 2023-04-06 15:54:00-04:00   0.022465753424657533   0.9549847687262544     0.12870572212297665
+{'model_run_date': '2023-04-07-01-57-55', 'start_date': '2023-03-29', 'end_date': '2023-04-06', 'duration': 0.022465753424657533, 'model_gain': 1.101016830165519, 'model_perf': 72.50046601789948, 'buy_and_hold_gain': 0.9662557112856056, 'buy_and_hold_perf': 0.2169778922785813, 'model_score': 334.1375716048297, 'predict_date': '2023-04-06', 'predict_macd_accum': 0.13488062730271955, 'predict_macd_len': 4, 'predict_action': 0.0, 'predict_vol': 0.4013793468475342}
+
+MACD Perf:          2023-03-29 11:06:00-04:00 - 2023-04-06 15:54:00-04:00   0.022465753424657533   0.9549847687262544     0.12870572212297665
+{'model_run_date': '2023-04-07-02-02-17', 'start_date': '2023-03-29', 'end_date': '2023-04-06', 'duration': 0.022465753424657533, 'model_gain': 1.1128038546339174, 'model_perf': 116.46481206490297, 'buy_and_hold_gain': 0.9662557112856056, 'buy_and_hold_perf': 0.2169778922785813, 'model_score': 536.7588874693832, 'predict_date': '2023-04-06', 'predict_macd_accum': 0.13488062730271955, 'predict_macd_len': 4, 'predict_action': 0.022090762853622437, 'predict_vol': 0.7236120700836182}
+
+MACD Perf:          2023-03-29 11:06:00-04:00 - 2023-04-06 15:54:00-04:00   0.022465753424657533   0.9549847687262544     0.12870572212297665
+{'model_run_date': '2023-04-07-02-06-23', 'start_date': '2023-03-29', 'end_date': '2023-04-06', 'duration': 0.022465753424657533, 'model_gain': 1.21862995626561, 'model_perf': 6642.698329144762, 'buy_and_hold_gain': 0.9662557112856056, 'buy_and_hold_perf': 0.2169778922785813, 'model_score': 30614.632022584577, 'predict_date': '2023-04-06', 'predict_macd_accum': 0.13488062730271955, 'predict_macd_len': 4, 'predict_action': 0.6575024724006653, 'predict_vol': 0.752621054649353}
+
+MACD Perf:          2023-03-30 10:59:00-04:00 - 2023-04-10 15:57:00-04:00   0.030703957382039574   0.9808811462253195     0.5332775953061848
+{'model_run_date': '2023-04-10-20-11-14', 'start_date': '2023-03-30', 'end_date': '2023-04-10', 'duration': 0.030703957382039574, 'model_gain': 1.2357057706297367, 'model_perf': 985.3499276936737, 'buy_and_hold_gain': 0.9417594985590176, 'buy_and_hold_perf': 0.14166082680786232, 'model_score': 6955.697985796211, 'predict_date': '2023-04-10', 'predict_macd_accum': -0.032321091048257755, 'predict_macd_len': 1, 'predict_action': 0.0, 'predict_vol': 1.0}
+
+MACD Perf:          2023-03-31 10:38:00-04:00 - 2023-04-11 15:48:00-04:00   0.030726788432267883   0.9864574785246883     0.6416248581090379
+{'model_run_date': '2023-04-11-20-17-01', 'start_date': '2023-03-31', 'end_date': '2023-04-11', 'duration': 0.030726788432267883, 'model_gain': 1.2241916379984974, 'model_perf': 722.8521645096223, 'buy_and_hold_gain': 0.9333448019157607, 'buy_and_hold_perf': 0.10593118170060564, 'model_score': 6823.790246696451, 'predict_date': '2023-04-11', 'predict_macd_accum': -0.18685786807515442, 'predict_macd_len': 5, 'predict_action': 0.0, 'predict_vol': 0.0}
+
+MACD Perf:          2023-04-03 10:26:00-04:00 - 2023-04-12 15:38:00-04:00   0.025251141552511416   0.9995649458641382     0.9829147993315328
+{'model_run_date': '2023-04-12-16-41-32', 'start_date': '2023-04-03', 'end_date': '2023-04-12', 'duration': 0.025251141552511416, 'model_gain': 1.1573564002595131, 'model_perf': 326.1636676552029, 'buy_and_hold_gain': 0.9146815144951561, 'buy_and_hold_perf': 0.029255268124053435, 'model_score': 11148.886630337662, 'predict_date': '2023-04-12', 'predict_macd_accum': 0.3655156975793187, 'predict_macd_len': 8, 'predict_action': 0.39430877566337585, 'predict_vol': 0.0}
+
+MACD Perf:          2023-04-04 10:37:00-04:00 - 2023-04-13 15:50:00-04:00   0.02525304414003044   1.0218267271862778     2.351428553797802
+{'model_run_date': '2023-04-13-17-22-26', 'start_date': '2023-04-04', 'end_date': '2023-04-13', 'duration': 0.02525304414003044, 'model_gain': 1.1550142128084535, 'model_perf': 300.8896700277288, 'buy_and_hold_gain': 0.9620919787112431, 'buy_and_hold_perf': 0.21646653774490318, 'model_score': 1390.0054630259517, 'predict_date': '2023-04-13', 'predict_macd_accum': 0.055528671040204966, 'predict_macd_len': 3, 'predict_action': 3.0, 'predict_vol': 0.0}
+
+MACD Perf:          2023-04-05 10:21:00-04:00 - 2023-04-14 15:44:00-04:00   0.0252720700152207   1.056636292015487     8.845410351352786
+{'model_run_date': '2023-04-16-19-50-47', 'start_date': '2023-04-05', 'end_date': '2023-04-14', 'duration': 0.0252720700152207, 'model_gain': 1.1495903305015402, 'model_perf': 248.6867672027813, 'buy_and_hold_gain': 0.9874440405299997, 'buy_and_hold_perf': 0.6065446609531681, 'model_score': 410.00569819867343, 'predict_date': '2023-04-14', 'predict_macd_accum': -0.5726386951022444, 'predict_macd_len': 13, 'predict_action': 1.4552509784698486, 'predict_vol': 1.0}
+
 ALNY
 MACD Perf:          2023-03-27 11:28:00-04:00 - 2023-04-04 15:44:00-04:00   0.022404870624048705   0.9908597253417969     0.6637596691942094
 {'model_run_date': '2023-04-04-20-20-11', 'start_date': '2023-03-27', 'end_date': '2023-04-04', 'duration': 0.022404870624048705, 'model_gain': 1.0313541633605956, 'model_perf': 3.96673822963235, 'buy_and_hold_gain': 1.0684629124146745, 'buy_and_hold_perf': 19.214318836105733, 'model_score': 0.20644698693031108, 'predict_date': '2023-04-04', 'predict_macd_accum': -0.3259188885707272, 'predict_macd_len': 6, 'predict_action': 1.4263696670532227, 'predict_vol': 0.0}
+
+MACD Perf:          2023-03-29 10:30:00-04:00 - 2023-04-06 15:57:00-04:00   0.022539954337899543   0.9886820197242411     0.603509884095659
+{'model_run_date': '2023-04-08-12-16-41', 'start_date': '2023-03-29', 'end_date': '2023-04-06', 'duration': 0.022539954337899543, 'model_gain': 1.2308857379431297, 'model_perf': 10059.346313416303, 'buy_and_hold_gain': 1.0848915433628474, 'buy_and_hold_perf': 37.14819301855165, 'model_score': 270.7896534400127, 'predict_date': '2023-04-06', 'predict_macd_accum': -0.06666388684056734, 'predict_macd_len': 1, 'predict_action': 1.253609299659729, 'predict_vol': 0.04852983355522156}
+
+MACD Perf:          2023-03-30 11:21:00-04:00 - 2023-04-10 15:49:00-04:00   0.0306468797564688   0.967428781214653     0.33943114903111193
+{'model_run_date': '2023-04-10-20-52-56', 'start_date': '2023-03-30', 'end_date': '2023-04-10', 'duration': 0.0306468797564688, 'model_gain': 1.221546371655083, 'model_perf': 685.2517195592899, 'buy_and_hold_gain': 1.0642964401958044, 'buy_and_hold_perf': 7.639169775505323, 'model_score': 89.70238123997724, 'predict_date': '2023-04-10', 'predict_macd_accum': -0.8384782212997839, 'predict_macd_len': 9, 'predict_action': 0.0, 'predict_vol': 0.0}
+
+MACD Perf:          2023-03-31 10:45:00-04:00 - 2023-04-11 15:37:00-04:00   0.03069254185692542   0.9704146674249745     0.37588484323334875
+{'model_run_date': '2023-04-11-21-47-54', 'start_date': '2023-03-31', 'end_date': '2023-04-11', 'duration': 0.03069254185692542, 'model_gain': 1.1814386579436735, 'model_perf': 228.68802156626273, 'buy_and_hold_gain': 1.0286825630943959, 'buy_and_hold_perf': 2.5127084752699758, 'model_score': 91.01255629811634, 'predict_date': '2023-04-11', 'predict_macd_accum': -1.1069623297865592, 'predict_macd_len': 18, 'predict_action': 0.0, 'predict_vol': 0.0}
+
+MACD Perf:          2023-04-03 11:02:00-04:00 - 2023-04-12 15:54:00-04:00   0.025213089802130897   0.9771595322991682     0.3999550760115418
+{'model_run_date': '2023-04-12-17-04-26', 'start_date': '2023-04-03', 'end_date': '2023-04-12', 'duration': 0.025213089802130897, 'model_gain': 1.145453306125432, 'model_perf': 218.352202957411, 'buy_and_hold_gain': 1.0030154759533199, 'buy_and_hold_perf': 1.1268427060154218, 'model_score': 193.77345373207987, 'predict_date': '2023-04-12', 'predict_macd_accum': -0.026586228172983534, 'predict_macd_len': 1, 'predict_action': 2.0047707557678223, 'predict_vol': 0.47849661111831665}
+
+MACD Perf:          2023-04-04 11:02:00-04:00 - 2023-04-13 15:41:00-04:00   0.02518835616438356   0.9959110489877685     0.849873498235627
+{'model_run_date': '2023-04-13-17-06-28', 'start_date': '2023-04-04', 'end_date': '2023-04-13', 'duration': 0.02518835616438356, 'model_gain': 1.1535813261056855, 'model_perf': 290.64915003883317, 'buy_and_hold_gain': 1.0351692449800616, 'buy_and_hold_perf': 3.944248607413933, 'model_score': 73.68935859988775, 'predict_date': '2023-04-13', 'predict_macd_accum': -1.0271777888247817, 'predict_macd_len': 14, 'predict_action': 0.0, 'predict_vol': 0.0}
+
+MACD Perf:          2023-04-05 11:22:00-04:00 - 2023-04-14 15:17:00-04:00   0.025104642313546425   0.9589615763356834     0.18840070782531443
+{'model_run_date': '2023-04-16-19-59-54', 'start_date': '2023-04-05', 'end_date': '2023-04-14', 'duration': 0.025104642313546425, 'model_gain': 1.1213761989053146, 'model_perf': 95.88669045102439, 'buy_and_hold_gain': 1.0021498347655762, 'buy_and_hold_perf': 1.0893084335789032, 'model_score': 88.02528971155617, 'predict_date': '2023-04-14', 'predict_macd_accum': 1.7714833078275078, 'predict_macd_len': 17, 'predict_action': 0.0, 'predict_vol': 0.23773692548274994}
 
 AMZN
 MACD Perf:          2023-03-27 10:38:00-04:00 - 2023-04-04 15:25:00-04:00   0.02246385083713851   0.9925720292663575     0.7175608833594689
 {'model_run_date': '2023-04-04-20-45-11', 'start_date': '2023-03-27', 'end_date': '2023-04-04', 'duration': 0.02246385083713851, 'model_gain': 1.0215531790924073, 'model_perf': 2.5838151935913722, 'buy_and_hold_gain': 1.0571437952738796, 'buy_and_hold_perf': 11.867280309382386, 'model_score': 0.2177259764858325, 'predict_date': '2023-04-04', 'predict_macd_accum': -0.6629738085107535, 'predict_macd_len': 23, 'predict_action': 0.0, 'predict_vol': 0.029092788696289062}
 
+MACD Perf:          2023-03-29 10:12:00-04:00 - 2023-04-06 15:54:00-04:00   0.022568493150684932   0.9847760771312022     0.5067422412123772
+{'model_run_date': '2023-04-08-14-42-48', 'start_date': '2023-03-29', 'end_date': '2023-04-06', 'duration': 0.022568493150684932, 'model_gain': 1.1187263008195951, 'model_perf': 144.18904868746074, 'buy_and_hold_gain': 1.0223741998209899, 'buy_and_hold_perf': 2.665689805335311, 'model_score': 54.09070792815803, 'predict_date': '2023-04-06', 'predict_macd_accum': 0.01297973198793207, 'predict_macd_len': 1, 'predict_action': 0.12370282411575317, 'predict_vol': 0.12099908292293549}
+
 ELV
 MACD Perf:          2023-03-27 10:44:00-04:00 - 2023-04-04 15:52:00-04:00   0.022503805175038052   1.0038528063964844     1.1863459071944173
 {'model_run_date': '2023-04-04-20-48-25', 'start_date': '2023-03-27', 'end_date': '2023-04-04', 'duration': 0.022503805175038052, 'model_gain': 1.029215057373047, 'model_perf': 3.595291205513817, 'buy_and_hold_gain': 1.0270775457574073, 'buy_and_hold_perf': 3.2780239216646296, 'model_score': 1.0967861405014014, 'predict_date': '2023-04-04', 'predict_macd_accum': -0.7745373755141036, 'predict_macd_len': 6, 'predict_action': 0.9069832563400269, 'predict_vol': 0.0}
+
+NIO
+MACD Perf:          2023-03-29 10:18:00-04:00 - 2023-04-06 15:41:00-04:00   0.02253234398782344   0.9044015351143568     0.011568734708174074
+{'model_run_date': '2023-04-08-14-07-50', 'start_date': '2023-03-29', 'end_date': '2023-04-06', 'duration': 0.02253234398782344, 'model_gain': 1.1542039507835054, 'model_perf': 580.9518559876794, 'buy_and_hold_gain': 0.9305813723122289, 'buy_and_hold_perf': 0.041048572702518146, 'model_score': 14152.790651160463, 'predict_date': '2023-04-06', 'predict_macd_accum': -0.008446593837671306, 'predict_macd_len': 15, 'predict_action': 0.0, 'predict_vol': 0.4694051742553711}
+
+MACD Perf:          2023-04-20 10:05:00-04:00 - 2023-04-28 15:55:00-04:00   0.02258371385083714   0.9758949252914404     0.33944599993635455
+{'model_run_date': '2023-04-30-19-56-09', 'start_date': '2023-04-20', 'end_date': '2023-04-28', 'duration': 0.02258371385083714, 'model_gain': 0.9967641739543609, 'model_perf': 0.8663089194985224, 'buy_and_hold_gain': 0.982830461199769, 'buy_and_hold_perf': 0.4644672047443816, 'model_score': 1.8651670357981323, 'model_gain_score': 1.0141771274951965, 'predict_date': '2023-04-28', 'predict_macd_accum': -0.03913161071462773, 'predict_macd_len': 3, 'predict_action': 0.0, 'predict_vol': 0.0, 'MACD_gain': 0.9758949252914404, 'MACD_perf': 0.33944599993635455}
+
+TSLA - min data 6,13,9
+MACD Perf:          2023-04-21 11:21:00-04:00 - 2023-05-01 15:56:00-04:00   0.02792047184170472   0.9690314692329074     0.32409875178874115
+{'model_run_date': '2023-05-01-21-08-54', 'start_date': '2023-04-21', 'end_date': '2023-05-01', 'duration': 0.02792047184170472, 'model_gain': 0.9964665200055027, 'model_perf': 0.8809280844646317, 'buy_and_hold_gain': 0.9868348658152919, 'buy_and_hold_perf': 0.6221002857713832, 'model_score': 1.416054781862559, 'model_gain_score': 1.0097601478462697, 'predict_date': '2023-05-01', 'predict_macd_accum': 0.014170228700177062, 'predict_macd_len': 2, 'predict_action': 0.0, 'predict_vol': 0.0, 'MACD_gain': 0.9690314692329074, 'MACD_perf': 0.32409875178874115}
+
 '''

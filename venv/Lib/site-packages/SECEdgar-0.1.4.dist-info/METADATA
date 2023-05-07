@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: SECEdgar
+Version: 0.1.4
+Summary: SEC-Edgar implements a basic Sphinx crwaler for downloading the
+                 filings. It provides an interface to extract the filing from
+                 the SEC.gov site. You might find it most useful for tasks
+                 involving automated data collection of filings from SEC.gov
+Home-page: https://github.com/rahulrrixe/SEC-Edgar
+Author: Rahul Ranjan
+Author-email: rahul.rrixe@gmail.com
+License: Apache License (2.0)
+Keywords: SEC,Edgar,Crawler,filings
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: beautifulsoup4 (==4.4.0)
+Requires-Dist: future (==0.13.1)
+Requires-Dist: requests (>=2.21.0)
+Requires-Dist: pytest (==3.6.3)
+Requires-Dist: flake8
+
+UNKNOWN
+
+

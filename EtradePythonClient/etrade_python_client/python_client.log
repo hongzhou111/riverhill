@@ -1,0 +1,2496 @@
+10/21/2019 06:16:17 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+10/21/2019 06:16:17 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+10/21/2019 06:16:17 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+10/21/2019 06:16:17 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+10/21/2019 06:16:17 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:17 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:17 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:17 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:39 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3'}
+10/21/2019 06:16:39 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3'}
+10/21/2019 06:16:39 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3'}
+10/21/2019 06:16:39 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3'}
+10/21/2019 06:16:39 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:39 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:39 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:39 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:16:48 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="742e774f73f80dd4b94f90e60bf624ccdbd3b6e7",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696208",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="GhyJx2FoS9KsCiSd80m9DLzfG%2Bk%3D"'}
+10/21/2019 06:16:48 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="742e774f73f80dd4b94f90e60bf624ccdbd3b6e7",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696208",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="GhyJx2FoS9KsCiSd80m9DLzfG%2Bk%3D"'}
+10/21/2019 06:16:48 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="742e774f73f80dd4b94f90e60bf624ccdbd3b6e7",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696208",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="GhyJx2FoS9KsCiSd80m9DLzfG%2Bk%3D"'}
+10/21/2019 06:16:48 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=F813F4A7289D782FEF36236EC495B2C3.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="742e774f73f80dd4b94f90e60bf624ccdbd3b6e7",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696208",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="GhyJx2FoS9KsCiSd80m9DLzfG%2Bk%3D"'}
+10/21/2019 06:16:48 PM Response Body: {
+    "AccountListResponse": {
+        "Accounts": {
+            "Account": [
+                {
+                    "accountDesc": "Brokerage",
+                    "accountId": "82314598",
+                    "accountIdKey": "dBZOKt9xDrtRSAOl4MSiiA",
+                    "accountMode": "IRA",
+                    "accountName": "NickName-1",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "MARGIN",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "Complete Savings",
+                    "accountId": "58315636",
+                    "accountIdKey": "vQMsebA1H5WltUfDkJP48g",
+                    "accountMode": "BROKERAGE",
+                    "accountName": "NickName-2",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "70700418",
+                    "accountIdKey": "6_Dpy0rmuQ9cu9IbTfvF2A",
+                    "accountMode": "CASH",
+                    "accountName": "NickName-3",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "83515143",
+                    "accountIdKey": "xj1Dc18FTqWPqkEEVUr5rw",
+                    "accountMode": "CASH",
+                    "accountName": "",
+                    "accountStatus": "CLOSED",
+                    "accountType": "CASH",
+                    "closedDate": 1521027780,
+                    "institutionType": "BROKERAGE"
+                }
+            ]
+        }
+    }
+}
+10/21/2019 06:16:48 PM Response Body: {
+    "AccountListResponse": {
+        "Accounts": {
+            "Account": [
+                {
+                    "accountDesc": "Brokerage",
+                    "accountId": "82314598",
+                    "accountIdKey": "dBZOKt9xDrtRSAOl4MSiiA",
+                    "accountMode": "IRA",
+                    "accountName": "NickName-1",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "MARGIN",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "Complete Savings",
+                    "accountId": "58315636",
+                    "accountIdKey": "vQMsebA1H5WltUfDkJP48g",
+                    "accountMode": "BROKERAGE",
+                    "accountName": "NickName-2",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "70700418",
+                    "accountIdKey": "6_Dpy0rmuQ9cu9IbTfvF2A",
+                    "accountMode": "CASH",
+                    "accountName": "NickName-3",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "83515143",
+                    "accountIdKey": "xj1Dc18FTqWPqkEEVUr5rw",
+                    "accountMode": "CASH",
+                    "accountName": "",
+                    "accountStatus": "CLOSED",
+                    "accountType": "CASH",
+                    "closedDate": 1521027780,
+                    "institutionType": "BROKERAGE"
+                }
+            ]
+        }
+    }
+}
+10/21/2019 06:16:48 PM Response Body: {
+    "AccountListResponse": {
+        "Accounts": {
+            "Account": [
+                {
+                    "accountDesc": "Brokerage",
+                    "accountId": "82314598",
+                    "accountIdKey": "dBZOKt9xDrtRSAOl4MSiiA",
+                    "accountMode": "IRA",
+                    "accountName": "NickName-1",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "MARGIN",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "Complete Savings",
+                    "accountId": "58315636",
+                    "accountIdKey": "vQMsebA1H5WltUfDkJP48g",
+                    "accountMode": "BROKERAGE",
+                    "accountName": "NickName-2",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "70700418",
+                    "accountIdKey": "6_Dpy0rmuQ9cu9IbTfvF2A",
+                    "accountMode": "CASH",
+                    "accountName": "NickName-3",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "83515143",
+                    "accountIdKey": "xj1Dc18FTqWPqkEEVUr5rw",
+                    "accountMode": "CASH",
+                    "accountName": "",
+                    "accountStatus": "CLOSED",
+                    "accountType": "CASH",
+                    "closedDate": 1521027780,
+                    "institutionType": "BROKERAGE"
+                }
+            ]
+        }
+    }
+}
+10/21/2019 06:16:48 PM Response Body: {
+    "AccountListResponse": {
+        "Accounts": {
+            "Account": [
+                {
+                    "accountDesc": "Brokerage",
+                    "accountId": "82314598",
+                    "accountIdKey": "dBZOKt9xDrtRSAOl4MSiiA",
+                    "accountMode": "IRA",
+                    "accountName": "NickName-1",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "MARGIN",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "Complete Savings",
+                    "accountId": "58315636",
+                    "accountIdKey": "vQMsebA1H5WltUfDkJP48g",
+                    "accountMode": "BROKERAGE",
+                    "accountName": "NickName-2",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "70700418",
+                    "accountIdKey": "6_Dpy0rmuQ9cu9IbTfvF2A",
+                    "accountMode": "CASH",
+                    "accountName": "NickName-3",
+                    "accountStatus": "ACTIVE",
+                    "accountType": "INDIVIDUAL",
+                    "closedDate": 0,
+                    "institutionType": "BROKERAGE"
+                },
+                {
+                    "accountDesc": "INDIVIDUAL",
+                    "accountId": "83515143",
+                    "accountIdKey": "xj1Dc18FTqWPqkEEVUr5rw",
+                    "accountMode": "CASH",
+                    "accountName": "",
+                    "accountStatus": "CLOSED",
+                    "accountType": "CASH",
+                    "closedDate": 1521027780,
+                    "institutionType": "BROKERAGE"
+                }
+            ]
+        }
+    }
+}
+10/21/2019 06:17:05 PM Request url: https://apisb.etrade.com/v1/accounts/dBZOKt9xDrtRSAOl4MSiiA/balance.json
+10/21/2019 06:17:05 PM Request url: https://apisb.etrade.com/v1/accounts/dBZOKt9xDrtRSAOl4MSiiA/balance.json
+10/21/2019 06:17:05 PM Request url: https://apisb.etrade.com/v1/accounts/dBZOKt9xDrtRSAOl4MSiiA/balance.json
+10/21/2019 06:17:05 PM Request url: https://apisb.etrade.com/v1/accounts/dBZOKt9xDrtRSAOl4MSiiA/balance.json
+10/21/2019 06:17:05 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'consumerkey': '081e324545d8f71c68805f297a15fe72', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="1e8bc04675941074241946a55d6591c03c8b085a",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696225",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="Jd7CO6L65%2F5o6o%2F0WkFCmGlIVIg%3D"'}
+10/21/2019 06:17:05 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'consumerkey': '081e324545d8f71c68805f297a15fe72', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="1e8bc04675941074241946a55d6591c03c8b085a",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696225",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="Jd7CO6L65%2F5o6o%2F0WkFCmGlIVIg%3D"'}
+10/21/2019 06:17:05 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'consumerkey': '081e324545d8f71c68805f297a15fe72', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="1e8bc04675941074241946a55d6591c03c8b085a",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696225",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="Jd7CO6L65%2F5o6o%2F0WkFCmGlIVIg%3D"'}
+10/21/2019 06:17:05 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'consumerkey': '081e324545d8f71c68805f297a15fe72', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="1e8bc04675941074241946a55d6591c03c8b085a",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696225",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="Jd7CO6L65%2F5o6o%2F0WkFCmGlIVIg%3D"'}
+10/21/2019 06:17:05 PM Response Body: {
+    "BalanceResponse": {
+        "Cash": {
+            "fundsForOpenOrdersCash": 0.0,
+            "moneyMktBalance": 0.0
+        },
+        "Computed": {
+            "OpenCalls": {
+                "cashCall": 0.0
+            },
+            "RealTimeValues": {
+                "netMv": -454.22,
+                "netMvLong": 0.0,
+                "totalAccountValue": 0.0
+            },
+            "cashAvailableForInvestment": 0.0,
+            "cashAvailableForWithdrawal": 0.0,
+            "cashBalance": 0.0,
+            "fundsWithheldFromPurchasePower": 0.0,
+            "fundsWithheldFromWithdrawal": 0.0,
+            "netCash": -740.450013,
+            "settledCashForInvestment": 0.0,
+            "unSettledCashForInvestment": 0.0
+        },
+        "accountDescription": "",
+        "accountId": "83353535",
+        "accountType": "MARGIN",
+        "optionLevel": "LEVEL_4"
+    }
+}
+10/21/2019 06:17:05 PM Response Body: {
+    "BalanceResponse": {
+        "Cash": {
+            "fundsForOpenOrdersCash": 0.0,
+            "moneyMktBalance": 0.0
+        },
+        "Computed": {
+            "OpenCalls": {
+                "cashCall": 0.0
+            },
+            "RealTimeValues": {
+                "netMv": -454.22,
+                "netMvLong": 0.0,
+                "totalAccountValue": 0.0
+            },
+            "cashAvailableForInvestment": 0.0,
+            "cashAvailableForWithdrawal": 0.0,
+            "cashBalance": 0.0,
+            "fundsWithheldFromPurchasePower": 0.0,
+            "fundsWithheldFromWithdrawal": 0.0,
+            "netCash": -740.450013,
+            "settledCashForInvestment": 0.0,
+            "unSettledCashForInvestment": 0.0
+        },
+        "accountDescription": "",
+        "accountId": "83353535",
+        "accountType": "MARGIN",
+        "optionLevel": "LEVEL_4"
+    }
+}
+10/21/2019 06:17:05 PM Response Body: {
+    "BalanceResponse": {
+        "Cash": {
+            "fundsForOpenOrdersCash": 0.0,
+            "moneyMktBalance": 0.0
+        },
+        "Computed": {
+            "OpenCalls": {
+                "cashCall": 0.0
+            },
+            "RealTimeValues": {
+                "netMv": -454.22,
+                "netMvLong": 0.0,
+                "totalAccountValue": 0.0
+            },
+            "cashAvailableForInvestment": 0.0,
+            "cashAvailableForWithdrawal": 0.0,
+            "cashBalance": 0.0,
+            "fundsWithheldFromPurchasePower": 0.0,
+            "fundsWithheldFromWithdrawal": 0.0,
+            "netCash": -740.450013,
+            "settledCashForInvestment": 0.0,
+            "unSettledCashForInvestment": 0.0
+        },
+        "accountDescription": "",
+        "accountId": "83353535",
+        "accountType": "MARGIN",
+        "optionLevel": "LEVEL_4"
+    }
+}
+10/21/2019 06:17:05 PM Response Body: {
+    "BalanceResponse": {
+        "Cash": {
+            "fundsForOpenOrdersCash": 0.0,
+            "moneyMktBalance": 0.0
+        },
+        "Computed": {
+            "OpenCalls": {
+                "cashCall": 0.0
+            },
+            "RealTimeValues": {
+                "netMv": -454.22,
+                "netMvLong": 0.0,
+                "totalAccountValue": 0.0
+            },
+            "cashAvailableForInvestment": 0.0,
+            "cashAvailableForWithdrawal": 0.0,
+            "cashBalance": 0.0,
+            "fundsWithheldFromPurchasePower": 0.0,
+            "fundsWithheldFromWithdrawal": 0.0,
+            "netCash": -740.450013,
+            "settledCashForInvestment": 0.0,
+            "unSettledCashForInvestment": 0.0
+        },
+        "accountDescription": "",
+        "accountId": "83353535",
+        "accountType": "MARGIN",
+        "optionLevel": "LEVEL_4"
+    }
+}
+10/21/2019 06:17:09 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="7b915afa97b7c18a01ec81475ee2bf5389e90732",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696229",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="fTBzWC%2FzyssdwHS0kHplanKfhfk%3D"'}
+10/21/2019 06:17:09 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="7b915afa97b7c18a01ec81475ee2bf5389e90732",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696229",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="fTBzWC%2FzyssdwHS0kHplanKfhfk%3D"'}
+10/21/2019 06:17:09 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="7b915afa97b7c18a01ec81475ee2bf5389e90732",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696229",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="fTBzWC%2FzyssdwHS0kHplanKfhfk%3D"'}
+10/21/2019 06:17:09 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3', 'Authorization': 'OAuth realm="",oauth_consumer_key="081e324545d8f71c68805f297a15fe72",oauth_nonce="7b915afa97b7c18a01ec81475ee2bf5389e90732",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1571696229",oauth_token="hz%2BkT26Qd19cbMa7mfHTsuGr9CkhhDeyCkxtRIYAM%2BU%3D",oauth_version="1.0",oauth_signature="fTBzWC%2FzyssdwHS0kHplanKfhfk%3D"'}
+10/21/2019 06:17:09 PM Response Body: {
+    "PortfolioResponse": {
+        "AccountPortfolio": [
+            {
+                "Position": [
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "BR"
+                        },
+                        "Quick": {
+                            "change": -0.28,
+                            "changePct": -1.3346,
+                            "lastTrade": 20.7,
+                            "lastTradeTime": 1343160240,
+                            "volume": 431591
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": -2.7999,
+                        "daysGainPct": -1.3346,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/27005131",
+                        "marketValue": 207,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0018,
+                        "positionId": 27005131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 0,
+                        "quantity": 10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/BR",
+                        "symbolDescription": "BR",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": 207,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "GLD"
+                        },
+                        "Quick": {
+                            "change": 0.49,
+                            "changePct": 0.3201,
+                            "lastTrade": 153.52,
+                            "lastTradeTime": 1343160000,
+                            "volume": 6510878
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0.9799,
+                        "daysGainPct": 0.3201,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4709131",
+                        "marketValue": 307.04,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0028,
+                        "positionId": 4709131,
+                        "positionIndicator": "TYPE1",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/GLD",
+                        "symbolDescription": "GLD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 300.04,
+                        "totalGainPct": 4286.2857
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 5,
+                        "costPerShare": 6,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.13,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4729131",
+                        "marketValue": 29.1499,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0002,
+                        "positionId": 4729131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 1,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 6,
+                        "totalGain": 23.1499,
+                        "totalGainPct": 385.8333
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": 1.3,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/23971131",
+                        "marketValue": -291.5,
+                        "otherFees": 0,
+                        "pctOfPortfolio": -0.0026,
+                        "positionId": 23971131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 0,
+                        "quantity": -10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -291.5,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RBL"
+                        },
+                        "Quick": {
+                            "change": -0.26,
+                            "changePct": -1.0252,
+                            "lastTrade": 25.1,
+                            "lastTradeTime": 1343159760,
+                            "volume": 11827
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.52,
+                        "daysGainPct": -1.0252,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4725131",
+                        "marketValue": 50.2,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0004,
+                        "positionId": 4725131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RBL",
+                        "symbolDescription": "RBL",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 43.2,
+                        "totalGainPct": 617.1428
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RPI"
+                        },
+                        "Quick": {
+                            "change": 0,
+                            "changePct": 0,
+                            "lastTrade": 1.43,
+                            "lastTradeTime": 1343150700,
+                            "volume": 1803
+                        },
+                        "commissions": 5,
+                        "costPerShare": 32.56,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0,
+                        "daysGainPct": 0,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/20841131",
+                        "marketValue": 2.8599,
+                        "otherFees": 45,
+                        "pctOfPortfolio": 0.0,
+                        "positionId": 20841131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 7.5599,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RPI",
+                        "symbolDescription": "RPI",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 65.12,
+                        "totalGain": -62.2599,
+                        "totalGainPct": -95.6081
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RXD"
+                        },
+                        "Quick": {
+                            "change": 0.432,
+                            "changePct": 2.6799,
+                            "lastTrade": 16.552,
+                            "lastTradeTime": 1343157480,
+                            "volume": 2200
+                        },
+                        "commissions": 2.99,
+                        "costPerShare": 0,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -1.296,
+                        "daysGainPct": 2.6799,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4732131",
+                        "marketValue": -49.6559,
+                        "otherFees": 0.0099,
+                        "pctOfPortfolio": -0.0004,
+                        "positionId": 4732131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 1,
+                        "quantity": -3,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RXD",
+                        "symbolDescription": "RXD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -49.6559,
+                        "totalGainPct": -827.6
+                    }
+                ],
+                "accountId": "83359700",
+                "totalPages": 1
+            }
+        ]
+    }
+}
+10/21/2019 06:17:09 PM Response Body: {
+    "PortfolioResponse": {
+        "AccountPortfolio": [
+            {
+                "Position": [
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "BR"
+                        },
+                        "Quick": {
+                            "change": -0.28,
+                            "changePct": -1.3346,
+                            "lastTrade": 20.7,
+                            "lastTradeTime": 1343160240,
+                            "volume": 431591
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": -2.7999,
+                        "daysGainPct": -1.3346,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/27005131",
+                        "marketValue": 207,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0018,
+                        "positionId": 27005131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 0,
+                        "quantity": 10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/BR",
+                        "symbolDescription": "BR",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": 207,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "GLD"
+                        },
+                        "Quick": {
+                            "change": 0.49,
+                            "changePct": 0.3201,
+                            "lastTrade": 153.52,
+                            "lastTradeTime": 1343160000,
+                            "volume": 6510878
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0.9799,
+                        "daysGainPct": 0.3201,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4709131",
+                        "marketValue": 307.04,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0028,
+                        "positionId": 4709131,
+                        "positionIndicator": "TYPE1",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/GLD",
+                        "symbolDescription": "GLD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 300.04,
+                        "totalGainPct": 4286.2857
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 5,
+                        "costPerShare": 6,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.13,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4729131",
+                        "marketValue": 29.1499,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0002,
+                        "positionId": 4729131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 1,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 6,
+                        "totalGain": 23.1499,
+                        "totalGainPct": 385.8333
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": 1.3,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/23971131",
+                        "marketValue": -291.5,
+                        "otherFees": 0,
+                        "pctOfPortfolio": -0.0026,
+                        "positionId": 23971131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 0,
+                        "quantity": -10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -291.5,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RBL"
+                        },
+                        "Quick": {
+                            "change": -0.26,
+                            "changePct": -1.0252,
+                            "lastTrade": 25.1,
+                            "lastTradeTime": 1343159760,
+                            "volume": 11827
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.52,
+                        "daysGainPct": -1.0252,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4725131",
+                        "marketValue": 50.2,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0004,
+                        "positionId": 4725131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RBL",
+                        "symbolDescription": "RBL",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 43.2,
+                        "totalGainPct": 617.1428
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RPI"
+                        },
+                        "Quick": {
+                            "change": 0,
+                            "changePct": 0,
+                            "lastTrade": 1.43,
+                            "lastTradeTime": 1343150700,
+                            "volume": 1803
+                        },
+                        "commissions": 5,
+                        "costPerShare": 32.56,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0,
+                        "daysGainPct": 0,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/20841131",
+                        "marketValue": 2.8599,
+                        "otherFees": 45,
+                        "pctOfPortfolio": 0.0,
+                        "positionId": 20841131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 7.5599,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RPI",
+                        "symbolDescription": "RPI",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 65.12,
+                        "totalGain": -62.2599,
+                        "totalGainPct": -95.6081
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RXD"
+                        },
+                        "Quick": {
+                            "change": 0.432,
+                            "changePct": 2.6799,
+                            "lastTrade": 16.552,
+                            "lastTradeTime": 1343157480,
+                            "volume": 2200
+                        },
+                        "commissions": 2.99,
+                        "costPerShare": 0,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -1.296,
+                        "daysGainPct": 2.6799,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4732131",
+                        "marketValue": -49.6559,
+                        "otherFees": 0.0099,
+                        "pctOfPortfolio": -0.0004,
+                        "positionId": 4732131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 1,
+                        "quantity": -3,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RXD",
+                        "symbolDescription": "RXD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -49.6559,
+                        "totalGainPct": -827.6
+                    }
+                ],
+                "accountId": "83359700",
+                "totalPages": 1
+            }
+        ]
+    }
+}
+10/21/2019 06:17:09 PM Response Body: {
+    "PortfolioResponse": {
+        "AccountPortfolio": [
+            {
+                "Position": [
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "BR"
+                        },
+                        "Quick": {
+                            "change": -0.28,
+                            "changePct": -1.3346,
+                            "lastTrade": 20.7,
+                            "lastTradeTime": 1343160240,
+                            "volume": 431591
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": -2.7999,
+                        "daysGainPct": -1.3346,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/27005131",
+                        "marketValue": 207,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0018,
+                        "positionId": 27005131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 0,
+                        "quantity": 10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/BR",
+                        "symbolDescription": "BR",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": 207,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "GLD"
+                        },
+                        "Quick": {
+                            "change": 0.49,
+                            "changePct": 0.3201,
+                            "lastTrade": 153.52,
+                            "lastTradeTime": 1343160000,
+                            "volume": 6510878
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0.9799,
+                        "daysGainPct": 0.3201,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4709131",
+                        "marketValue": 307.04,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0028,
+                        "positionId": 4709131,
+                        "positionIndicator": "TYPE1",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/GLD",
+                        "symbolDescription": "GLD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 300.04,
+                        "totalGainPct": 4286.2857
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 5,
+                        "costPerShare": 6,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.13,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4729131",
+                        "marketValue": 29.1499,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0002,
+                        "positionId": 4729131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 1,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 6,
+                        "totalGain": 23.1499,
+                        "totalGainPct": 385.8333
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": 1.3,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/23971131",
+                        "marketValue": -291.5,
+                        "otherFees": 0,
+                        "pctOfPortfolio": -0.0026,
+                        "positionId": 23971131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 0,
+                        "quantity": -10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -291.5,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RBL"
+                        },
+                        "Quick": {
+                            "change": -0.26,
+                            "changePct": -1.0252,
+                            "lastTrade": 25.1,
+                            "lastTradeTime": 1343159760,
+                            "volume": 11827
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.52,
+                        "daysGainPct": -1.0252,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4725131",
+                        "marketValue": 50.2,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0004,
+                        "positionId": 4725131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RBL",
+                        "symbolDescription": "RBL",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 43.2,
+                        "totalGainPct": 617.1428
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RPI"
+                        },
+                        "Quick": {
+                            "change": 0,
+                            "changePct": 0,
+                            "lastTrade": 1.43,
+                            "lastTradeTime": 1343150700,
+                            "volume": 1803
+                        },
+                        "commissions": 5,
+                        "costPerShare": 32.56,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0,
+                        "daysGainPct": 0,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/20841131",
+                        "marketValue": 2.8599,
+                        "otherFees": 45,
+                        "pctOfPortfolio": 0.0,
+                        "positionId": 20841131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 7.5599,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RPI",
+                        "symbolDescription": "RPI",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 65.12,
+                        "totalGain": -62.2599,
+                        "totalGainPct": -95.6081
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RXD"
+                        },
+                        "Quick": {
+                            "change": 0.432,
+                            "changePct": 2.6799,
+                            "lastTrade": 16.552,
+                            "lastTradeTime": 1343157480,
+                            "volume": 2200
+                        },
+                        "commissions": 2.99,
+                        "costPerShare": 0,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -1.296,
+                        "daysGainPct": 2.6799,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4732131",
+                        "marketValue": -49.6559,
+                        "otherFees": 0.0099,
+                        "pctOfPortfolio": -0.0004,
+                        "positionId": 4732131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 1,
+                        "quantity": -3,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RXD",
+                        "symbolDescription": "RXD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -49.6559,
+                        "totalGainPct": -827.6
+                    }
+                ],
+                "accountId": "83359700",
+                "totalPages": 1
+            }
+        ]
+    }
+}
+10/21/2019 06:17:09 PM Response Body: {
+    "PortfolioResponse": {
+        "AccountPortfolio": [
+            {
+                "Position": [
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "BR"
+                        },
+                        "Quick": {
+                            "change": -0.28,
+                            "changePct": -1.3346,
+                            "lastTrade": 20.7,
+                            "lastTradeTime": 1343160240,
+                            "volume": 431591
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": -2.7999,
+                        "daysGainPct": -1.3346,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/27005131",
+                        "marketValue": 207,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0018,
+                        "positionId": 27005131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 0,
+                        "quantity": 10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/BR",
+                        "symbolDescription": "BR",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": 207,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "GLD"
+                        },
+                        "Quick": {
+                            "change": 0.49,
+                            "changePct": 0.3201,
+                            "lastTrade": 153.52,
+                            "lastTradeTime": 1343160000,
+                            "volume": 6510878
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0.9799,
+                        "daysGainPct": 0.3201,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4709131",
+                        "marketValue": 307.04,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0028,
+                        "positionId": 4709131,
+                        "positionIndicator": "TYPE1",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/GLD",
+                        "symbolDescription": "GLD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 300.04,
+                        "totalGainPct": 4286.2857
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 5,
+                        "costPerShare": 6,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.13,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4729131",
+                        "marketValue": 29.1499,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0002,
+                        "positionId": 4729131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 1,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 6,
+                        "totalGain": 23.1499,
+                        "totalGainPct": 385.8333
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "MSFT"
+                        },
+                        "Quick": {
+                            "change": -0.13,
+                            "changePct": -0.4439,
+                            "lastTrade": 29.15,
+                            "lastTradeTime": 1343160000,
+                            "volume": 47711254
+                        },
+                        "commissions": 0,
+                        "costPerShare": 0,
+                        "dateAcquired": -57600000,
+                        "daysGain": 1.3,
+                        "daysGainPct": -0.4439,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/23971131",
+                        "marketValue": -291.5,
+                        "otherFees": 0,
+                        "pctOfPortfolio": -0.0026,
+                        "positionId": 23971131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 0,
+                        "quantity": -10,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/MSFT",
+                        "symbolDescription": "MSFT",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -291.5,
+                        "totalGainPct": 0
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RBL"
+                        },
+                        "Quick": {
+                            "change": -0.26,
+                            "changePct": -1.0252,
+                            "lastTrade": 25.1,
+                            "lastTradeTime": 1343159760,
+                            "volume": 11827
+                        },
+                        "commissions": 5,
+                        "costPerShare": 3.5,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -0.52,
+                        "daysGainPct": -1.0252,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4725131",
+                        "marketValue": 50.2,
+                        "otherFees": 0,
+                        "pctOfPortfolio": 0.0004,
+                        "positionId": 4725131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 1,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RBL",
+                        "symbolDescription": "RBL",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 7,
+                        "totalGain": 43.2,
+                        "totalGainPct": 617.1428
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RPI"
+                        },
+                        "Quick": {
+                            "change": 0,
+                            "changePct": 0,
+                            "lastTrade": 1.43,
+                            "lastTradeTime": 1343150700,
+                            "volume": 1803
+                        },
+                        "commissions": 5,
+                        "costPerShare": 32.56,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": 0,
+                        "daysGainPct": 0,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/20841131",
+                        "marketValue": 2.8599,
+                        "otherFees": 45,
+                        "pctOfPortfolio": 0.0,
+                        "positionId": 20841131,
+                        "positionIndicator": "TYPE2",
+                        "positionType": "LONG",
+                        "pricePaid": 7.5599,
+                        "quantity": 2,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RPI",
+                        "symbolDescription": "RPI",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 65.12,
+                        "totalGain": -62.2599,
+                        "totalGainPct": -95.6081
+                    },
+                    {
+                        "Product": {
+                            "expiryDay": 0,
+                            "expiryMonth": 0,
+                            "expiryYear": 0,
+                            "securityType": "EQ",
+                            "strikePrice": 0,
+                            "symbol": "RXD"
+                        },
+                        "Quick": {
+                            "change": 0.432,
+                            "changePct": 2.6799,
+                            "lastTrade": 16.552,
+                            "lastTradeTime": 1343157480,
+                            "volume": 2200
+                        },
+                        "commissions": 2.99,
+                        "costPerShare": 0,
+                        "dateAcquired": 1335250800000,
+                        "daysGain": -1.296,
+                        "daysGainPct": 2.6799,
+                        "lotsDetails": "https://apisb.etrade.com/v1/accounts/E5Nd4LJBsEi_UyHm4Vio9g/portfolio/4732131",
+                        "marketValue": -49.6559,
+                        "otherFees": 0.0099,
+                        "pctOfPortfolio": -0.0004,
+                        "positionId": 4732131,
+                        "positionIndicator": "TYPE5",
+                        "positionType": "SHORT",
+                        "pricePaid": 1,
+                        "quantity": -3,
+                        "quoteDetails": "https://apisb.etrade.com/v1/market/quote/RXD",
+                        "symbolDescription": "RXD",
+                        "todayCommissions": 0,
+                        "todayFees": 0,
+                        "todayPricePaid": 0,
+                        "todayQuantity": 0,
+                        "totalCost": 0,
+                        "totalGain": -49.6559,
+                        "totalGainPct": -827.6
+                    }
+                ],
+                "accountId": "83359700",
+                "totalPages": 1
+            }
+        ]
+    }
+}
+10/21/2019 06:17:29 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3'}
+10/21/2019 06:17:29 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3'}
+10/21/2019 06:17:29 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3'}
+10/21/2019 06:17:29 PM Request Header: {'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JSESSIONID=2424A1B680868499DF057FB66C39EB08.tomcat3'}
+10/21/2019 06:17:29 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:17:29 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:17:29 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}
+10/21/2019 06:17:29 PM Response Body: {
+    "QuoteResponse": {
+        "QuoteData": [
+            {
+                "All": {
+                    "adjustedFlag": false,
+                    "annualDividend": 0.0,
+                    "ask": 579.73,
+                    "askExchange": "",
+                    "askSize": 100,
+                    "askTime": "16:00:00 EDT 06-20-2012",
+                    "averageVolume": 13896435,
+                    "beta": 0.93,
+                    "bid": 574.04,
+                    "bidExchange": "",
+                    "bidSize": 100,
+                    "bidTime": "16:00:00 EDT 06-20-2012",
+                    "cashDeliverable": 0,
+                    "changeClose": 0.0,
+                    "changeClosePercentage": 0.0,
+                    "companyName": "GOOGLE INC CL A",
+                    "contractSize": 0.0,
+                    "daysToExpiration": 0,
+                    "declaredDividend": 0.0,
+                    "dirLast": "1",
+                    "dividend": 0.0,
+                    "dividendPayableDate": 0,
+                    "eps": 32.99727,
+                    "estEarnings": 43.448,
+                    "exDividendDate": 1344947183,
+                    "exchgLastTrade": "",
+                    "expirationDate": 0,
+                    "fsi": "",
+                    "high": 0.0,
+                    "high52": 670.25,
+                    "highAsk": 0.0,
+                    "highBid": 0.0,
+                    "intrinsicValue": 0.0,
+                    "lastTrade": 577.51,
+                    "low": 0.0,
+                    "low52": 473.02,
+                    "lowAsk": 0.0,
+                    "lowBid": 0.0,
+                    "marketCap": 188282697750.0,
+                    "marketCloseAskSize": 0,
+                    "marketCloseBidSize": 0,
+                    "marketCloseVolume": 0,
+                    "nextEarningDate": "",
+                    "numberOfTrades": 0,
+                    "open": 0.0,
+                    "openInterest": 0,
+                    "optionMultiplier": 0.0,
+                    "optionStyle": "",
+                    "pe": 17.5017,
+                    "previousClose": 577.51,
+                    "previousDayVolume": 2433786,
+                    "primaryExchange": "NASDAQ NM",
+                    "sharesOutstanding": 326025,
+                    "symbolDescription": "GOOGLE INC CL A",
+                    "timeOfLastTrade": 1341334800,
+                    "timePremium": 0.0,
+                    "todayClose": 0.0,
+                    "totalVolume": 0,
+                    "upc": 0,
+                    "volume10Day": 0,
+                    "week52HiDate": 1325673870,
+                    "week52LowDate": 1308908670,
+                    "yield": 0.0
+                },
+                "Product": {
+                    "securityType": "EQ",
+                    "symbol": "GOOG"
+                },
+                "ahFlag": "false",
+                "dateTime": "16:00:00 EDT 06-20-2012",
+                "dateTimeUTC": 1340222400,
+                "quoteStatus": "REALTIME"
+            }
+        ]
+    }
+}

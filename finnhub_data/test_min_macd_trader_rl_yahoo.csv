@@ -1,0 +1,38 @@
+date,action_type, fitness, price, sahre, value, status2023-03-31 12:32:59.150000,buy,"{'date': Timestamp('2023-03-31 12:32:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.85069274902344,4,823.4027709960938,done2023-03-31 12:36:59.041000,buy,"{'date': Timestamp('2023-03-31 12:36:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.85279846191406,0,0,done2023-03-31 12:43:00.138000,buy,"{'date': Timestamp('2023-03-31 12:42:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.1750030517578,0,0,done2023-03-31 12:43:59.635000,buy,"{'date': Timestamp('2023-03-31 12:43:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.9510040283203,0,0,done2023-03-31 12:49:59.028000,buy,"{'date': Timestamp('2023-03-31 12:49:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.69000244140625,0,0,done2023-03-31 12:52:59.010000,buy,"{'date': Timestamp('2023-03-31 12:52:00-0400', tz='America/New_York'), 'model_predict': 0.10263011}",205.38999938964844,0,0,done2023-03-31 12:57:59.241000,buy,"{'date': Timestamp('2023-03-31 12:57:00-0400', tz='America/New_York'), 'model_predict': 0.0}",204.91000366210938,0,0,done2023-03-31 13:02:59.144000,buy,"{'date': Timestamp('2023-03-31 13:02:00-0400', tz='America/New_York'), 'model_predict': 0.0}",204.5500030517578,0,0,done
+2023-03-31 13:05:59.033000,buy,"{'date': Timestamp('2023-03-31 13:05:00-0400', tz='America/New_York'), 'model_predict': 0.971132}",204.33999633789062,0,0,done
+2023-03-31 13:14:59.163000,buy,"{'date': Timestamp('2023-03-31 13:14:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.0399932861328,0,0,done
+2023-03-31 13:16:59.137000,buy,"{'date': Timestamp('2023-03-31 13:16:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.51820373535156,0,0,done
+2023-03-31 13:19:59.906000,buy,"{'date': Timestamp('2023-03-31 13:19:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.39999389648438,0,0,done
+2023-03-31 13:32:00.237000,buy,"{'date': Timestamp('2023-03-31 13:31:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.0,0,0,done
+2023-03-31 13:32:59.222000,buy,"{'date': Timestamp('2023-03-31 13:32:00-0400', tz='America/New_York'), 'model_predict': 0.24772134}",204.7449951171875,0,0,done
+2023-03-31 13:33:59.137000,buy,"{'date': Timestamp('2023-03-31 13:33:00-0400', tz='America/New_York'), 'model_predict': 0.0}",204.8699951171875,0,0,done
+2023-03-31 13:44:00.186000,buy,"{'date': Timestamp('2023-03-31 13:43:00-0400', tz='America/New_York'), 'model_predict': 0.0}",204.91000366210938,0,0,done
+2023-03-31 13:47:59.168000,buy,"{'date': Timestamp('2023-03-31 13:47:00-0400', tz='America/New_York'), 'model_predict': 0.0}",204.89999389648438,0,0,done
+2023-03-31 13:48:58.572000,buy,"{'date': Timestamp('2023-03-31 13:48:00-0400', tz='America/New_York'), 'model_predict': 0.0}",204.83999633789062,0,0,done
+2023-03-31 13:49:59.496000,buy,"{'date': Timestamp('2023-03-31 13:49:00-0400', tz='America/New_York'), 'model_predict': 0.0}",205.08999633789062,0,0,done
+2023-03-31 13:55:59.235000,buy,"{'date': Timestamp('2023-03-31 13:55:00-0400', tz='America/New_York'), 'model_predict': 0.6583014}",205.3000030517578,0,0,done
+2023-03-31 13:58:00.115000,buy,"{'date': Timestamp('2023-03-31 13:57:00-0400', tz='America/New_York'), 'model_predict': 0.90368074}",205.63009643554688,0,0,done
+2023-03-31 14:06:00.170000,buy,"{'date': Timestamp('2023-03-31 14:05:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.3404998779297,0,0,done
+2023-03-31 14:08:59.546000,buy,"{'date': Timestamp('2023-03-31 14:08:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.53500366210938,0,0,done
+2023-03-31 14:13:59.826000,buy,"{'date': Timestamp('2023-03-31 14:13:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.77000427246094,0,0,done
+2023-03-31 14:23:59.677000,buy,"{'date': Timestamp('2023-03-31 14:23:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.97999572753906,0,0,done
+2023-03-31 14:24:59.291000,buy,"{'date': Timestamp('2023-03-31 14:24:00-0400', tz='America/New_York'), 'model_predict': 0.8394191}",206.85000610351562,0,0,done
+2023-03-31 14:25:59.711000,buy,"{'date': Timestamp('2023-03-31 14:25:00-0400', tz='America/New_York'), 'model_predict': 0.6268387}",207.0832061767578,0,0,done
+2023-03-31 14:26:59.286000,buy,"{'date': Timestamp('2023-03-31 14:26:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.82000732421875,0,0,done
+2023-03-31 14:32:59.584000,buy,"{'date': Timestamp('2023-03-31 14:32:00-0400', tz='America/New_York'), 'model_predict': 0.0227151}",206.90989685058594,0,0,done
+2023-03-31 14:37:59.542000,buy,"{'date': Timestamp('2023-03-31 14:37:00-0400', tz='America/New_York'), 'model_predict': 0.0}",207.0998992919922,0,0,done
+2023-03-31 14:40:59.560000,buy,"{'date': Timestamp('2023-03-31 14:40:00-0400', tz='America/New_York'), 'model_predict': 0.0}",207.25999450683594,0,0,done
+2023-03-31 14:42:59.918000,buy,"{'date': Timestamp('2023-03-31 14:42:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.89999389648438,0,0,done
+2023-03-31 14:49:00.039000,buy,"{'date': Timestamp('2023-03-31 14:48:00-0400', tz='America/New_York'), 'model_predict': 0.0}",207.08999633789062,0,0,done
+2023-03-31 14:51:59.125000,buy,"{'date': Timestamp('2023-03-31 14:51:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.9499969482422,0,0,done
+2023-03-31 14:52:59.031000,buy,"{'date': Timestamp('2023-03-31 14:52:00-0400', tz='America/New_York'), 'model_predict': 0.124883965}",207.1072998046875,0,0,done
+2023-03-31 14:57:00.176000,buy,"{'date': Timestamp('2023-03-31 14:56:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.89169311523438,0,0,done
+2023-03-31 15:00:59.921000,buy,"{'date': Timestamp('2023-03-31 15:00:00-0400', tz='America/New_York'), 'model_predict': 0.25501496}",207.1199951171875,0,0,done
+2023-03-31 15:07:59.111000,buy,"{'date': Timestamp('2023-03-31 15:07:00-0400', tz='America/New_York'), 'model_predict': 0.0}",207.63999938964844,0,0,done
+2023-03-31 15:20:59.871000,buy,"{'date': Timestamp('2023-03-31 15:20:00-0400', tz='America/New_York'), 'model_predict': 0.06201887}",207.14540100097656,0,0,done
+2023-03-31 15:26:59.388000,buy,"{'date': Timestamp('2023-03-31 15:26:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.76010131835938,0,0,done
+2023-03-31 15:29:00.013000,buy,"{'date': Timestamp('2023-03-31 15:28:00-0400', tz='America/New_York'), 'model_predict': 0.35863617}",207.02049255371094,0,0,done
+2023-03-31 15:33:00.126000,buy,"{'date': Timestamp('2023-03-31 15:32:00-0400', tz='America/New_York'), 'model_predict': 0.2683463}",206.88999938964844,0,0,done
+2023-03-31 15:39:59.291000,buy,"{'date': Timestamp('2023-03-31 15:39:00-0400', tz='America/New_York'), 'model_predict': 0.8795441}",206.35000610351562,0,0,done
+2023-03-31 15:53:59.024000,buy,"{'date': Timestamp('2023-03-31 15:53:00-0400', tz='America/New_York'), 'model_predict': 0.0}",206.16000366210938,0,0,done
+2023-03-31 15:55:59.832000,buy,"{'date': Timestamp('2023-03-31 15:55:00-0400', tz='America/New_York'), 'model_predict': 0.614961}",206.89999389648438,0,0,done

@@ -1,0 +1,53 @@
+Pycharm -> Tools -> Install MiniConda 3
+stable_baslines requirements:
+1. Python 3.7.15
+conda create --name tf python==3.7.15
+conda activate tf
+2. tensorflow 1.15
+pip install tensorflow=1.15
+3. stable_baselines
+pip install stable-baselines3
+
+pip install yfinance
+
+pip install streamlit
+
+pip install stockstats
+
+pip install matplotlib
+
+pip install plotly
+
+pip install simfin
+
+for mongodb 3.4
+pip install pymongo==3.10.0
+
+conda install -c conda-forge ta-lib
+
+pip install gym
+
+pip install selenium==3.141
+
+pip install openpyxl
+#pip uninstall pandas
+#pip install pandas
+
+pip install schedule
+
+pip install polygon
+
+pip install finnhub-python
+
+pip install websocket-client
+
+pip install twelvedata[pandas,matplotlib,plotly,websocket-client]
+
+pip install fhub
+# fix real_time.py in fhub package
+
+pip install robin_stocks
+
+pip install openai
+
+pip install odo

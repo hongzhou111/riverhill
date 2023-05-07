@@ -1,0 +1,2 @@
+Your expired SANDBOX API key is: 081e324545d8f71c68805f297a15fe72, and secret is: e3860f1cca1d71d93023a655ccee2c6f.
+Your pending approval PROD API key is: 1612f18b2ddf8d0c4702f1f1d47413f4, and secret is: 9925c532fcccf449648bf36b1ee8aeee.
