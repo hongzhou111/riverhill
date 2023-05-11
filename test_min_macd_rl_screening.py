@@ -178,7 +178,7 @@ if __name__ == '__main__':
     check_date = (datetime.now() + timedelta(days=-90)).strftime("%Y-%m-%d")
 
     index = 1
-    restartIndex = 90       #6,7,8,10
+    restartIndex = 192       #6,7,8,10
     stopIndex = 1000      #1000000
     repeat = 1      #10
 

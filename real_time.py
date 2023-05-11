@@ -159,6 +159,7 @@ class Subscription:
         if 'data' in _json.keys():
             #for _data in _json['data']:
             _data = _json['data'][-1]       # only take the last from each msg
+            #print(_data)
             _info = self._to_dict(_data)
             _symbol = _info.pop('Symbol')
             _con = _info.pop('Condition')

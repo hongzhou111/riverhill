@@ -192,7 +192,7 @@ class MinMACDTrader:
         if not self.subs.tickers[self.ticker].history.empty:
             last_history_time = self.subs.tickers[self.ticker].history.iloc[len(self.subs.tickers[self.ticker].history) - 1]['Date']
             # if self.current_time.timestamp() - self.last_subs_time.timestamp() >= 60:      # sample by system time
-            if last_history_time.timestamp() - self.last_subs_time.timestamp() >= 9.5       #59.5:  # >= 60: sample by msg timestamp
+            if last_history_time.timestamp() - self.last_subs_time.timestamp() >= 9.5:       #59.5:  # >= 60: sample by msg timestamp
                 self.df.loc[len(self.df)] = self.subs.tickers[self.ticker].history.iloc[len(self.subs.tickers[self.ticker].history) - 1]  # append last record from finnhub msg history
                 # self.df['Open'] = self.df['Close']
                 # self.df['High'] = self.df['Close']
@@ -201,7 +201,7 @@ class MinMACDTrader:
                 self.ss.stock = Sdf.retype(self.ss.stock)
                 # print(self.df)
                 # self.ss.macd()
-                # print(self.ss.stock.tail(5))
+                #print(self.ss.stock.tail(5))
 
                 # self.last_subs_time = self.current_time
                 self.last_subs_time = last_history_time
@@ -452,7 +452,7 @@ class MinMACDTrader:
         w_r.writerow(rl_o)
         rfile.close()
         self.p_rl['actions'].append(rl_o)
-        print(self.p_rl)
+        print(self.p_rl['tname'], self.p_rl['symbol'], self.p_rl['share'], self.p_rl['cash'], self.p_rl['init_investment'])
 
         self.save_p_rl()
 
@@ -482,6 +482,7 @@ class MinMACDTrader:
                     if price > 0:
                         share = round(amount/price, 2)
                         print(share)
+                        value = share * price
         elif action < 2:
             rl_action_type = 'sell'
 
@@ -516,7 +517,7 @@ class MinMACDTrader:
         w_r.writerow(rl_o)
         rfile.close()
         self.p_rl['actions'].append(rl_o)
-        print(self.p_rl)
+        print(self.p_rl['tname'], self.p_rl['symbol'], self.p_rl['share'], self.p_rl['cash'], self.p_rl['init_investment'])
 
         self.save_p_rl()
 
@@ -572,7 +573,7 @@ class MinMACDTrader:
             w.writerow(macd_o)
             mfile.close()
             self.p_macd['actions'].append(macd_o)
-            print(self.p_macd)
+            print(self.p_macd['tname'], self.p_macd['symbol'], self.p_macd['share'], self.p_macd['cash'], self.p_macd['init_investment'])
 
         self.save_p_macd()
 
@@ -599,9 +600,14 @@ class MinMACDTrader:
         else:
             robin_login_status = False
 
+        #rl1 for 9:30 - 11:00 trading
         #rl = StockRL(self.ticker, 0, short=self.short, long=self.long, signal=self.signal, save_loc='./rl_min/test_rl_', interval='no')
-        rl = StockRL(self.ticker, 0, short=self.short, long=self.long, signal=self.signal, save_loc='./rl_sec/test_rl_', interval='no')
-        rl.reload()
+        rl1 = StockRL(self.ticker, 0, short=self.short, long=self.long, signal=self.signal, save_loc='./rl_sec_8_11/test_rl_', interval='no')
+        rl1.reload()
+
+        #rl2 for 11:00 - 15:00 trading
+        rl2 = StockRL(self.ticker, 0, short=self.short, long=self.long, signal=self.signal, save_loc='./rl_sec_10_15/test_rl_', interval='no')
+        rl2.reload()
 
         refresh_history = False
         market_closed = False
@@ -628,12 +634,14 @@ class MinMACDTrader:
                 if not self.ss.stock.empty:
                     check_macd_datetime = self.ss.stock.tail(1).index.item()
                     # self.ss.macd()
-                    # print(self.ss.stock.tail(1))
+                    #print(self.ss.stock.tail(1))
                 else:
                     check_macd_datetime = self.current_time
 
                 if check_macd_datetime.timestamp() > last_finnhub_datetime.timestamp():     # and last_finnhub_datetime > init_time:
                     save_history_status = False
+                    if self.cur_time < "09:30:00:000000":
+                        print(self.ss.stock.tail(1))
 
                 if self.current_time.timestamp() - check_macd_datetime.timestamp() >= 60 and check_macd_datetime.timestamp() > last_finnhub_datetime.timestamp():       # and last_finnhub_datetime > init_time:  # check finnhub delay, excluding the initial yahoo history load
                     print('finnhub slow delay =', self.current_time.timestamp() - check_macd_datetime.timestamp())
@@ -668,11 +676,19 @@ class MinMACDTrader:
                             macd_crossing_count += 1
                             if macd_crossing_count > self.MACD_CROSSING_WAIT:  # wait after 6/5 crossings
                                 # rl order
-                                rl.stock_env.ss = self.ss.stock
-                                rl.stock_env.c2 = self.ss.macd_crossing_by_threshold_min_len()
-                                rl.stock_env.current_step = len(rl.stock_env.c2.loc[:, 'open'].values) - 1
-                                # print(rl.stock_env.current_step, rl.stock_env._next_observation_test())
-                                action, _states = rl.model.predict(rl.stock_env._next_observation_test())
+
+                                if self.cur_time >= "09:30:00:000000" and self.cur_time <= '11:00:00:000000':
+                                    rl1.stock_env.ss = self.ss.stock
+                                    rl1.stock_env.c2 = self.ss.macd_crossing_by_threshold_min_len()
+                                    rl1.stock_env.current_step = len(rl1.stock_env.c2.loc[:, 'open'].values) - 1
+                                    # print(rl1.stock_env.current_step, rl1.stock_env._next_observation_test())
+                                    action, _states = rl1.model.predict(rl1.stock_env._next_observation_test())
+                                else:
+                                    rl2.stock_env.ss = self.ss.stock
+                                    rl2.stock_env.c2 = self.ss.macd_crossing_by_threshold_min_len()
+                                    rl2.stock_env.current_step = len(rl2.stock_env.c2.loc[:, 'open'].values) - 1
+                                    # print(rl2.stock_env.current_step, rl2.stock_env._next_observation_test())
+                                    action, _states = rl2.model.predict(rl2.stock_env._next_observation_test())
 
                                 if not paper_trade:
                                     self.robin_order(action=action[0])
@@ -685,7 +701,10 @@ class MinMACDTrader:
                 if market_closed is False:
                     market_closed = True
                     # close_market_sell
-                    self.robin_order(action=1, close_market_sell=True)
+                    if not paper_trade:
+                        self.robin_order(action=1, close_market_sell=True)
+                    else:
+                        self.paper_order(action=action[0], close_market_sell=True)
 
                     self.macd_order(close_market_sell=True)
 
@@ -697,8 +716,6 @@ class MinMACDTrader:
             elif self.cur_time >= "16:02:00:000000" and self.cur_time < '21:00:00:000000':
                 self.current_state = 'postmarket'
                 refresh_history = True
-            else:
-                self.current_state = 'postmarket'
 
             if self.cur_time >= "00:00:00:000000" and self.cur_time < '21:00:00:000000' and save_history_status is False:        #save df
                 self.save_history()
@@ -716,8 +733,13 @@ class MinMACDTrader:
                 self.robin_logout()
                 robin_login_status = False
 
-            if self.current_state == 'postmarket':
-                sleep_time = 1       #10  # 60 * 10            # sleep 10 min
+            if self.cur_time > '21:00:00:000000':
+                self.current_state = 'sleep'
+
+            if self.current_state == 'sleep':
+                sleep_time = 60       #10  # 60 * 10            # sleep 1 min
+            elif self.current_state == 'postmarket':
+                sleep_time = 0  # 10  # 60 * 10            # sleep 1 min
             elif self.current_state == 'market':
                 sleep_time = 0
             else:
@@ -745,13 +767,14 @@ class CustomEncoder(json.JSONEncoder):  # use CustomEncoder to fix pymongo error
 
 if __name__ == '__main__':
     ticker='TSLA'
-    short = 3
-    long = 7
-    signal = 19
+    short = 12      #3  #6
+    long = 26       #7  #13
+    signal = 9      #19 #9
     tname = 'sec_macd_1'
     mmt = MinMACDTrader(ticker=ticker, short=short, long=long, signal=signal, tname=tname)
-    #mmt.reload()
-    mmt.run()
+    mmt.reload()
+    #mmt.run()
+    mmt.run(paper_trade=True)
     #mmt.run(rerun=True)
 
     '''

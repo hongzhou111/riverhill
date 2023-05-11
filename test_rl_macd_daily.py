@@ -105,7 +105,8 @@ class RLDailyTrader:
                      'EWD', 'ADRNY', 'KTB', 'BA', 'VATE', 'GFS', 'ITT', 'SDXAY', 'CASH', 'ARW', 'V', 'MBLY', 'HSTM',
                      'LVMUY', 'FSBW', 'NTES', 'URBN', 'EADSY', 'CDNS', 'CASS', 'LFUS', 'WT', 'IR', 'ARCAY', 'LRCX', 'FTNT',
                      'MANH', 'SCTH', 'DO', 'ARNC', 'NVR', 'INTA', 'BWA', 'TJBH', 'AGM', 'MTZ', 'COCO', 'CARR', 'PH',
-                     'FTCO', 'GSHD', 'HUBS', 'LMPX', 'MRTI', 'NGLD', 'DKNG', 'NFLX', 'UHAL', 'CTVA', 'KIDS', 'RADI', 'RIOT']
+                     'FTCO', 'GSHD', 'HUBS', 'LMPX', 'MRTI', 'NGLD', 'DKNG', 'NFLX', 'UHAL', 'CTVA', 'KIDS', 'RADI', 'RIOT',
+                     'AMRX', 'IDXX', 'INSP', 'WST', 'CPRT', 'RMD']
 
         #self.list = ['SHOP', 'COUP', 'TWLO', 'ROKU', 'OKTA', 'PAYC', 'GOOGL', 'LYFT', 'TTD', 'AYX', 'ISRG', 'CRM',
         #             'ATVI', 'MDB', 'SQ', 'BABA', 'AAPL', 'TCEHY', 'FB', 'AMZN', 'TSLA', 'ANTM', 'COST', 'GS',
@@ -438,7 +439,7 @@ class RLDailyTrader:
 
     def run_portfolio(self, g20_threshold=20):
         index = 1
-        restartIndex = 129        #1568      # 3752
+        restartIndex = 1        #1568      # 3752
         stopIndex = 1000000  # 3753
         for ticker in self.list:
             print(str(index) + "	" + ticker)
@@ -617,7 +618,7 @@ if __name__ == '__main__':
     #if date_diff > 1 and max_date.weekday() < 4: aaod = (max_date + timedelta(days=1)).strftime("%Y-%m-%d")
     if date_diff >= 1 and date_diff <= 2 and max_date.weekday() == 4: aaod = max_date.strftime("%Y-%m-%d")
     #if date_diff >= 3 and max_date.weekday() == 4: aaod = (max_date + timedelta(days=3)).strftime("%Y-%m-%d")
-    aaod = '2023-05-05'
+    #aaod = '2023-05-05'
 
     print(aaod)
 
