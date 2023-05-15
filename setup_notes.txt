@@ -57,3 +57,5 @@ git add .
 git commit -m "test"
 git push https://hongzhou111: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@github.com/hongzhou111/riverhill.git/
 C:\Users\3203142\OneDrive\Stock\PycharmProjects\riverhill>git push https://hongzhou111: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@github.com/hongzhou111/riverhill.git/
+
+pip install duka

@@ -49,6 +49,7 @@ Change History:
 2023/03/15      add stock_count_max = 100,  sort the stocks by perf for invest_time > 30,  mutate_sell the lowerst stocks if count > stock_count_max
 2023/03/16      for run_all add sort for the stocks, sorted by G20 desc
 2023/04/26      for stock_count mutate sell,  check stock perf every 5 days (check_stock_count_days), mutate_selel the lowerest stocks if count > stock_count_max, otherwise mutate_sell last stock_mutatel_sell_count
+2023/05/12      add daily process and robin hood interface
 '''
 import math
 from datetime import datetime

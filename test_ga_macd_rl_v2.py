@@ -836,7 +836,7 @@ class RuleGA_MACD_RL:
 
         print(self.p['investment'], self.p['p_cash'])
         print(self.p['total_history'])
-        print(stock_list)
+        #print(stock_list)
 
         #print(json_util.dumps(ga.p, indent=4))
 
