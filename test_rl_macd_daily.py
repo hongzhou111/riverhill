@@ -439,7 +439,7 @@ class RLDailyTrader:
 
     def run_portfolio(self, g20_threshold=20):
         index = 1
-        restartIndex = 1        #1568      # 3752
+        restartIndex = 76        #1568      # 3752
         stopIndex = 1000000  # 3753
         for ticker in self.list:
             print(str(index) + "	" + ticker)

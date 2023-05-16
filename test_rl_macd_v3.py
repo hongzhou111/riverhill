@@ -727,7 +727,7 @@ class StockRL:
         self.macd_min_len = macd_min_len
 
     def train(self, save=False):
-        self.model.learn(total_timesteps=200000)
+        self.model.learn(total_timesteps=20000)
         if save is True:
             self.model.save(self.save_loc+self.ticker)
 
@@ -735,7 +735,7 @@ class StockRL:
         #self.model = PPO2.load(self.save_loc+self.ticker, self.env)
         self.model = PPO.load(self.save_loc+self.ticker, self.env)
         #self.model.set_env(self.env)
-        self.model.learn(total_timesteps=200000)
+        self.model.learn(total_timesteps=20000)
         if save is True:
             self.model.save(self.save_loc+self.ticker)
 

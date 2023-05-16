@@ -78,24 +78,37 @@ today = datetime.now().strftime("%Y_%m_%d")
 #today = '2023_05_08'
 print(today)
 
-#re1 = daily_run(ticker, 12, 26, 9, today, test=True, period=1)
-#re1 = daily_run(ticker, 12, 26, 9, today, test=False, period=1)
+print('10sec data 8-11 12/26/9 before retrain')
+re1 = daily_run(ticker, 12, 26, 9, today, test=True, period=1)
+print('10sec data 8-11 12/26/9 after retrain')
+re1 = daily_run(ticker, 12, 26, 9, today, test=False, period=1)
 
-#re1 = daily_run(ticker, 6, 13, 9, today, test=True, period=1)
-#re1 = daily_run(ticker, 6, 13, 9, today, test=False, period=1)
+print('10sec data 8-11 6/13/9 before retrain')
+re1 = daily_run(ticker, 6, 13, 9, today, test=True, period=1)
+print('10sec data 8-11 6/13/9 after retrain')
+re1 = daily_run(ticker, 6, 13, 9, today, test=False, period=1)
 
-#re1 = daily_run(ticker, 3, 7, 19, today, test=True, period=1)
-#re1 = daily_run(ticker, 3, 7, 19, today, test=False, period=1)
+print('10sec data 8-11 3/7/19 before retrain')
+re1 = daily_run(ticker, 3, 7, 19, today, test=True, period=1)
+print('10sec data 8-11 3/7/19 after retrain')
+re1 = daily_run(ticker, 3, 7, 19, today, test=False, period=1)
 
-#re2 = daily_run(ticker, 12, 26, 9, today, test=True, period=2)
-#re2 = daily_run(ticker, 12, 26, 9, today, test=False, period=2)
+print('10sec data 10-15 12/26/9 before retrain')
+re2 = daily_run(ticker, 12, 26, 9, today, test=True, period=2)
+print('10sec data 10-15 12/26/9 after retrain')
+re2 = daily_run(ticker, 12, 26, 9, today, test=False, period=2)
 
-#re2 = daily_run(ticker, 6, 13, 9, today, test=True, period=2)
-#re2 = daily_run(ticker, 6, 13, 9, today, test=False, period=2)
+print('10sec data 10-15 6/13/9 before retrain')
+re2 = daily_run(ticker, 6, 13, 9, today, test=True, period=2)
+print('10sec data 10-15 6/13/9 after retrain')
+re2 = daily_run(ticker, 6, 13, 9, today, test=False, period=2)
 
-#re2 = daily_run(ticker, 3, 7, 19, today, test=True, period=2)
-#re2 = daily_run(ticker, 3, 7, 19, today, test=False, period=2)
+print('10sec data 10-15 3/7/19 before retrain')
+re2 = daily_run(ticker, 3, 7, 19, today, test=True, period=2)
+print('10sec data 10-15 3/7/19 after retrain')
+re2 = daily_run(ticker, 3, 7, 19, today, test=False, period=2)
 
+'''
 model_gain = 1
 buy_and_hold_gain = 1
 macd_gain = 1
@@ -107,7 +120,7 @@ qDates = [
     '2023_05_11',
     '2023_05_12'
 ]
-
+'''
 '''
 tDates = [
     '2023_05_08',
@@ -135,6 +148,7 @@ tDates = [
     '2023_05_05'
 ]
 '''
+'''
 #ticker='TSLA'
 for q in qDates:
     print(q)
@@ -155,7 +169,7 @@ for q in qDates:
     #re2 = daily_run(ticker, 12, 26, 9, q, test=False, period=2)
 
 print(model_gain, buy_and_hold_gain, macd_gain)
-
+'''
 '''
     #re1 = daily_run(ticker, 3, 7, 19, q)
     #re1 = daily_run(ticker, 6, 13, 9, q)
@@ -444,4 +458,31 @@ after retrain
 1.0870643715339623 0.884257723961703 0.9107785810766711
 
 performance is much worse with retrain every day, test next day.
+
+2023_05_15
+10sec data 8-11 12/26/9 before retrain
+2023-05-15 08:13:18.920000-04:00 2023-05-15 10:54:08.565000-04:00 0.9941589749226193 1.0011080563853298 0.9895816721213925
+10sec data 8-11 12/26/9 after retrain
+2023-05-15 08:13:18.920000-04:00 2023-05-15 10:54:08.565000-04:00 0.998635645585679 1.0011080563853298 0.9895816721213925
+10sec data 8-11 6/13/9 before retrain
+2023-05-15 08:13:18.920000-04:00 2023-05-15 10:52:13.313000-04:00 1.0010776111599382 0.9906933706963873 0.9890508777149658
+10sec data 8-11 6/13/9 after retrain
+2023-05-15 08:13:18.920000-04:00 2023-05-15 10:52:13.313000-04:00 1.0283589009381908 0.9906933706963873 0.9890508777149658
+10sec data 8-11 3/7/19 before retrain
+2023-05-15 08:11:40.475000-04:00 2023-05-15 10:54:08.565000-04:00 0.9865872911929988 0.9834870730739033 0.9898761904761906
+10sec data 8-11 3/7/19 after retrain
+2023-05-15 08:11:40.475000-04:00 2023-05-15 10:54:08.565000-04:00 1.0304657887562472 0.9834870730739033 0.9898761904761906
+10sec data 10-15 12/26/9 before retrain
+2023-05-15 10:17:38.549000-04:00 2023-05-15 14:54:04.879000-04:00 0.9950122106960471 1.0010720711872731 1.0021066570362347
+10sec data 10-15 12/26/9 after retrain
+2023-05-15 10:17:38.549000-04:00 2023-05-15 14:54:04.879000-04:00 1.024199771706315 1.0010720711872731 1.0021066570362347
+10sec data 10-15 6/13/9 before retrain
+2023-05-15 10:13:52.777000-04:00 2023-05-15 14:57:51.006000-04:00 1.0027114882723975 0.9926478275912273 1.0024679467886595
+10sec data 10-15 6/13/9 after retrain
+2023-05-15 10:13:52.777000-04:00 2023-05-15 14:57:51.006000-04:00 1.0304830077055345 0.9926478275912273 1.0024679467886595
+10sec data 10-15 3/7/19 before retrain
+2023-05-15 10:08:26.552000-04:00 2023-05-15 14:57:51.006000-04:00 1.0158505171533685 0.9959678424251931 1.0048935310054365
+10sec data 10-15 3/7/19 after retrain
+2023-05-15 10:08:26.552000-04:00 2023-05-15 14:57:51.006000-04:00 1.0303869108578405 0.9959678424251931 1.0048935310054365
+
 '''
