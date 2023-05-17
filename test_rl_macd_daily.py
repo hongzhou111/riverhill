@@ -86,11 +86,11 @@ class RLDailyTrader:
                      'SPSC', 'ABC', 'EDPFY', 'HALO', 'VRTV', 'GEO', 'UNF', 'AXSM', 'YUM', 'GES', 'YUMC', 'AMGN', 'OLN',
                      'EPD', 'KLAC', 'MMP', 'BURL', 'CWT', 'CSL', 'DLTR', 'DY', 'MA', 'MSI', 'NTCT', 'NEE', 'ORCL', 'SNA',
                      'SBUX', 'WYNN', 'XYL', 'AIG', 'CCI', 'CMC', 'RIO', 'STLD', 'AMP', 'ASX', 'LSCC', 'PLXS', 'COLD',
-                     'APPF', 'BRKR', 'CROX', 'DSGX', 'AQUA', 'FCPT', 'GMS', 'HCA', 'NSIT', 'IBB', 'LMAT', 'NEP', 'OLLI',
-                     'PTCT', 'TPR', 'RL', 'GEL', 'AIMC', 'EWZ', 'KNX', 'FWONA', 'MTD', 'COOP', 'ODFL', 'WAT',
+                     'APPF', 'BRKR', 'CROX', 'DSGX', 'AQUA', 'FCPT', 'GMS', 'HCA', 'NSIT', 'LMAT', 'NEP', 'OLLI',
+                     'PTCT', 'TPR', 'RL', 'GEL', 'EWZ', 'KNX', 'FWONA', 'MTD', 'COOP', 'ODFL', 'WAT',
                      'XPEL', 'MEG', 'CCJ', 'MEOH', 'PRI', 'PLMR', 'CEG', 'ADI', 'KLIC', 'MTSI', 'MCHP', 'MPWR', 'OCSL',
                      'TXN', 'ATRI', 'BCC', 'CRHKY', 'CCOI', 'CTS', 'DXCM', 'DFIN', 'FELE', 'LSTR', 'MBUU', 'O', 'RBA',
-                     'SBRA', 'SGEN', 'SKX', 'SLYV', 'MDY', 'VHT', 'WM', 'PII', 'AVGO', 'FRHC', 'CAR', 'CACI', 'ETN', 'NPO',
+                     'SBRA', 'SGEN', 'SKX', 'VHT', 'WM', 'PII', 'AVGO', 'FRHC', 'CAR', 'CACI', 'ETN', 'NPO',
                      'FDS', 'PPA', 'ROP', 'STRL', 'TMO', 'OWL', 'MKTX', 'POWI', 'ROAD', 'DHI', 'PLUS', 'GPI', 'ICFI',
                      'MEI', 'PRIM', 'R', 'TDY', 'XLE', 'FCX', 'PEP', 'HPE', 'ABB', 'AMX', 'EQIX', 'IBP', 'IYH',
                      'LECO', 'NRC', 'PKG', 'DGX', 'TSCO', 'VRSN', 'WSO', 'ZTO', 'UI', 'VOYA', 'CRUS', 'GOLF', 'ASND',
@@ -106,15 +106,16 @@ class RLDailyTrader:
                      'LVMUY', 'FSBW', 'NTES', 'URBN', 'EADSY', 'CDNS', 'CASS', 'LFUS', 'WT', 'IR', 'ARCAY', 'LRCX', 'FTNT',
                      'MANH', 'SCTH', 'DO', 'ARNC', 'NVR', 'INTA', 'BWA', 'TJBH', 'AGM', 'MTZ', 'COCO', 'CARR', 'PH',
                      'FTCO', 'GSHD', 'HUBS', 'LMPX', 'MRTI', 'NGLD', 'DKNG', 'NFLX', 'UHAL', 'CTVA', 'KIDS', 'RADI', 'RIOT',
-                     'AMRX', 'IDXX', 'INSP', 'WST', 'CPRT', 'RMD']
+                     'AMRX', 'IDXX', 'INSP', 'WST', 'CPRT', 'RMD', 'CRSP']
 
         #self.list = ['SHOP', 'COUP', 'TWLO', 'ROKU', 'OKTA', 'PAYC', 'GOOGL', 'LYFT', 'TTD', 'AYX', 'ISRG', 'CRM',
         #             'ATVI', 'MDB', 'SQ', 'BABA', 'AAPL', 'TCEHY', 'FB', 'AMZN', 'TSLA', 'ANTM', 'COST', 'GS',
         #             'GE', 'CDLX', 'APPN', 'RNG', 'DELL', 'AZO', 'CHTR', 'FTNT', 'POOL', 'NOW', 'BKNG', 'ORLY',
         #             'ALGN', 'HUM', 'IAC', 'LIN', 'SNAP', 'PCTY', 'IDXX', 'NVCR', 'ETSY', 'EW', 'CNC', 'MASI', 'CMG',
         #             'TTNDY', 'ILMN', 'DECK', 'FIVE', 'ANET', 'HUBS', 'EQIX', 'MPWR']
-        #   'SPSC', 'CHTR', 'UI', 'CTLT', 'XLRN','SPPT','MIME', 'MLYBY','SWCH', 'SRD','COUP','MYOV','EVOP','STOR', 'SJI',
-        #self.list = ['BKNG'] 'WIX', 'BILI','MA', 'HCA', 'PRAH', 'NFLX', 'ZTS','VEEV', 'PYPL', 'AVGO', 'ZM', 'CRWD', 'CVNA', 'DOCU', 'PINS', 'V'
+        #   'SPSC', 'CHTR', 'UI', 'CTLT', 'XLRN','SPPT','MIME', 'MLYBY','SWCH', 'SRD','COUP','MYOV','EVOP','STOR', 'SJI', 'IBB',
+        #self.list = ['BKNG'] 'WIX', 'BILI','MA', 'HCA', 'PRAH', 'NFLX', 'ZTS','VEEV', 'PYPL', 'AVGO', 'ZM', 'CRWD',
+        # 'CVNA', 'DOCU', 'PINS', 'V', 'AIMC', 'SLYV', 'MDY',
         self.exclusionList = ['PENN', 'JCOM', 'GKOS', 'EYE', 'BURL', 'W', 'GOLF', 'DG', 'TRU', 'SSNC', 'TSCO', 'FLT', 'PDD',
                               'ZS', 'ROST','DXCM', 'NTES', 'NIO', 'LI', 'ODFL', 'XPO', 'SAM','FRC']
 

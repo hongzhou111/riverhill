@@ -94,8 +94,8 @@ if __name__ == '__main__':
             model_perf = smax['model_perf']['mean'][0]
             buy_and_hold_gain = smax['buy_and_hold_gain']['mean'][0]
             buy_and_hold_perf = smax['buy_and_hold_perf']['mean'][0]
-            macd_gain = smax['macd_gain']['mean'][0]
-            macd_perf = smax['macd_perf']['mean'][0]
+            macd_gain = smax['MACD_gain']['mean'][0]
+            macd_perf = smax['MACD_perf']['mean'][0]
             duration = smax['duration']['mean'][0]
 
             # print(ticker, max_score, duration, model_perf, buy_and_hold_perf, macd_list[macd_list_index], macd_threshold_list[macd_threshold_list_index], macd_min_len_list[macd_min_len_list_index])

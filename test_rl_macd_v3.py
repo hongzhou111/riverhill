@@ -865,8 +865,8 @@ class StockRL:
                 'model_perf': model_perf,
                 'buy_and_hold_gain': buy_and_hold_gain,
                 'buy_and_hold_perf': buy_and_hold_perf,
-                'macd_gain': mr['MACD_gain'],
-                'macd_perf': mr['MACD_perf']
+                'MACD_gain': mr['MACD_gain'],
+                'MACD_perf': mr['MACD_perf']
             }
             result = pd.DataFrame.from_records([r])
 
