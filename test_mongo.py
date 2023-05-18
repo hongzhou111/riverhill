@@ -4,7 +4,8 @@ import pymongo
 
 class MongoExplorer:
     def __init__(self):
-        mongo_client = pymongo.MongoClient('mongodb://192.168.1.160:27017/')
+        #mongo_client = pymongo.MongoClient('mongodb://192.168.1.160:27017/')
+        mongo_client = pymongo.MongoClient('mongodb://192.168.1.181:27017/')
         self.mongoDB = mongo_client['riverhill']
 
 if __name__ == '__main__':

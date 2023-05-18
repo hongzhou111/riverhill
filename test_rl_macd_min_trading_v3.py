@@ -767,10 +767,10 @@ class CustomEncoder(json.JSONEncoder):  # use CustomEncoder to fix pymongo error
 
 if __name__ == '__main__':
     ticker='TSLA'
-    short = 12      #3  #6
-    long = 26       #7  #13
+    short = 6       #12      #3  #6
+    long = 13       #26       #7  #13
     signal = 9      #19 #9
-    tname = 'sec_macd_1'
+    tname = 'sec_macd_6_13_9'
     mmt = MinMACDTrader(ticker=ticker, short=short, long=long, signal=signal, tname=tname)
     mmt.reload()
     #mmt.run()

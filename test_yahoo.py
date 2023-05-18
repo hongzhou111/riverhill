@@ -165,8 +165,8 @@ if __name__ == '__main__':
             #logging.info(str(companyIndex) + ": " + company)
             print(str(companyIndex) + ": " + company)
 
-            #q.get_quotes(company, AAOD)
-            q.get_minute_data(company)
+            q.get_quotes(company, AAOD)
+            #q.get_minute_data(company)
         companyIndex = companyIndex + 1
 
     #from yahoo_historical import Fetcher

@@ -298,7 +298,7 @@ class StockScore:
                      'XMEX', 'GSX', 'GRWG', 'MNST', 'GDS', 'SE', 'MELI', 'DQ', 'SWET', 'INFO', 'TT', 'GBTC',
                      'HZNP', 'OCFT', 'GOOG', 'YY', 'BCEI', 'NPSNY', 'BRDCY', 'CPRI', 'BOTY', 'NXPI', 'XFLS',
                       'BBD', 'GPH', 'PAGS', 'PHIL', 'GFKSY', 'CNNA', 'DLOC', 'SEII', 'WWR', 'MT', 'DB', 'OIBRQ',
-                     'BIEI', 'RMSL', 'KMI', 'NAKD', 'NSPX', 'BHP', 'TNXP', 'MLYBY', 'SIM','AMOV']
+                     'BIEI', 'RMSL', 'KMI', 'NAKD', 'NSPX', 'BHP', 'TNXP', 'MLYBY', 'SIM','AMOV', 'GRDZF']
 
         # 4. Industry = Tobacco
         if self.company['industry'] == "Food & Tobacco":
