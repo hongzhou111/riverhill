@@ -274,7 +274,7 @@ class MinMACDTrader:
                         'price': '187.61000000', 'stop_price': None, 'quantity': '4.95991400', 'reject_reason': None,
                         'created_at': '2023-04-11T13:57:50.938320Z', 'updated_at': '2023-04-11T13:57:52.248640Z', 'last_transaction_at': '2023-04-11T13:57:51.935573Z', 'executions': [{'price': '187.59800000', 'quantity': '4.95991400', 'rounded_notional': '930.47000000', 'settlement_date': '2023-04-13', 'timestamp': '2023-04-11T13:57:51.345000Z', 'id': '6435675f-105e-43bd-9e78-71fd3bdee706', 'ipo_access_execution_rank': None}], 'extended_hours': False, 'market_hours': 'regular_hours', 'override_dtbp_checks': False, 'override_day_trade_checks': False, 'response_category': None, 'stop_triggered_at': None, 'last_trail_price': None, 'last_trail_price_updated_at': None, 'last_trail_price_source': None, 'dollar_based_amount': {'amount': '930.47000000', 'currency_code': 'USD', 'currency_id': '1072fc76-1862-41ab-82c2-485837590762'}, 'total_notional': {'amount': '930.47', 'currency_code': 'USD', 'currency_id': '1072fc76-1862-41ab-82c2-485837590762'}, 'executed_notional': {'amount': '930.47', 'currency_code': 'USD', 'currency_id': '1072fc76-1862-41ab-82c2-485837590762'}, 'investment_schedule_id': None, 'is_ipo_access_order': False, 'ipo_access_cancellation_reason': None, 'ipo_access_lower_collared_price': None, 'ipo_access_upper_collared_price': None, 'ipo_access_upper_price': None, 'ipo_access_lower_price': None, 'is_ipo_access_price_finalized': False, 'is_visible_to_user': True, 'has_ipo_access_custom_price_limit': False, 'is_primary_account': True, 'order_form_version': 2, 'preset_percent_limit': None, 'order_form_type': 'collaring_removal'}
                     '''
-                    time.sleep(3)
+                    time.sleep(2)
                     _id = robin_buy.get('id')
                     _order_info = rh.get_stock_order_info(_id)
                     #print(_order_info)
@@ -321,7 +321,7 @@ class MinMACDTrader:
                                 'price': '187.61000000', 'stop_price': None, 'quantity': '4.95991400', 'reject_reason': None,
                                 'created_at': '2023-04-11T13:57:50.938320Z', 'updated_at': '2023-04-11T13:57:52.248640Z', 'last_transaction_at': '2023-04-11T13:57:51.935573Z', 'executions': [{'price': '187.59800000', 'quantity': '4.95991400', 'rounded_notional': '930.47000000', 'settlement_date': '2023-04-13', 'timestamp': '2023-04-11T13:57:51.345000Z', 'id': '6435675f-105e-43bd-9e78-71fd3bdee706', 'ipo_access_execution_rank': None}], 'extended_hours': False, 'market_hours': 'regular_hours', 'override_dtbp_checks': False, 'override_day_trade_checks': False, 'response_category': None, 'stop_triggered_at': None, 'last_trail_price': None, 'last_trail_price_updated_at': None, 'last_trail_price_source': None, 'dollar_based_amount': {'amount': '930.47000000', 'currency_code': 'USD', 'currency_id': '1072fc76-1862-41ab-82c2-485837590762'}, 'total_notional': {'amount': '930.47', 'currency_code': 'USD', 'currency_id': '1072fc76-1862-41ab-82c2-485837590762'}, 'executed_notional': {'amount': '930.47', 'currency_code': 'USD', 'currency_id': '1072fc76-1862-41ab-82c2-485837590762'}, 'investment_schedule_id': None, 'is_ipo_access_order': False, 'ipo_access_cancellation_reason': None, 'ipo_access_lower_collared_price': None, 'ipo_access_upper_collared_price': None, 'ipo_access_upper_price': None, 'ipo_access_lower_price': None, 'is_ipo_access_price_finalized': False, 'is_visible_to_user': True, 'has_ipo_access_custom_price_limit': False, 'is_primary_account': True, 'order_form_version': 2, 'preset_percent_limit': None, 'order_form_type': 'collaring_removal'}
                             '''
-                            time.sleep(3)
+                            time.sleep(2)
                             _id = robin_buy.get('id')
                             _order_info = rh.get_stock_order_info(_id)
                             # print(_order_info)
@@ -361,7 +361,7 @@ class MinMACDTrader:
                         'ipo_access_upper_price': None, 'ipo_access_lower_price': None, 'is_ipo_access_price_finalized': False, 'is_visible_to_user': True, 'has_ipo_access_custom_price_limit': False, 'is_primary_account': True,
                         'order_form_version': 2, 'preset_percent_limit': None, 'order_form_type': 'collaring_removal'}
                     '''
-                    time.sleep(3)
+                    time.sleep(2)
                     _id = robin_sell.get('id')
                     _order_info = rh.get_stock_order_info(_id)
                     #print(_order_info)
@@ -408,7 +408,7 @@ class MinMACDTrader:
                                 'ipo_access_upper_price': None, 'ipo_access_lower_price': None, 'is_ipo_access_price_finalized': False, 'is_visible_to_user': True, 'has_ipo_access_custom_price_limit': False, 'is_primary_account': True,
                                 'order_form_version': 2, 'preset_percent_limit': None, 'order_form_type': 'collaring_removal'}
                             '''
-                            time.sleep(3)
+                            time.sleep(2)
                             _id = robin_sell.get('id')
                             _order_info = rh.get_stock_order_info(_id)
                             # print(_order_info)
