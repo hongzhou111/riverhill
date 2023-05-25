@@ -248,9 +248,9 @@ if __name__ == '__main__':
     tname = 'min_macd_1'
     #r = Robin(ticker='TSLA', tname=tname)
     r = Robin(ticker='NIO', tname=tname)
-    #r.check_robin_holdings()
+    r.check_robin_holdings()
 
-    r.robin_order(0)
+    #r.robin_order(0)
     #r.robin_order(1)
     #r.robin_order(2)
 
