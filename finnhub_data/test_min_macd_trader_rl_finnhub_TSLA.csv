@@ -3631,3 +3631,17 @@
 2023-05-26 15:27:16.881000,sell,"{'date': Timestamp('2023-05-26 15:27:15.762000-0400', tz='America/New_York'), 'model_predict': 0.48859453, 'accum': 0.01058804292265289, 'l': 2}",195.36,0,0,unsent
 2023-05-26 15:27:35.936000,sell,"{'date': Timestamp('2023-05-26 15:27:35.326000-0400', tz='America/New_York'), 'model_predict': 0.76688147, 'accum': -0.016739609632079114, 'l': 2}",195.4283,0,0,unsent
 2023-05-26 15:27:46.906000,sell,"{'date': Timestamp('2023-05-26 15:27:46.264000-0400', tz='America/New_York'), 'model_predict': 0.0, 'accum': 0.00214195696429198, 'l': 1}",195.0,0,0,unsent
+2023-05-26 15:28:38.879000,sell,"{'date': Timestamp('2023-05-26 15:28:37.812000-0400', tz='America/New_York'), 'model_predict': 0.59958357, 'accum': -0.2029496338717356, 'l': 5}",195.07,0,0,unsent
+2023-05-26 15:30:24.006000,sell,"{'date': Timestamp('2023-05-26 15:30:22.865000-0400', tz='America/New_York'), 'model_predict': 0.05322747, 'accum': 0.28967864401564125, 'l': 10}",194.8117,0,0,unsent
+2023-05-26 15:31:55.162000,sell,"{'date': Timestamp('2023-05-26 15:31:54.016000-0400', tz='America/New_York'), 'model_predict': 0.23968238, 'accum': -0.1763426822249448, 'l': 9}",194.5,0,0,unsent
+2023-05-26 15:35:09.421000,sell,"{'date': Timestamp('2023-05-26 15:35:08.296000-0400', tz='America/New_York'), 'model_predict': 0.0, 'accum': 0.6235799143917429, 'l': 19}",194.8237,0,0,unsent
+2023-05-26 15:35:19.404000,sell,"{'date': Timestamp('2023-05-26 15:35:18.878000-0400', tz='America/New_York'), 'model_predict': 1.0356026, 'accum': -0.002076049129456855, 'l': 1}",194.875,0,0,unsent
+2023-05-26 15:35:29.331000,sell,"{'date': Timestamp('2023-05-26 15:35:28.976000-0400', tz='America/New_York'), 'model_predict': 0.01958014, 'accum': 0.0012033013010862813, 'l': 1}",194.85,0,0,unsent
+2023-05-26 15:37:12.497000,sell,"{'date': Timestamp('2023-05-26 15:37:11.651000-0400', tz='America/New_York'), 'model_predict': 0.0, 'accum': -0.2627780316301687, 'l': 10}",194.76,0,0,unsent
+2023-05-26 15:37:33.603000,sell,"{'date': Timestamp('2023-05-26 15:37:32.620000-0400', tz='America/New_York'), 'model_predict': 1.2677164, 'accum': 0.01451573482437056, 'l': 2}",194.38,0,0,unsent
+2023-05-26 15:39:47.718000,sell,"{'date': Timestamp('2023-05-26 15:39:46.913000-0400', tz='America/New_York'), 'model_predict': 0.0, 'accum': -0.6785544603493685, 'l': 13}",193.57,0,0,unsent
+2023-05-26 15:43:53.949000,sell,"{'date': Timestamp('2023-05-26 15:43:53.929000-0400', tz='America/New_York'), 'model_predict': 0.5103099, 'accum': 0.9658377145769182, 'l': 24}",193.61,0,0,unsent
+2023-05-26 15:49:00.497000,sell,"{'date': Timestamp('2023-05-26 15:48:59.301000-0400', tz='America/New_York'), 'model_predict': 0.0, 'accum': -0.8229097371802961, 'l': 30}",192.5585,0,0,unsent
+2023-05-26 15:50:13.453000,sell,"{'date': Timestamp('2023-05-26 15:50:12.814000-0400', tz='America/New_York'), 'model_predict': 0.23004445, 'accum': 0.4911729664419, 'l': 7}",192.31,0,0,unsent
+2023-05-26 15:52:24.694000,sell,"{'date': Timestamp('2023-05-26 15:52:23.794000-0400', tz='America/New_York'), 'model_predict': 0.83385587, 'accum': -0.28763079660175284, 'l': 13}",192.05,0,0,unsent
+2023-05-26 15:56:00,sell,"{'date': datetime.datetime(2023, 5, 26, 15, 56), 'reason': 'close_market_sell'}",193.2908,0,0,unsent

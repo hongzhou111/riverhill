@@ -74,7 +74,7 @@ class MinMACDTrader:
         self.macd_csv_name = './finnhub_data/test_min_macd_trader_macd_finnhub_' + ticker + '.csv'
         self.rl_csv_name = './finnhub_data/test_min_macd_trader_rl_finnhub_' + ticker + '.csv'
 
-        self.MAX_ROBIN_BUY_RETRY = 3
+        self.MAX_ROBIN_BUY_RETRY = 2
 
         self.current_time = datetime.now()
 
@@ -773,8 +773,8 @@ if __name__ == '__main__':
     tname = 'sec_macd_6_13_9'
     mmt = MinMACDTrader(ticker=ticker, short=short, long=long, signal=signal, tname=tname)
     mmt.reload()
-    #mmt.run()
-    mmt.run(paper_trade=True)
+    mmt.run()
+    #mmt.run(paper_trade=True)
     #mmt.run(rerun=True)
 
     '''

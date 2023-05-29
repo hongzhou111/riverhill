@@ -31,3 +31,8 @@ if __name__ == '__main__':
             print(i, x['Symbol'])
         i = i + 1
 
+    ticker = 'TSLA'
+    collection = ticker + '_10sec'      #mongodb colection name, TALA_10sec
+    df = pd.read_csv("c:\path\CsvFile.csv")     # row data in csv file, full path
+    data_dict = df.to_dict("records")
+    result = mongo.mongodB[collection].insert_many(data_list)
