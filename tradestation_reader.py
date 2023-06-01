@@ -1,22 +1,22 @@
-from tkinter import E
-from webbrowser import get
 import requests
 import csv
 import json
 import pandas as pd
 import os
-import datetime
-import pause
 from test_mongo import MongoExplorer
+from apscheduler.schedulers.blocking import BlockingScheduler
+import logging
+from pytz import utc
 
 """ auth_url to copy
 https://signin.tradestation.com/authorize?response_type=code&client_id=r4bJ08Nbz9f8b6djDhoyCmazNnrrLFL4&redirect_uri=http%3A%2F%2Flocalhost&audience=https%3A%2F%2Fapi.tradestation.com&state=STATE&scope=openid+offline_access+profile+MarketData+ReadAccount+Trade+Crypto+Matrix+OptionSpreads
 """
 auth_url = "https://signin.tradestation.com/authorize?response_type=code&client_id=r4bJ08Nbz9f8b6djDhoyCmazNnrrLFL4&redirect_uri=http%3A%2F%2Flocalhost&audience=https%3A%2F%2Fapi.tradestation.com&state=STATE&scope=openid+offline_access+profile+MarketData+ReadAccount+Trade+Crypto+Matrix+OptionSpreads"
-authorization_code = "Q6IimMWRRH2o_BjC"
+authorization_code = "i_TSPBeCF8-1sjJs"
 public_key = "r4bJ08Nbz9f8b6djDhoyCmazNnrrLFL4"
 private_key = "hFBk8xgV_UGJEUFnxVW-AFz6YToqZwdvM-48x5wLUQhzKiR99r2w780hL0giBfvd"
 token_url = "https://signin.tradestation.com/oauth/token"
+mongo = MongoExplorer()
 
 def get_tokens():
     headers = {"content-type": "application/x-www-form-urlencoded"}
@@ -97,33 +97,39 @@ def stream_marketdepth_quotes(symbols, path):
             print(e)
             break
 
-def get_quotes_10sec(symbol):
-    next_time = datetime.datetime.now() + datetime.timedelta(0, 10)
+def get_quote(symbol):
     url = f"https://api.tradestation.com/v3/marketdata/quotes/{symbol}"
     collection = f"{symbol}_10sec_ts"
-    mongo = MongoExplorer()
     while True:
         try:
-            pause.until(next_time)
             access_token = refresh()
             headers = {"Authorization": f"Bearer {access_token}"}
 
-            response = requests.get(url, headers=headers).json()
-            print(response["Quotes"][0])
-            fieldnames = ["Symbol", "Open", "High", "Low", "Last", "Ask", "AskSize", "Bid", "BidSize", "Volume", "TradeTime"]
+            response = requests.get(url, headers=headers)
+            if response.status_code != 200:
+                continue
+            response = response.json()
+            fieldnames = ["Symbol", "Open", "High", "Low", "PreviousClose", "PreviousVolume", "Last", "Ask", "AskSize", "Bid", "BidSize", "NetChange", "NetChangePct", "Volume", "VWAP", "TradeTime"]
             dict = {key: response["Quotes"][0][key] for key in fieldnames}
             print(dict)
             mongo.mongoDB[collection].replace_one({"TradeTime": dict["TradeTime"]}, dict, upsert=True)
-            next_time += datetime.timedelta(0, 10)
-        except requests.exceptions.ChunkedEncodingError as chunkError:
-            print(chunkError)
-            continue
-        except Exception as e:
-            print(e)
             break
+        except Exception as e:
+            logging.exception(e)
+            continue
+
+def get_quotes_10sec(symbols):
+    # Default MemoryJobStore - stores job (fn get_quote) in memory
+    # Default ThreadPoolExecutor(10) - max 10 threads
+    scheduler = BlockingScheduler(timezone=utc)
+    for symbol in symbols:
+        scheduler.add_job(get_quote, 'cron', args=[symbol], max_instances=2, \
+            day_of_week='mon-fri', hour="8-23", second="*/10")
+    scheduler.start()
 
 if __name__ == '__main__':
-    #access_token, refresh_token, id_token = get_tokens()
-    refresh_token = "EMDit_4j9JcSMuURcS0uNigyWpWuJ19gfAmzek6nwlfLR"
-    symbols = "TSLA"
+    #print(get_tokens())
+    logging.basicConfig(filename="tradestation_data/exceptions.log", format='%(asctime)s %(message)s')
+    refresh_token = "RsHzxnj7GVWK03IhN3gSXdwSF34a55gmtuDYQxjqioPBs"
+    symbols = ["TSLA", "AAPL", "GOOGL", "MSFT", "AMZN", "BABA", "LYFT", "GE", "META", "MDB"]
     get_quotes_10sec(symbols)
