@@ -1,0 +1,195 @@
+2023-06-02 11:19:00,125 NVDA HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1075, in _create
+    self.do_handshake()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1346, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 487, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 133, in get_quote
+    response = requests.get(url, headers=headers)
+                   ^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 35, in refresh
+    headers = {"content-type": "application/x-www-form-urlencoded"}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 518, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+2023-06-02 11:30:50,387 ZM <Response [502]>
+2023-06-02 11:30:50,421 AMZN <Response [502]>
+2023-06-02 11:30:50,740 AMZN <Response [502]>
+2023-06-02 12:07:50,136 NFLX HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1075, in _create
+    self.do_handshake()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1346, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 487, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 133, in get_quote
+    response = requests.get(url, headers=headers)
+                   ^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 35, in refresh
+    headers = {"content-type": "application/x-www-form-urlencoded"}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 518, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+2023-06-02 17:15:20,113 AAPL HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1075, in _create
+    self.do_handshake()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1346, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 487, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 133, in get_quote
+    response = requests.get(url, headers=headers)
+                   ^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 35, in refresh
+    headers = {"content-type": "application/x-www-form-urlencoded"}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 518, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
