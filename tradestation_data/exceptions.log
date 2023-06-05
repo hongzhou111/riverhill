@@ -1,195 +1,744 @@
-2023-06-02 11:19:00,125 NVDA HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+2023-06-05 07:17:03,818 AMC <Response [200]> 
+2023-06-05 07:17:03,823 AMZN <Response [200]> 
+2023-06-05 07:17:03,824 AMC 'NoneType' object has no attribute 'readline'
 Traceback (most recent call last):
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 703, in urlopen
-    httplib_response = self._make_request(
-                       ^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 386, in _make_request
-    self._validate_conn(conn)
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
-    conn.connect()
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connection.py", line 419, in connect
-    self.sock = ssl_wrap_socket(
-                ^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
-    ssl_sock = _ssl_wrap_socket_impl(
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
-    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1075, in _create
-    self.do_handshake()
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1346, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,829 TSLA <Response [200]> 
+2023-06-05 07:17:03,831 NFLX <Response [200]> 
+2023-06-05 07:17:03,836 META <Response [200]> 
+2023-06-05 07:17:03,841 NVDA <Response [200]> 
+2023-06-05 07:17:03,841 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,844 MSFT <Response [200]> 
+2023-06-05 07:17:03,847 AAPL <Response [200]> 
+2023-06-05 07:17:03,857 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,856 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,856 NFLX 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,856 META 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,856 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,857 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:03,848 ZM <Response [200]> 
+2023-06-05 07:17:03,861 ZM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 07:17:04,223 GOOG <Response [200]> 
+2023-06-05 07:17:04,224 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 12:11:58,006 AAPL ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 761, in _update_chunk_length
+    self.chunk_left = int(line, 16)
+                      ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 487, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 444, in _error_catcher
+    yield
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 828, in read_chunked
+    self._update_chunk_length()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 765, in _update_chunk_length
+    raise InvalidChunkLength(self, line)
+urllib3.exceptions.InvalidChunkLength: InvalidChunkLength(got length b'', 0 bytes read)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 133, in get_quote
-    response = requests.get(url, headers=headers)
-                   ^^^^^^^^^
-  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 35, in refresh
-    headers = {"content-type": "application/x-www-form-urlencoded"}
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 701, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 518, in send
-    raise SSLError(e, request=request)
-requests.exceptions.SSLError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
-2023-06-02 11:30:50,387 ZM <Response [502]>
-2023-06-02 11:30:50,421 AMZN <Response [502]>
-2023-06-02 11:30:50,740 AMZN <Response [502]>
-2023-06-02 12:07:50,136 NFLX HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
-Traceback (most recent call last):
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 703, in urlopen
-    httplib_response = self._make_request(
-                       ^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 386, in _make_request
-    self._validate_conn(conn)
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
-    conn.connect()
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connection.py", line 419, in connect
-    self.sock = ssl_wrap_socket(
-                ^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
-    ssl_sock = _ssl_wrap_socket_impl(
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
-    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1075, in _create
-    self.do_handshake()
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1346, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 816, in read_chunked
+    with self._error_catcher():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 461, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 487, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 818, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
+2023-06-05 12:15:42,684 NVDA <Response [200]> 
+2023-06-05 12:15:42,684 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 12:15:42,702 ZM <Response [200]> 
+2023-06-05 12:15:42,702 ZM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 12:27:29,742 META <Response [200]> 
+2023-06-05 12:27:29,744 META 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 12:27:30,051 NFLX <Response [200]> 
+2023-06-05 12:27:30,053 NFLX 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 13:23:46,399 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.398252
+2023-06-05 13:23:46,409 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.409257
+2023-06-05 13:23:46,409 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.409448
+2023-06-05 13:23:46,423 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.423200
+2023-06-05 13:23:46,429 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.429714
+2023-06-05 13:23:46,429 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.429832
+2023-06-05 13:23:46,430 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430282
+2023-06-05 13:23:46,430 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430525
+2023-06-05 13:23:46,430 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430666
+2023-06-05 13:23:46,430 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430771
+2023-06-05 13:23:46,430 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430892
+2023-06-05 13:23:46,430 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430950
+2023-06-05 13:23:46,431 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.430991
+2023-06-05 13:23:46,431 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431061
+2023-06-05 13:23:46,431 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431102
+2023-06-05 13:23:46,431 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431133
+2023-06-05 13:23:46,431 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431174
+2023-06-05 13:23:46,431 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431290
+2023-06-05 13:23:46,431 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431352
+2023-06-05 13:23:46,431 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:23:50 UTC)" was missed by 0:00:06.431384
+2023-06-05 13:25:34,744 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.744086
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748082
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748180
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748238
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748287
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748337
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748367
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748399
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748435
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748462
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748503
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748542
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748586
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748614
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748642
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748671
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748705
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748737
+2023-06-05 13:25:34,748 Run time of job "get_lvl1_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748767
+2023-06-05 13:25:34,748 Run time of job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 17:25:40 UTC)" was missed by 0:00:04.748792
+2023-06-05 14:00:46,604 NFLX <Response [200]> 
+2023-06-05 14:00:46,605 META <Response [200]> 
+2023-06-05 14:00:46,606 MSFT <Response [200]> 
+2023-06-05 14:00:46,608 AMZN <Response [200]> 
+2023-06-05 14:00:46,610 GOOG <Response [200]> 
+2023-06-05 14:00:46,611 NFLX 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:46,612 TSLA <Response [200]> 
+2023-06-05 14:00:46,614 AAPL <Response [200]> 
+2023-06-05 14:00:46,614 META 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:46,614 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:46,614 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:46,615 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:46,643 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:46,646 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:47,444 ZM <Response [200]> 
+2023-06-05 14:00:47,444 ZM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:47,446 AMC <Response [200]> 
+2023-06-05 14:00:47,452 NVDA <Response [200]> 
+2023-06-05 14:00:47,459 AMC 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 14:00:47,462 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,678 TSLA <Response [200]> 
+2023-06-05 16:30:51,679 META <Response [200]> 
+2023-06-05 16:30:51,679 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,679 META 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,751 AAPL <Response [200]> 
+2023-06-05 16:30:51,752 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,753 NFLX <Response [200]> 
+2023-06-05 16:30:51,754 GOOG <Response [200]> 
+2023-06-05 16:30:51,754 NFLX 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,755 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,851 NVDA <Response [200]> 
+2023-06-05 16:30:51,852 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:51,868 ZM <Response [200]> 
+2023-06-05 16:30:51,868 ZM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:52,308 MSFT <Response [200]> 
+2023-06-05 16:30:52,308 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:52,329 AMZN <Response [200]> 
+2023-06-05 16:30:52,329 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 16:30:52,510 NVDA <Response [502]> 
+2023-06-05 16:30:52,517 META <Response [502]> 
+2023-06-05 16:30:52,518 ZM <Response [502]> 
+2023-06-05 16:30:52,519 TSLA <Response [502]> 
+2023-06-05 16:30:52,520 NFLX <Response [502]> 
+2023-06-05 16:30:52,857 MSFT <Response [502]> 
+2023-06-05 16:30:52,986 TSLA <Response [502]> 
+2023-06-05 16:30:53,009 ZM <Response [502]> 
+2023-06-05 16:30:53,517 MSFT <Response [502]> 
+2023-06-05 17:00:45,104 AMC <Response [200]> 
+2023-06-05 17:00:45,106 AMC 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:00:45,257 MSFT <Response [200]> 
+2023-06-05 17:00:45,259 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:00:45,417 TSLA <Response [200]> 
+2023-06-05 17:00:45,423 AMZN <Response [200]> 
+2023-06-05 17:00:45,424 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:00:45,424 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:00:45,434 ZM <Response [200]> 
+2023-06-05 17:00:45,434 ZM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:00:45,516 NVDA <Response [200]> 
+2023-06-05 17:00:45,516 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:00:45,648 META <Response [200]> 
+2023-06-05 17:00:45,648 META 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-05 17:13:37,381 META ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 761, in _update_chunk_length
+    self.chunk_left = int(line, 16)
+                      ^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 16: b''
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 133, in get_quote
-    response = requests.get(url, headers=headers)
-                   ^^^^^^^^^
-  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 35, in refresh
-    headers = {"content-type": "application/x-www-form-urlencoded"}
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 701, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 518, in send
-    raise SSLError(e, request=request)
-requests.exceptions.SSLError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
-2023-06-02 17:15:20,113 AAPL HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
-Traceback (most recent call last):
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 703, in urlopen
-    httplib_response = self._make_request(
-                       ^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 386, in _make_request
-    self._validate_conn(conn)
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
-    conn.connect()
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connection.py", line 419, in connect
-    self.sock = ssl_wrap_socket(
-                ^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
-    ssl_sock = _ssl_wrap_socket_impl(
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
-    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1075, in _create
-    self.do_handshake()
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/ssl.py", line 1346, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 444, in _error_catcher
+    yield
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 828, in read_chunked
+    self._update_chunk_length()
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 765, in _update_chunk_length
+    raise InvalidChunkLength(self, line)
+urllib3.exceptions.InvalidChunkLength: InvalidChunkLength(got length b'', 0 bytes read)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 487, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 816, in read_chunked
+    with self._error_catcher():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 461, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 133, in get_quote
-    response = requests.get(url, headers=headers)
-                   ^^^^^^^^^
-  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 35, in refresh
-    headers = {"content-type": "application/x-www-form-urlencoded"}
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 115, in post
-    return request("post", url, data=data, json=json, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/sessions.py", line 701, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/adapters.py", line 518, in send
-    raise SSLError(e, request=request)
-requests.exceptions.SSLError: HTTPSConnectionPool(host='signin.tradestation.com', port=443): Max retries exceeded with url: /oauth/token (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:992)')))
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 57, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 818, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
+2023-06-05 17:13:40,034 Job "get_lvl2_quote (trigger: cron[day_of_week='mon-fri', hour='8-23', second='*/10'], next run at: 2023-06-05 21:13:50 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 149, in get_lvl2_quote
+    for row in last_bids_and_asks[symbol]["Bids"]:
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'Bids'

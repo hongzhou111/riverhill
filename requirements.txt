@@ -1,4 +1,4 @@
-tensorflow==1.15
+tensorflow
 stable-baselines3
 yfinance
 streamlit
@@ -20,5 +20,4 @@ robin_stocks
 openai
 odo
 duka
-logging
 apscheduler
