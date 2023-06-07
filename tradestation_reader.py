@@ -2,7 +2,6 @@ import requests
 import csv
 import json
 import pandas as pd
-import os
 from test_mongo import MongoExplorer
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
@@ -18,7 +17,9 @@ authorization_code = "e37HZhkr8HBokHSw"
 public_key = "r4bJ08Nbz9f8b6djDhoyCmazNnrrLFL4"
 private_key = "hFBk8xgV_UGJEUFnxVW-AFz6YToqZwdvM-48x5wLUQhzKiR99r2w780hL0giBfvd"
 token_url = "https://signin.tradestation.com/oauth/token"
+refresh_token = "lzijZJe0VUnjFEzq6dqWK-Q3rqhzyoq7kkrDkqVoJvoYn"
 mongo = MongoExplorer()
+
 
 last_quote = {}
 lvl1_getTime = {}
@@ -94,33 +95,6 @@ def stream_lvl2_quotes(symbol):
             logging.exception(f"{symbol} {e}")
             continue
 
-# def get_quote(symbol):
-#     url = f"https://api.tradestation.com/v3/marketdata/quotes/{symbol}"
-#     collection = f"{symbol}_10sec_ts_lvl1"
-#     string_fields = ["Symbol", "TradeTime"]
-#     float_fields = ["Last", "Ask", "AskSize", "Bid", "BidSize", "Volume", "VWAP", "Open", "High", "Low", "PreviousClose", "PreviousVolume", "NetChange", "NetChangePct"]
-#     while True:
-#         try:
-#             access_token = refresh()
-#             headers = {"Authorization": f"Bearer {access_token}"}
-
-#             response = requests.get(url, headers=headers)
-#             if response.status_code != 200:
-#                 logging.warning(f"{symbol} {response} {response.text}")
-#                 continue
-#             response = response.json()
-
-#             dict = {key: response["Quotes"][0][key] for key in string_fields}
-#             dict.update({key: float(response["Quotes"][0][key]) for key in float_fields})
-#             tradeTime = response["Quotes"][0]["TradeTime"]
-#             last = response["Quotes"][0]["Last"]
-#             print(f"{symbol} {datetime.datetime.now()} {tradeTime} {last}")
-#             mongo.mongoDB[collection].replace_one({"TradeTime": dict["TradeTime"]}, dict, upsert=True)
-#             break
-#         except Exception as e:
-#             logging.exception(f"{symbol} {e}")
-#             continue   
-
 def get_lvl1_quote(symbol):
     collection = f"{symbol}_10sec_ts_lvl1"
     string_fields = ["Symbol", "TradeTime"]
@@ -184,6 +158,5 @@ if __name__ == '__main__':
     # print(get_tokens())
     logging.basicConfig(filename="tradestation_data/exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
-    refresh_token = "lzijZJe0VUnjFEzq6dqWK-Q3rqhzyoq7kkrDkqVoJvoYn"
     symbols = ['NVDA', 'AMC', 'META', 'NFLX', 'AMZN', 'AAPL', 'ZM', 'GOOG', 'MSFT', 'TSLA']   
     get_quotes_10sec(symbols)

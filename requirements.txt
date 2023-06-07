@@ -21,3 +21,5 @@ openai
 odo
 duka
 apscheduler
+jupyter
+chardet
