@@ -158,5 +158,5 @@ if __name__ == '__main__':
     # print(get_tokens())
     logging.basicConfig(filename="tradestation_data/exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
-    symbols = ['NVDA', 'AMC', 'META', 'NFLX', 'AMZN', 'AAPL', 'ZM', 'GOOG', 'MSFT', 'TSLA']   
+    symbols = ['NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'TSLA', 'MDB', 'SMCI', 'COCO', 'RCM']   
     get_quotes_10sec(symbols)
