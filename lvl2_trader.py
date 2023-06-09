@@ -170,8 +170,8 @@ class Lvl2Trader:
 if __name__ == '__main__':
     logging.basicConfig(filename="tradestation_data/trading_exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
-    symbols = ['TSLA']
-    price_dif_threshold = .007
+    symbols = ['NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'TSLA', 'MDB', 'SMCI', 'COCO', 'RCM']   
+    price_dif_threshold = .025
     size_threshold = 1
     simulator = True
     trader = Lvl2Trader(simulator, price_dif_threshold=price_dif_threshold, size_threshold=size_threshold)
