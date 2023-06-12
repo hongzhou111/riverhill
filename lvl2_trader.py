@@ -10,26 +10,26 @@ from tradestation_reader import refresh
 import logging
 
 class Lvl2Trader:
-    def __init__(self, simulator, price_dif_threshold, size_threshold):
+    def __init__(self, symbols, price_dif_threshold, size_threshold, simulator):
         self.account_id = "11655345"
         self.mongo = MongoExplorer()
+        self.symbols = symbols
+
+        self.simulator = simulator
+
         self.price_dif_threshold = price_dif_threshold
         self.size_threshold = size_threshold
+        self.volume_sum = 0
         self.holding_share = False
         self.balance = 0
 
-        self.simulator = simulator
-        self.prices = {"Last": None, "Ask": None, "Bid": None, "BUY": None, "SELL": None, "BUYTOCOVER": None, "SELLSHORT": None}
-        self.volume_sum = 0
+        self.start_scheduler()
 
     def read_lvl1(self, symbol, time):
         collection = f"{symbol}_10sec_ts_lvl1"
         lvl1 = None
         while lvl1 is None:
             lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
-        self.prices["Last"] = lvl1["Last"]
-        self.prices["Ask"] = lvl1["Ask"]
-        self.prices["Bid"] = lvl1["Bid"]
         print(lvl1)
         return lvl1
 
@@ -69,8 +69,13 @@ class Lvl2Trader:
         headers = {"content-type": "application/json", "Authorization": f"Bearer {access_token}"}
 
         order_time = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-        response = requests.request("POST", url, json=payload, headers=headers).json()
-        print(response)
+        response = requests.request("POST", url, json=payload, headers=headers)
+        if response.status_code != 200:
+            logging.warning(f"{symbol} {action} {response.text}")
+        response = response.json()
+        if "Confirmations" not in response:
+            logging.warning(f"{symbol} {action} {response.text}")
+
         collection = f"{symbol}_ts_trades"
         if self.simulator:
             price = float(response["Confirmations"][0]["EstimatedPrice"])
@@ -94,35 +99,6 @@ class Lvl2Trader:
             if response["Orders"][0]["Status"] == "FLL":
                 return response
     
-    def get_price(self, symbol, action):
-        url = "https://api.tradestation.com/v3/orderexecution/orderconfirm"
-        access_token = refresh()
-        payload = {
-            "AccountID": self.account_id,
-            "Symbol": symbol,
-            "Quantity": "1",
-            "OrderType": "Market",
-            "TradeAction": action,
-            "TimeInForce": {"Duration": "DAY"},
-            "Route": "Intelligent"
-        }
-        headers = {"content-type": "application/json", "Authorization": f"Bearer {access_token}"}
-        response = requests.request("POST", url, json=payload, headers=headers).json()
-        print(response)
-        price = float(response["Confirmations"][0]["EstimatedPrice"])
-        self.prices[action] = price
-
-    def store_prices(self, symbol):
-        collection = f"{symbol}_ts_trade_prices"
-        time = datetime.datetime.utcnow()
-        time = time.replace(second=time.second - time.second%10).strftime("%Y-%m-%dT%H:%M:%SZ")
-        dict = {"Time": time}
-        dict.update(self.prices)
-        with open(f"tradestation_data/{symbol}_trade_prices.log", 'a') as f:
-            f.write(f"{dict}\n")
-        self.mongo.mongoDB[collection].insert_one(dict)
-        self.prices = {"Last": None, "Ask": None, "Bid": None, "BUY": None, "SELL": None, "BUYTOCOVER": None, "SELLSHORT": None}
-
     def trade(self, symbol):
         time = datetime.datetime.utcnow()
         time = time.replace(second=time.second - time.second%10).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -134,45 +110,25 @@ class Lvl2Trader:
             self.trade_shares(symbol, "SELL", "1", time)
             self.holding_share = False
 
-    def trade_10sec(self, symbols):
+    def start_scheduler(self):
         executors = {
             'default': ThreadPoolExecutor(100),
             'processpool': ProcessPoolExecutor(8)
         }
         scheduler = BlockingScheduler(executors=executors, timezone=utc)
-        for symbol in symbols:
+        for symbol in self.symbols:
             scheduler.add_job(self.trade, 'cron', args=[symbol], max_instances=2, \
                 day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
             scheduler.add_job(self.trade, 'cron', args=[symbol], max_instances=2, \
                 day_of_week='mon-fri', hour="14-19", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "BUY"], max_instances=2, \
-                day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "BUY"], max_instances=2, \
-                day_of_week='mon-fri', hour="14-19", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "SELL"], max_instances=2, \
-                day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "SELL"], max_instances=2, \
-                day_of_week='mon-fri', hour="14-19", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "BUYTOCOVER"], max_instances=2, \
-                day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "BUYTOCOVER"], max_instances=2, \
-                day_of_week='mon-fri', hour="14-19", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "SELLSHORT"], max_instances=2, \
-                day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[symbol, "SELLSHORT"], max_instances=2, \
-                day_of_week='mon-fri', hour="14-19", second="*/10")
-            scheduler.add_job(self.store_prices, 'cron', args=[symbol], max_instances=2, \
-                day_of_week='mon-fri', hour="13", minute="30-59", second="1/10")
-            scheduler.add_job(self.store_prices, 'cron', args=[symbol], max_instances=2, \
-                day_of_week='mon-fri', hour="14-19", second="1/10")
         scheduler.start()
 
 if __name__ == '__main__':
     logging.basicConfig(filename="tradestation_data/trading_exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
-    symbols = ['NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'TSLA', 'MDB', 'SMCI', 'COCO', 'RCM']   
-    price_dif_threshold = .025
+    #symbols = ['NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'TSLA', 'MDB', 'SMCI', 'COCO', 'RCM']   
+    symbols = ["TSLA"]
+    price_dif_threshold = .1
     size_threshold = 1
     simulator = True
-    trader = Lvl2Trader(simulator, price_dif_threshold=price_dif_threshold, size_threshold=size_threshold)
-    trader.trade_10sec(symbols)
+    trader = Lvl2Trader(symbols, price_dif_threshold, size_threshold, simulator)
