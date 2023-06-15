@@ -10,14 +10,14 @@ from tradestation_reader import refresh
 import logging
 
 class Lvl2Trader:
-    def __init__(self, symbols, price_dif_threshold, size_threshold, simulator):
+    def __init__(self, symbols, price_dif_thresholds, size_threshold, simulator):
         self.account_id = "11655345"
         self.mongo = MongoExplorer()
         self.symbols = symbols
 
         self.simulator = simulator
 
-        self.price_dif_threshold = price_dif_threshold
+        self.price_dif_thresholds = price_dif_thresholds
         self.size_threshold = size_threshold
         self.volume_sum = 0
         self.holding_share = False
@@ -41,13 +41,13 @@ class Lvl2Trader:
         print(df)
         return df
 
-    def calc_volume_sum(self, symbol, time):
+    def calc_volume_sum(self, symbol, time, price_dif_threshold):
         lvl1 = self.read_lvl1(symbol, time)
         df = self.read_lvl2(symbol, time)
         df.loc[df["Side"] == "Bid", "Dif"] = (df["Price"] - lvl1["Last"])
         df.loc[df["Side"] == "Ask", "Dif"] = (lvl1["Last"] - df["Price"])
         df.loc[df["Side"] == "Ask", "TotalSize"] *= -1
-        df = df.loc[df["Dif"] >= self.price_dif_threshold]
+        df = df.loc[df["Dif"] >= price_dif_threshold]
         self.volume_sum = df["TotalSize"].sum()
         print(df)
 
@@ -88,7 +88,7 @@ class Lvl2Trader:
             f.write(f"{dict}\n")
         self.mongo.mongoDB[collection].insert_one(dict)
         
-    def check_status(order_id):
+    def check_status(self, order_id):
         url = f"https://api.tradestation.com/v3/brokerage/accounts/{self.account_id}/orders/{order_id}"
         while True:
             access_token = refresh()
@@ -99,10 +99,10 @@ class Lvl2Trader:
             if response["Orders"][0]["Status"] == "FLL":
                 return response
     
-    def trade(self, symbol):
+    def trade(self, symbol, price_dif_threshold):
         time = datetime.datetime.utcnow()
         time = time.replace(second=time.second - time.second%10).strftime("%Y-%m-%dT%H:%M:%SZ")
-        self.calc_volume_sum(symbol, time)
+        self.calc_volume_sum(symbol, time, price_dif_threshold)
         if self.volume_sum >= size_threshold and not self.holding_share:
             self.trade_shares(symbol, "BUY", "1", time)
             self.holding_share = True
@@ -117,10 +117,11 @@ class Lvl2Trader:
         }
         scheduler = BlockingScheduler(executors=executors, timezone=utc)
         for symbol in self.symbols:
-            scheduler.add_job(self.trade, 'cron', args=[symbol], max_instances=2, \
+            scheduler.add_job(self.trade, 'cron', args=[symbol, self.price_dif_thresholds[13]], max_instances=2, \
                 day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
-            scheduler.add_job(self.trade, 'cron', args=[symbol], max_instances=2, \
-                day_of_week='mon-fri', hour="14-19", second="*/10")
+            for hr in range(14, 20):
+                scheduler.add_job(self.trade, 'cron', args=[symbol, self.price_dif_thresholds[hr]], max_instances=2, \
+                    day_of_week='mon-fri', hour=hr, second="*/10")
         scheduler.start()
 
 if __name__ == '__main__':
@@ -128,7 +129,9 @@ if __name__ == '__main__':
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
     #symbols = ['NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'TSLA', 'MDB', 'SMCI', 'COCO', 'RCM']   
     symbols = ["TSLA"]
-    price_dif_threshold = .1
+    # price_dif_thresholds = {13: .069, 14: .069, 15: .052, 16: .13, 17: .03, 18: .011, 19: .031}
+    # price_dif_thresholds = {13: -.07, 14: .069, 15: .147, 16: .045, 17: .028, 18: .011, 19: .09}
+    price_dif_thresholds = {13: .17, 14: .089, 15: .147, 16: .045, 17: .036, 18: .1, 19: .02}
     size_threshold = 1
     simulator = True
-    trader = Lvl2Trader(symbols, price_dif_threshold, size_threshold, simulator)
+    trader = Lvl2Trader(symbols, price_dif_thresholds, size_threshold, simulator)

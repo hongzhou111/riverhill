@@ -181,10 +181,9 @@ class TS_Reader:
 
     def start_scheduler(self):
         # Default MemoryJobStore - stores job (fn get_quote) in memory
-        # Default ThreadPoolExecutor(10) - max 10 threads
         executors = {
-            'default': ThreadPoolExecutor(100),
-            'processpool': ProcessPoolExecutor(8)
+            'default': ThreadPoolExecutor(100), # max 100 threads
+            'processpool': ProcessPoolExecutor(8)   # secondary executor - max 8 cpus
         }
         scheduler = BlockingScheduler(executors=executors, timezone=utc)
         for symbol in self.symbols:
