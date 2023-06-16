@@ -131,7 +131,8 @@ if __name__ == '__main__':
     symbols = ["TSLA"]
     # price_dif_thresholds = {13: .069, 14: .069, 15: .052, 16: .13, 17: .03, 18: .011, 19: .031}
     # price_dif_thresholds = {13: -.07, 14: .069, 15: .147, 16: .045, 17: .028, 18: .011, 19: .09}
-    price_dif_thresholds = {13: .17, 14: .089, 15: .147, 16: .045, 17: .036, 18: .1, 19: .02}
+    # price_dif_thresholds = {13: .17, 14: .089, 15: .147, 16: .045, 17: .036, 18: .1, 19: .02}
+    price_dif_thresholds = {13: .17, 14: .089, 15: .147, 16: .1, 17: .03, 18: .1, 19: .07}
     size_threshold = 1
     simulator = True
     trader = Lvl2Trader(symbols, price_dif_thresholds, size_threshold, simulator)

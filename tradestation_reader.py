@@ -145,13 +145,13 @@ class TS_Reader:
         with open(f"tradestation_data/{symbol}.log", 'a') as f:
             f.write(f"LVL2: {print_dict}\n")
 
-    def get_price(self, symbol, action):
+    def get_price(self, symbol, action, quantity):
         url = "https://api.tradestation.com/v3/orderexecution/orderconfirm"
         access_token = refresh()
         payload = {
             "AccountID": account_id,
             "Symbol": symbol,
-            "Quantity": "1",
+            "Quantity": quantity,
             "OrderType": "Market",
             "TradeAction": action,
             "TimeInForce": {"Duration": "DAY"},
@@ -195,9 +195,9 @@ class TS_Reader:
                 day_of_week='mon-fri', hour="8-23", second="*/10")
         actions = ["BUY", "SELL", "BUYTOCOVER", "SELLSHORT"]
         for action in actions:
-            scheduler.add_job(self.get_price, 'cron', args=[self.symbols[0], action], max_instances=2, \
+            scheduler.add_job(self.get_price, 'cron', args=[self.symbols[0], action, "1"], max_instances=2, \
             day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
-            scheduler.add_job(self.get_price, 'cron', args=[self.symbols[0], action], max_instances=2, \
+            scheduler.add_job(self.get_price, 'cron', args=[self.symbols[0], action, "1"], max_instances=2, \
             day_of_week='mon-fri', hour="14-19", second="*/10")
         scheduler.add_job(self.store_prices, 'cron', args=[self.symbols[0]], max_instances=2, \
             day_of_week='mon-fri', hour="13", minute="30-59", second="2/10")
