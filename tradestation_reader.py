@@ -216,5 +216,5 @@ if __name__ == '__main__':
     logging.basicConfig(filename="tradestation_data/exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
     ts_reader = TS_Reader()
-    # ts_reader.start_quotes_scheduler(['TSLA', 'NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'MDB', 'SMCI', 'COCO', 'RCM'])
-    ts_reader.start_prices_scheduler(["TSLA"])
+    ts_reader.start_quotes_scheduler(['TSLA', 'NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'MDB', 'SMCI', 'COCO', 'RCM'])
+    # ts_reader.start_prices_scheduler(["TSLA"])
