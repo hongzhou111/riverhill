@@ -13314,3 +13314,732 @@ Traceback (most recent call last):
   File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 818, in generate
     raise ChunkedEncodingError(e)
 requests.exceptions.ChunkedEncodingError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
+2023-06-29 01:52:28,435 COCO <Response [200]> 
+2023-06-29 01:52:28,438 TSLA <Response [200]> 
+2023-06-29 01:52:28,439 GOOG <Response [200]> 
+2023-06-29 01:52:28,439 COCO 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 01:52:28,439 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 01:52:28,439 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 01:52:40,345 NVDA <Response [200]> 
+2023-06-29 01:52:40,347 MDB <Response [200]> 
+2023-06-29 01:52:40,347 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 01:52:40,348 MDB 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 01:52:41,221 AAPL <Response [200]> 
+2023-06-29 01:52:41,222 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:39,031 RCM <Response [200]> 
+2023-06-29 02:00:39,034 RCM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:39,070 TSLA <Response [200]> 
+2023-06-29 02:00:39,071 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:39,153 MDB <Response [200]> 
+2023-06-29 02:00:39,153 MDB 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:50,812 GOOG <Response [200]> 
+2023-06-29 02:00:50,813 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:51,263 AAPL <Response [200]> 
+2023-06-29 02:00:51,263 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:52,818 NVDA <Response [200]> 
+2023-06-29 02:00:52,819 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:00:52,822 AMZN <Response [200]> 
+2023-06-29 02:00:52,823 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:01:02,275 SMCI <Response [200]> 
+2023-06-29 02:01:02,275 MSFT <Response [200]> 
+2023-06-29 02:01:02,275 COCO <Response [200]> 
+2023-06-29 02:01:02,276 SMCI 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:01:02,276 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:01:02,276 COCO 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:39,053 MDB <Response [200]> 
+2023-06-29 02:15:39,056 MDB 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:39,062 MSFT <Response [200]> 
+2023-06-29 02:15:39,062 COCO <Response [200]> 
+2023-06-29 02:15:39,062 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:39,062 COCO 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:39,065 SMCI <Response [200]> 
+2023-06-29 02:15:39,065 SMCI 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:39,069 RCM <Response [200]> 
+2023-06-29 02:15:39,069 RCM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:39,878 MSFT <Response [502]> 
+2023-06-29 02:15:40,378 MSFT <Response [502]> 
+2023-06-29 02:15:51,551 MSFT <Response [200]> 
+2023-06-29 02:15:51,552 COCO <Response [200]> 
+2023-06-29 02:15:51,554 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:51,554 COCO 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:54,138 MDB <Response [200]> 
+2023-06-29 02:15:54,139 MDB 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:54,207 TSLA <Response [200]> 
+2023-06-29 02:15:54,207 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:54,487 MDB <Response [502]> 
+2023-06-29 02:15:54,577 TSLA <Response [502]> 
+2023-06-29 02:15:54,910 TSLA <Response [502]> 
+2023-06-29 02:15:57,322 NVDA <Response [200]> 
+2023-06-29 02:15:57,323 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:57,370 AMZN <Response [200]> 
+2023-06-29 02:15:57,370 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:15:57,982 AMZN <Response [502]> 
+2023-06-29 02:16:02,305 AMZN <Response [200]> 
+2023-06-29 02:16:02,306 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:02,317 RCM <Response [200]> 
+2023-06-29 02:16:02,317 RCM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:02,839 RCM <Response [502]> 
+2023-06-29 02:16:03,322 SMCI <Response [200]> 
+2023-06-29 02:16:03,323 SMCI 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:03,360 AAPL <Response [200]> 
+2023-06-29 02:16:03,360 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:04,756 COCO <Response [200]> 
+2023-06-29 02:16:04,757 TSLA <Response [200]> 
+2023-06-29 02:16:04,757 NVDA <Response [200]> 
+2023-06-29 02:16:04,757 COCO 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:04,757 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:04,757 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:04,765 GOOG <Response [200]> 
+2023-06-29 02:16:04,765 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:06,393 AAPL <Response [200]> 
+2023-06-29 02:16:06,394 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 02:16:07,002 AAPL <Response [502]> 
+2023-06-29 02:16:07,504 AAPL <Response [502]> 
+2023-06-29 02:47:33,250 MSFT <Response [200]> 
+2023-06-29 02:47:33,253 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 03:57:36,485 SMCI <Response [200]> 
+2023-06-29 03:57:36,488 SMCI 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 03:59:18,835 AAPL <Response [200]> 
+2023-06-29 03:59:18,836 NVDA <Response [200]> 
+2023-06-29 03:59:18,836 AAPL 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 03:59:18,836 NVDA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 03:59:21,926 GOOG <Response [200]> 
+2023-06-29 03:59:21,926 GOOG 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 03:59:29,476 MSFT <Response [200]> 
+2023-06-29 03:59:29,477 MSFT 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 04:00:08,082 COCO <Response [200]> 
+2023-06-29 04:00:08,085 COCO 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 04:00:29,515 TSLA <Response [200]> 
+2023-06-29 04:00:29,516 MDB <Response [200]> 
+2023-06-29 04:00:29,516 AMZN <Response [200]> 
+2023-06-29 04:00:29,517 TSLA 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 04:00:29,517 MDB 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 04:00:29,517 AMZN 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 04:00:49,368 MDB <Response [200]> 
+2023-06-29 04:00:49,370 MDB 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'
+2023-06-29 04:00:49,374 RCM <Response [200]> 
+2023-06-29 04:00:49,374 RCM 'NoneType' object has no attribute 'readline'
+Traceback (most recent call last):
+  File "/Users/mattjzhou/riverhill/tradestation_reader.py", line 61, in stream_lvl1_quotes
+    for line in response.iter_lines():
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 865, in iter_lines
+    for chunk in self.iter_content(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 624, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/urllib3/response.py", line 848, in read_chunked
+    line = self._fp.fp.readline()
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'readline'

@@ -152,6 +152,11 @@ class TS_Trader:
         if self.holding_short[symbol]:
             self.trade_shares(symbol, "BUYTOCOVER", "1", time, 0)
 
+    def close_eod(self, symbol):
+        self.close_eoh(symbol)
+        with open(f"tradestation_data/{symbol}_trades.log", 'a') as f:
+            f.write("\n")
+
     def start_scheduler(self, symbols):
         executors = {
             'default': ThreadPoolExecutor(100),
@@ -173,7 +178,7 @@ class TS_Trader:
                     day_of_week='mon-fri', hour=hr, minute="59", second="55")
             scheduler.add_job(self.trade, 'cron', args=[symbol, 19], max_instances=2, \
                 day_of_week='mon-fri', hour="19", minute="0-54", second="*/10")
-            scheduler.add_job(self.close_eoh, 'cron', args=[symbol], day_of_week='mon-fri', hour="19", minute="55")
+            scheduler.add_job(self.close_eod, 'cron', args=[symbol], day_of_week='mon-fri', hour="19", minute="55")
         scheduler.start()
 
 if __name__ == '__main__':

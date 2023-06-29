@@ -16,10 +16,10 @@ class Lvl2Trader:
         self.sell_threshold_range = sell_threshold_range
         self.size_threshold = size_threshold
 
-        buy_thresholds = {13: .045, 14: .13, 15: .08, 16: .045, 17: .035, 18: .135, 19: .02}
-        sell_thresholds = {13: -.055, 14: -.135, 15: -.18, 16: -.07, 17: -.09, 18: -.205, 19: -.065}
-        buy_to_cover_thresholds = {13: .045, 14: .24, 15: .035, 16: .055, 17: .035, 18: .08, 19: .02}
-        sell_short_thresholds = {13: -.055, 14: -.12, 15: -.085, 16: -.07, 17: -.09, 18: -.1, 19: -.065}  
+        buy_thresholds = {13: 0.065, 14: 0.105, 15: 0.08, 16: 0.045, 17: 0.025, 18: 0.025, 19: 0.02}
+        sell_thresholds = {13: -0.215, 14: -0.085, 15: -0.18, 16: -0.07, 17: -0.09, 18: -0.2, 19: -0.05}
+        buy_to_cover_thresholds = {13: 0.06, 14: 0.105, 15: 0.08, 16: 0.065, 17: 0.035, 18: 0.08, 19: 0.02}
+        sell_short_thresholds = {13: 0.06, 14: 0.105, 15: 0.08, 16: 0.065, 17: 0.035, 18: 0.08, 19: 0.02}
         self.ts_trader = TS_Trader(buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, size_threshold, True)
 
     def calc_gain_long(self, df, buy_threshold, sell_threshold, size_threshold):
@@ -124,30 +124,26 @@ class Lvl2Trader:
             short_df[(short_df["Buy Threshold"]==buy_to_cover_threshold) & (short_df["Sell Threshold"]==sell_short_threshold)].iloc[0].tolist()
 
     def update_all_thresholds(self, symbol):
-        print("----------PREVIOUS THRESHOLDS----------")
-        print(self.ts_trader.buy_thresholds)
-        print(self.ts_trader.sell_thresholds)
-        print(self.ts_trader.buy_to_cover_thresholds)
-        print(self.ts_trader.sell_short_thresholds)
-        date = datetime.utcnow().strftime("%Y-%m-%d")
-        for hour in range(13, 20):
-            long_row, short_row = self.update_thresholds(symbol, date, hour)
-            prev_long_row, prev_short_row = self.test_thresholds(symbol, hour, \
-                self.ts_trader.buy_thresholds[hour], self.ts_trader.sell_thresholds[hour], \
-                    self.ts_trader.buy_to_cover_thresholds[hour], self.ts_trader.sell_short_thresholds[hour])
-            print(f"Previous Long {hour}: {prev_long_row}")
-            print(f"Previous Short {hour}: {prev_short_row}")
-            print(f"Long {hour}: {long_row}")
-            print(f"Short {hour}: {short_row}")
-            self.ts_trader.buy_thresholds[hour] = long_row[0]
-            self.ts_trader.sell_thresholds[hour] = long_row[1]
-            self.ts_trader.buy_to_cover_thresholds[hour] = short_row[0]
-            self.ts_trader.sell_short_thresholds[hour] = short_row[0]
-        print("----------NEW THRESHOLDS----------")
-        print(self.ts_trader.buy_thresholds)
-        print(self.ts_trader.sell_thresholds)
-        print(self.ts_trader.buy_to_cover_thresholds)
-        print(self.ts_trader.sell_short_thresholds)
+        with open(f"tradestation_data/{symbol}_thresholds.log", 'a') as f:
+            date = datetime.utcnow().strftime("%Y-%m-%d")
+            f.write(f"{date}\n----------PREVIOUS THRESHOLDS----------\n")
+            f.write(f"{self.ts_trader.buy_thresholds}\n{self.ts_trader.sell_thresholds}\n")
+            f.write(f"{self.ts_trader.buy_to_cover_thresholds}\n{self.ts_trader.sell_short_thresholds}\n")
+            for hour in range(13, 20):
+                long_row, short_row = self.update_thresholds(symbol, date, hour)
+                prev_long_row, prev_short_row = self.test_thresholds(symbol, hour, \
+                    self.ts_trader.buy_thresholds[hour], self.ts_trader.sell_thresholds[hour], \
+                        self.ts_trader.buy_to_cover_thresholds[hour], self.ts_trader.sell_short_thresholds[hour])
+                f.write(f"Previous Long {hour}: {prev_long_row}\nPrevious Short {hour}: {prev_short_row}\n")
+                f.write(f"Long {hour}: {long_row}\nShort {hour}: {short_row}\n")
+                self.ts_trader.buy_thresholds[hour] = long_row[0]
+                self.ts_trader.sell_thresholds[hour] = long_row[1]
+                self.ts_trader.buy_to_cover_thresholds[hour] = short_row[0]
+                self.ts_trader.sell_short_thresholds[hour] = short_row[1]
+            f.write("----------NEW THRESHOLDS----------\n")
+            f.write(f"Buy Thresholds: {self.ts_trader.buy_thresholds}\nSell Thresholds: {self.ts_trader.sell_thresholds}\n")
+            f.write(f"Buy to Cover Thresholds: {self.ts_trader.buy_to_cover_thresholds}\nSell Short Thresholds: {self.ts_trader.sell_short_thresholds}\n")
+            f.write("\n")
 
     def start_scheduler(self, symbols):
         executors = {
@@ -170,9 +166,9 @@ class Lvl2Trader:
                     day_of_week='mon-fri', hour=hr, minute="59", second="55")
             scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 19], max_instances=2, \
                 day_of_week='mon-fri', hour="19", minute="0-54", second="*/10")
-            scheduler.add_job(self.ts_trader.close_eoh, 'cron', args=[symbol], day_of_week='mon-fri', hour="19", minute="55")
+            scheduler.add_job(self.ts_trader.close_eod, 'cron', args=[symbol], day_of_week='mon-fri', hour="19", minute="55")
             scheduler.add_job(self.update_all_thresholds, 'cron', args=[symbol], 
-                day_of_week='mon-fri', hour="23", minute="15")
+                day_of_week='mon-fri', hour="20")
         scheduler.start()
 
 if __name__ == '__main__':

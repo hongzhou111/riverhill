@@ -174,6 +174,10 @@ class TS_Reader:
         self.mongo.mongoDB[collection].insert_one(dict)
         self.prices[symbol] = {}
 
+    def clear_log(self, file):
+        with open(file, 'w'):
+            pass
+
     def start_quotes_scheduler(self, symbols):
         # Default MemoryJobStore - stores job (fn get_quote) in memory
         executors = {
@@ -188,6 +192,10 @@ class TS_Reader:
                 day_of_week='mon-fri', hour="8-23", second="*/10")
             scheduler.add_job(self.get_lvl2_quote, 'cron', args=[symbol], max_instances=2, \
                 day_of_week='mon-fri', hour="8-23", second="*/10")
+            scheduler.add_job(self.clear_log, 'cron', args=[f"tradestation_data/{symbol}.log"], \
+                day_of_week='mon', hour="0")
+        scheduler.add_job(self.clear_log, 'cron', args=["tradestation_data/exceptions.log"], \
+            day_of_week='mon', hour="0")
         scheduler.start()
         
     def start_prices_scheduler(self, symbols):
@@ -208,6 +216,8 @@ class TS_Reader:
                 day_of_week='mon-fri', hour="13", minute="30-59", second="2/10")
             scheduler.add_job(self.store_prices, 'cron', args=[symbol], max_instances=2, \
                 day_of_week='mon-fri', hour="14-19", second="2/10")
+            scheduler.add_job(self.clear_log, 'cron', args=[f"tradestation_data/{symbol}_trade_prices.log"], \
+                day_of_week='mon', hour="0")
         scheduler.start()
 
 
