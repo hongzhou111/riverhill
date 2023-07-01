@@ -1,0 +1,93 @@
+2023-06-29 16:29:25,469 Job "Lvl2Trader.update_all_thresholds (trigger: cron[day_of_week='mon-fri', hour='20', minute='29'], next run at: 2023-06-30 20:29:00 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/lvl2trader.py", line 136, in update_all_thresholds
+    long_row, short_row = self.update_thresholds(symbol, date, hour)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/lvl2trader.py", line 116, in update_thresholds
+    short_df["Sum"] = short_df[dates].sum(axis=1)
+                      ~~~~~~~~^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pandas/core/frame.py", line 3767, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 5876, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 5938, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['6/13/23', '6/14/23', '6/15/23', '6/16/23', '6/20/23', '6/21/23', '6/22/23', '6/23/23', '6/26/23', '6/27/23', '6/28/23', '6/29/23'] not in index"
+2023-06-30 14:26:00,022 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:26:00 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:45:30,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:45:30 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:45:40,013 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:45:40 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:45:50,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:45:50 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:46:00,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:46:00 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:46:10,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:46:10 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:46:20,006 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:46:20 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:46:30,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:46:30 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:46:40,016 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:46:40 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:46:50,015 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:46:50 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:47:00,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:47:00 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:47:10,025 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:47:10 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:47:20,069 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:47:20 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:47:30,008 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:47:30 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:47:40,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:47:40 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 14:47:50,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-06-30 18:47:50 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:19:40,005 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:19:40 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:19:50,012 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:19:50 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:20:00,011 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:20:00 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:20:10,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:20:10 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:20:20,014 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:20:20 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:20:30,014 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:20:30 UTC)" skipped: maximum number of running instances reached (2)
+2023-06-30 15:20:40,012 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-06-30 19:20:40 UTC)" skipped: maximum number of running instances reached (2)
+2023-07-01 00:56:31,046 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-03 18:00:00 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 643, in receive_message
+    return receive_message(self.sock, request_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/network.py", line 196, in receive_message
+    _receive_data_on_socket(sock, 16))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/network.py", line 255, in _receive_data_on_socket
+    chunk_length = sock.recv_into(mv[bytes_read:])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 141, in trade
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 48, in calc_volume_sums
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 37, in read_lvl1
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 953, in __send_message
+    response = client._run_operation_with_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1342, in _run_operation_with_response
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1464, in _retryable_read
+    return func(session, server, sock_info, slave_ok)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1334, in _cmd
+    return server.run_operation_with_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/server.py", line 117, in run_operation_with_response
+    reply = sock_info.receive_message(request_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 646, in receive_message
+    self._raise_connection_failure(error)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 795, in _raise_connection_failure
+    _raise_connection_failure(self.address, error)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 281, in _raise_connection_failure
+    raise NetworkTimeout(msg)
+pymongo.errors.NetworkTimeout: 192.168.1.181:27017: [Errno 60] Operation timed out

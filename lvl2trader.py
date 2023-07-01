@@ -16,11 +16,11 @@ class Lvl2Trader:
         self.sell_threshold_range = sell_threshold_range
         self.size_threshold = size_threshold
 
-        buy_thresholds = {13: 0.065, 14: 0.105, 15: 0.08, 16: 0.045, 17: 0.025, 18: 0.025, 19: 0.02}
-        sell_thresholds = {13: -0.215, 14: -0.085, 15: -0.18, 16: -0.07, 17: -0.09, 18: -0.2, 19: -0.05}
-        buy_to_cover_thresholds = {13: 0.06, 14: 0.105, 15: 0.08, 16: 0.065, 17: 0.035, 18: 0.08, 19: 0.02}
-        sell_short_thresholds = {13: 0.06, 14: 0.105, 15: 0.08, 16: 0.065, 17: 0.035, 18: 0.08, 19: 0.02}
-        self.ts_trader = TS_Trader(buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, size_threshold, True)
+        buy_thresholds = {13: 0.06, 14: 0.105, 15: 0.075, 16: 0.065, 17: 0.03, 18: 0.025, 19: 0.02}
+        sell_thresholds = {13: -0.215, 14: -0.085, 15: -0.18, 16: -0.175, 17: -0.065, 18: -0.235, 19: -0.065}
+        buy_to_cover_thresholds = {13: 0.065, 14: 0.13, 15: 0.055, 16: 0.065, 17: 0.085, 18: 0.08, 19: 0.02}
+        sell_short_thresholds = {13: -0.135, 14: -0.12, 15: -0.125, 16: -0.075, 17: -0.1, 18: -0.1, 19: -0.065}
+        self.ts_trader = TS_Trader(buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, quantity="10")
 
     def calc_gain_long(self, df, buy_threshold, sell_threshold, size_threshold):
         last_sell = df.iloc[len(df) - 1, df.columns.get_loc("SELL")]
@@ -80,7 +80,10 @@ class Lvl2Trader:
         collection_3 = f"{symbol}_ts_trade_prices"
         long_df = pd.read_csv(f"tradestation_data/{symbol}_{hour}_thresholds_long.csv")
         short_df = pd.read_csv(f"tradestation_data/{symbol}_{hour}_thresholds_short.csv")
-        dates = list(long_df.columns)[2:-1] + [date]
+        if date not in long_df.columns:
+            dates = list(long_df.columns)[2:-1] + [date]
+        else:
+            dates = list(long_df.columns)[2:-1]
         start = f'{date}T{hour}:00:00Z'
         end = f'{date}T{hour+1}:00:00Z'
         query_1 = {'$and': [{'CurTime': {'$gte': start}}, {'CurTime': {'$lt': end}}]}
@@ -155,20 +158,20 @@ class Lvl2Trader:
             self.ts_trader.holding_long[symbol] = False
             self.ts_trader.holding_short[symbol] = False
             self.ts_trader.balance[symbol] = 0
-            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 13], max_instances=2,
+            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 13], 
                 day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
             scheduler.add_job(self.ts_trader.close_eoh, 'cron', args=[symbol], 
                 day_of_week='mon-fri', hour="13", minute="59", second="55")
             for hr in range(14, 19):
-                scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, hr], max_instances=2,
+                scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, hr],
                     day_of_week='mon-fri', hour=hr, second="*/10")
                 scheduler.add_job(self.ts_trader.close_eoh, 'cron', args=[symbol], 
                     day_of_week='mon-fri', hour=hr, minute="59", second="55")
-            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 19], max_instances=2, \
+            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 19],
                 day_of_week='mon-fri', hour="19", minute="0-54", second="*/10")
             scheduler.add_job(self.ts_trader.close_eod, 'cron', args=[symbol], day_of_week='mon-fri', hour="19", minute="55")
             scheduler.add_job(self.update_all_thresholds, 'cron', args=[symbol], 
-                day_of_week='mon-fri', hour="20")
+                day_of_week='mon-fri', hour="20", minute="35")
         scheduler.start()
 
 if __name__ == '__main__':

@@ -158,7 +158,7 @@ class TS_Reader:
             logging.warning(f"{symbol} {action} {response.text}")
         response = response.json()
         if "Confirmations" not in response:
-            logging.warning(f"{symbol} {action} {response.text}")
+            logging.warning(f"{symbol} {action} {response}")
             
         price = {action: float(response["Confirmations"][0]["EstimatedPrice"])}
         self.prices[symbol].update(price)
