@@ -91,3 +91,504 @@ Traceback (most recent call last):
   File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 281, in _raise_connection_failure
     raise NetworkTimeout(msg)
 pymongo.errors.NetworkTimeout: 192.168.1.181:27017: [Errno 60] Operation timed out
+2023-07-03 09:30:10,888 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-03 13:30:20 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 153, in trade
+    filled_time, price = self.trade_shares(symbol, action, self.quantity, time, long_volume_sum)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TS_Trader.trade_shares() takes 4 positional arguments but 6 were given
+2023-07-03 09:30:30,810 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-03 13:30:40 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 153, in trade
+    filled_time, price = self.trade_shares(symbol, action, self.quantity, time, long_volume_sum)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TS_Trader.trade_shares() takes 4 positional arguments but 6 were given
+2023-07-03 09:59:55,030 Job "TS_Trader.close_eoh (trigger: cron[day_of_week='mon-fri', hour='13', minute='59', second='55'], next run at: 2023-07-04 13:59:55 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 162, in close_eoh
+    self.trade_shares(symbol, "SELL", "1", time, 0)
+TypeError: TS_Trader.trade_shares() takes 4 positional arguments but 6 were given
+2023-07-03 15:00:44,759 974002314 
+2023-07-03 15:00:44,780 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-03 19:00:50 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 971, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 153, in trade
+    filled_time, price = self.trade_shares(symbol, action, self.quantity)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 96, in trade_shares
+    status_response = self.check_status(response["Orders"][0]["OrderID"])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 127, in check_status
+    response = response.json()
+               ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/requests/models.py", line 975, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2023-07-05 14:31:20,061 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:31:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:31:30,080 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:31:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:31:40,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:31:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:31:50,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:31:50 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:32:00,012 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:32:00 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:32:04,025 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:32:10 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 643, in receive_message
+    return receive_message(self.sock, request_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/network.py", line 196, in receive_message
+    _receive_data_on_socket(sock, 16))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/network.py", line 255, in _receive_data_on_socket
+    chunk_length = sock.recv_into(mv[bytes_read:])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 953, in __send_message
+    response = client._run_operation_with_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1342, in _run_operation_with_response
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1464, in _retryable_read
+    return func(session, server, sock_info, slave_ok)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1334, in _cmd
+    return server.run_operation_with_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/server.py", line 117, in run_operation_with_response
+    reply = sock_info.receive_message(request_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 646, in receive_message
+    self._raise_connection_failure(error)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 795, in _raise_connection_failure
+    _raise_connection_failure(self.address, error)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 281, in _raise_connection_failure
+    raise NetworkTimeout(msg)
+pymongo.errors.NetworkTimeout: 192.168.1.181:27017: [Errno 60] Operation timed out
+2023-07-05 14:32:20,007 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:32:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:32:30,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:32:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:32:40,005 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:32:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:32:40,499 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:32:50 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: [Errno 51] Network is unreachable
+2023-07-05 14:33:00,006 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:33:00 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:33:10,004 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:33:10 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:33:20,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:33:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:33:20,383 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:33:30 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: [Errno 51] Network is unreachable
+2023-07-05 14:33:40,005 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:33:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:33:50,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:33:50 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:34:00,008 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:34:00 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:34:00,279 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:34:10 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: [Errno 51] Network is unreachable
+2023-07-05 14:34:20,016 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:34:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:34:30,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:34:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:34:40,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:34:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 14:34:40,479 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='18', second='*/10'], next run at: 2023-07-05 18:34:50 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: timed out
+2023-07-05 15:03:30,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:03:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:03:40,018 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:03:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:03:50,008 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:03:50 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:03:50,464 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:04:00 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: [Errno 51] Network is unreachable
+2023-07-05 15:04:10,004 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:04:10 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:04:20,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:04:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:04:30,008 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:04:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:04:30,315 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:04:40 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: [Errno 51] Network is unreachable
+2023-07-05 15:04:50,018 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:04:50 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:05:00,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:05:00 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:05:10,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:05:10 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:05:10,573 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:05:20 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: [Errno 64] Host is down
+2023-07-05 15:05:30,003 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:05:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:05:40,008 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:05:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:05:50,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:05:50 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:05:50,104 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:06:00 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1050, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1806, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1759, in __start_session
+    server_session = self._get_server_session()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1792, in _get_server_session
+    return self._topology.get_server_session()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 482, in get_server_session
+    self._select_servers_loop(
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/topology.py", line 208, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 192.168.1.181:27017: timed out
+2023-07-05 15:06:10,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:06:10 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:06:20,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:06:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:06:30,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:06:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:06:40,008 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:06:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:06:50,006 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:06:50 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:07:00,014 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:07:00 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:07:10,026 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:07:10 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:07:20,009 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:07:20 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:07:30,005 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:07:30 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:07:40,010 Execution of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:07:40 UTC)" skipped: maximum number of running instances reached (1)
+2023-07-05 15:07:45,032 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='19', minute='0-54', second='*/10'], next run at: 2023-07-05 19:07:50 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 643, in receive_message
+    return receive_message(self.sock, request_id,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/network.py", line 196, in receive_message
+    _receive_data_on_socket(sock, 16))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/network.py", line 255, in _receive_data_on_socket
+    chunk_length = sock.recv_into(mv[bytes_read:])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 139, in trade
+    last_price, long_volume_sum, short_volume_sum = self.calc_volume_sums(symbol, time, hour)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 49, in calc_volume_sums
+    lvl1 = self.read_lvl1(symbol, time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 38, in read_lvl1
+    lvl1 = self.mongo.mongoDB[collection].find_one({"CurTime": time})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/collection.py", line 1273, in find_one
+    for result in cursor.limit(-1):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1156, in next
+    if len(self.__data) or self._refresh():
+                           ^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 1073, in _refresh
+    self.__send_message(q)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/cursor.py", line 953, in __send_message
+    response = client._run_operation_with_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1342, in _run_operation_with_response
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1464, in _retryable_read
+    return func(session, server, sock_info, slave_ok)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1334, in _cmd
+    return server.run_operation_with_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/server.py", line 117, in run_operation_with_response
+    reply = sock_info.receive_message(request_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 646, in receive_message
+    self._raise_connection_failure(error)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 795, in _raise_connection_failure
+    _raise_connection_failure(self.address, error)
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 281, in _raise_connection_failure
+    raise NetworkTimeout(msg)
+pymongo.errors.NetworkTimeout: 192.168.1.181:27017: [Errno 60] Operation timed out

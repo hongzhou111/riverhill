@@ -101,18 +101,18 @@ class TS_Trader:
 
         if action == "BUY":
             self.holding_long[symbol] = True
-            self.balance[symbol] = self.balance[symbol] - price
+            self.balance[symbol] = self.balance[symbol] - (price * int(quantity))
             self.trade_price[symbol] = price
         elif action == "SELL":
             self.holding_long[symbol] = False
-            self.balance[symbol] = self.balance[symbol] + price
+            self.balance[symbol] = self.balance[symbol] + (price * int(quantity))
         elif action == "SELLSHORT":
             self.holding_short[symbol] = True
-            self.balance[symbol] = self.balance[symbol] + price
+            self.balance[symbol] = self.balance[symbol] + (price * int(quantity))
             self.trade_price[symbol] = price
         elif action == "BUYTOCOVER":
             self.holding_short[symbol] = False
-            self.balance[symbol] = self.balance[symbol] - price
+            self.balance[symbol] = self.balance[symbol] - (price * int(quantity))
         return filled_time, price
         
     def check_status(self, order_id):
@@ -150,18 +150,26 @@ class TS_Trader:
         #     actions.append("BUYTOCOVER")
 
         for action in actions:
-            filled_time, price = self.trade_shares(symbol, action, self.quantity, time, long_volume_sum)
+            filled_time, price = self.trade_shares(symbol, action, self.quantity)
             dict = {"Time": time, "FilledTime": filled_time, "Action": action, "Price": price, "Balance": self.balance[symbol], "VolumeSum": long_volume_sum}
             with open(f"tradestation_data/{symbol}_trades.log", 'a') as f:
                 f.write(f"{dict}\n")
             self.mongo.mongoDB[collection].insert_one(dict)
     
     def close_eoh(self, symbol):
+        collection = f"{symbol}_ts_trades"
         time = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+        actions = []
         if self.holding_long[symbol]:
-            self.trade_shares(symbol, "SELL", "1", time, 0)
-        if self.holding_short[symbol]:
-            self.trade_shares(symbol, "BUYTOCOVER", "1", time, 0)
+            actions.append("SELL")
+        # if self.holding_short[symbol]:
+        #     actions.append("BUYTOCOVER")
+        for action in actions:
+            filled_time, price = self.trade_shares(symbol, action, self.quantity)
+            dict = {"Time": time, "FilledTime": filled_time, "Action": action, "Price": price, "Balance": self.balance[symbol]}
+            with open(f"tradestation_data/{symbol}_trades.log", 'a') as f:
+                f.write(f"{dict}\n")
+            self.mongo.mongoDB[collection].insert_one(dict)
 
     def close_eod(self, symbol):
         self.close_eoh(symbol)

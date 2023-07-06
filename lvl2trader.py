@@ -16,11 +16,11 @@ class Lvl2Trader:
         self.sell_threshold_range = sell_threshold_range
         self.size_threshold = size_threshold
 
-        buy_thresholds = {13: 0.06, 14: 0.105, 15: 0.075, 16: 0.065, 17: 0.03, 18: 0.025, 19: 0.02}
-        sell_thresholds = {13: -0.215, 14: -0.085, 15: -0.18, 16: -0.175, 17: -0.065, 18: -0.235, 19: -0.065}
-        buy_to_cover_thresholds = {13: 0.065, 14: 0.13, 15: 0.055, 16: 0.065, 17: 0.085, 18: 0.08, 19: 0.02}
-        sell_short_thresholds = {13: -0.135, 14: -0.12, 15: -0.125, 16: -0.075, 17: -0.1, 18: -0.1, 19: -0.065}
-        self.ts_trader = TS_Trader(buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, quantity="10")
+        buy_thresholds = {13: 0.06, 14: 0.105, 15: 0.075, 16: 0.04, 17: 0.03, 18: 0.025, 19: 0.02}
+        sell_thresholds = {13: -0.215, 14: -0.085, 15: -0.18, 16: -0.07, 17: -0.065, 18: -0.205, 19: -0.065}
+        buy_to_cover_thresholds = {13: 0.055, 14: 0.145, 15: 0.08, 16: 0.065, 17: 0.1, 18: 0.08, 19: 0.02}
+        sell_short_thresholds = {13: -0.215, 14: -0.12, 15: -0.18, 16: -0.075, 17: -0.105, 18: -0.1, 19: -0.065}
+        self.ts_trader = TS_Trader(buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, trade_stop_loss=.2, quantity="40")
 
     def calc_gain_long(self, df, buy_threshold, sell_threshold, size_threshold):
         last_sell = df.iloc[len(df) - 1, df.columns.get_loc("SELL")]
