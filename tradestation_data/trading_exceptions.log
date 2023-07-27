@@ -592,3 +592,94 @@ Traceback (most recent call last):
   File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/pymongo/pool.py", line 281, in _raise_connection_failure
     raise NetworkTimeout(msg)
 pymongo.errors.NetworkTimeout: 192.168.1.181:27017: [Errno 60] Operation timed out
+2023-07-17 10:42:31,804 Run time of job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='14', second='*/10'], next run at: 2023-07-17 14:42:40 UTC)" was missed by 0:00:01.798094
+2023-07-19 09:30:01,431 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:30:10 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:30:11,242 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:30:20 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:30:21,150 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:30:30 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:30:31,168 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:30:40 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:30:41,259 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:30:50 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:30:51,168 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:31:00 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:31:01,230 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:31:10 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:31:11,068 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:31:20 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:31:21,365 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:31:30 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'
+2023-07-19 09:31:31,124 Job "TS_Trader.trade (trigger: cron[day_of_week='mon-fri', hour='13', minute='30-59', second='*/10'], next run at: 2023-07-19 13:31:40 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/Users/mattjzhou/opt/miniconda3/envs/trading_env/lib/python3.11/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mattjzhou/riverhill/tradestation_trader.py", line 144, in trade
+    if self.hourly_stop_loss_hit[symbol]:
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'TSLA'

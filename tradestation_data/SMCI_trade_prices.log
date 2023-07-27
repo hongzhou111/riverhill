@@ -179,3 +179,16 @@
 {'Time': '2023-06-12T13:52:00Z', 'Last': None, 'Ask': None, 'Bid': None, 'BUY': None, 'SELL': None, 'BUYTOCOVER': None, 'SELLSHORT': None}
 {'Time': '2023-06-12T13:52:10Z', 'Last': None, 'Ask': None, 'Bid': None, 'BUY': None, 'SELL': None, 'BUYTOCOVER': None, 'SELLSHORT': None}
 {'Time': '2023-06-12T13:52:20Z', 'Last': None, 'Ask': None, 'Bid': None, 'BUY': None, 'SELL': None, 'BUYTOCOVER': None, 'SELLSHORT': None}
+{'Time': '2023-07-18T14:23:30Z', 'SELL': 304.38, 'BUY': 305.0}
+{'Time': '2023-07-18T14:23:40Z', 'SELL': 304.42, 'BUY': 305.0}
+{'Time': '2023-07-18T14:23:50Z', 'BUY': 305.35, 'SELL': 304.46}
+{'Time': '2023-07-18T14:24:00Z', 'SELL': 304.73, 'BUY': 305.36}
+{'Time': '2023-07-18T14:24:10Z', 'SELL': 304.77, 'BUY': 305.35}
+{'Time': '2023-07-18T14:24:20Z', 'SELL': 304.88, 'BUY': 305.36}
+{'Time': '2023-07-18T14:24:30Z', 'BUY': 305.36, 'SELL': 304.89}
+{'Time': '2023-07-18T14:24:40Z', 'SELL': 304.27, 'BUY': 304.87}
+{'Time': '2023-07-18T14:24:50Z', 'SELL': 304.53, 'BUY': 305.21}
+{'Time': '2023-07-18T14:25:00Z', 'SELL': 304.55, 'BUY': 305.19}
+{'Time': '2023-07-18T14:25:10Z'}
+{'Time': '2023-07-18T14:25:20Z'}
+{'Time': '2023-07-18T14:25:30Z'}

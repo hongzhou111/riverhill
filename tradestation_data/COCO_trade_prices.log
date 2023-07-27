@@ -179,3 +179,16 @@
 {'Time': '2023-06-12T13:52:00Z', 'Last': None, 'Ask': None, 'Bid': None, 'BUY': None, 'SELL': None, 'BUYTOCOVER': None, 'SELLSHORT': None}
 {'Time': '2023-06-12T13:52:10Z', 'Last': None, 'Ask': None, 'Bid': None, 'BUY': None, 'SELL': None, 'BUYTOCOVER': None, 'SELLSHORT': None}
 {'Time': '2023-06-12T13:52:20Z', 'Last': None, 'Ask': None, 'Bid': None, 'BUY': None, 'SELL': None, 'BUYTOCOVER': None, 'SELLSHORT': None}
+{'Time': '2023-07-18T14:23:30Z', 'BUY': 25.07, 'SELL': 25.01}
+{'Time': '2023-07-18T14:23:40Z', 'SELL': 25.01, 'BUY': 25.07}
+{'Time': '2023-07-18T14:23:50Z', 'SELL': 25.01, 'BUY': 25.07}
+{'Time': '2023-07-18T14:24:00Z', 'SELL': 25.01, 'BUY': 25.07}
+{'Time': '2023-07-18T14:24:10Z', 'BUY': 25.07, 'SELL': 25.01}
+{'Time': '2023-07-18T14:24:20Z', 'SELL': 25.01, 'BUY': 25.07}
+{'Time': '2023-07-18T14:24:30Z', 'SELL': 25.01, 'BUY': 25.07}
+{'Time': '2023-07-18T14:24:40Z', 'BUY': 25.06, 'SELL': 25.01}
+{'Time': '2023-07-18T14:24:50Z', 'SELL': 25.01, 'BUY': 25.06}
+{'Time': '2023-07-18T14:25:00Z', 'SELL': 25.01, 'BUY': 25.06}
+{'Time': '2023-07-18T14:25:10Z'}
+{'Time': '2023-07-18T14:25:20Z'}
+{'Time': '2023-07-18T14:25:30Z'}
