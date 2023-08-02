@@ -17,51 +17,55 @@ class Lvl2Trader:
         self.buy_threshold_range = buy_threshold_range
         self.sell_threshold_range = sell_threshold_range
 
-        buy_thresholds = {13: 4.0, 14: 78.0, 15: 2.0, 16: 8.0, 17: 0.0, 18: 6.0, 19: 44.0}
-        sell_thresholds = {13: -225.0, 14: -43.0, 15: -68.0, 16: -69.0, 17: -267.0, 18: -70.0, 19: -499.0}
-        buy_to_cover_thresholds = {13: 16.0, 14: 252.0, 15: 0.0, 16: 14.0, 17: 41.0, 18: 35.0, 19: 111.0}
-        sell_short_thresholds = {13: -64.0, 14: -8.0, 15: -72.0, 16: -68.0, 17: -39.0, 18: -70.0, 19: 0.0}
-        self.ts_trader = TS_Trader(self.account_id, buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, stop_loss=100, quantity=40)
+        thresholds = {'TSLA': {'buy': {13: 4.0, 14: 78.0, 15: 2.0, 16: 8.0, 17: 20.0, 18: 6.0, 19: 42.0},
+                'sell': {13: -224.0, 14: -43.0, 15: -68.0, 16: -69.0, 17: -47.0, 18: -70.0, 19: -498.0},
+                'buy_to_cover': {13: 25.0, 14: 253.0, 15: 0.0, 16: 14.0, 17: 41.0, 18: 32.0, 19: 109.0},
+                'sell_short':{13: -224.0, 14: -43.0, 15: -68.0, 16: -69.0, 17: -47.0, 18: -70.0, 19: -498.0}},
+            'NVDA': {'buy': {13: 70.0, 14: 11.0, 15: 53.0, 16: 6.0, 17: 6.0, 18: 13.0, 19: 4.0},
+                'sell': {13: -440.0, 14: -5.0, 15: -288.0, 16: 0.0, 17: -240.0, 18: -17.0, 19: -40.0},
+                'buy_to_cover': {13: 15.0, 14: 499.0, 15: 45.0, 16: 6.0, 17: 499.0, 18: 217.0, 19: 345.0},
+                'sell_short':{13: -440.0, 14: -5.0, 15: -288.0, 16: 0.0, 17: -240.0, 18: -17.0, 19: -40.0}}, 
+            'AMZN': {'buy': {13: 108.0, 14: 27.0, 15: 23.0, 16: 34.0, 17: 20.0, 18: 39.0, 19: 18.0},
+                'sell': {13: -76.0, 14: -59.0, 15: -358.0, 16: -33.0, 17: -57.0, 18: -45.0, 19: -85.0},
+                'buy_to_cover': {13: 250.0, 14: 26.0, 15: 54.0, 16: 31.0, 17: 279.0, 18: 40.0, 19: 441.0},
+                'sell_short':{13: -76.0, 14: -59.0, 15: -358.0, 16: -33.0, 17: -57.0, 18: -45.0, 19: -85.0}}, 
+            'AAPL': {'buy': {13: 11.0, 14: 79.0, 15: 53.0, 16: 11.0, 17: 36.0, 18: 0.0, 19: 35.0},
+                'sell': {13: -46.0, 14: -33.0, 15: -32.0, 16: -21.0, 17: -58.0, 18: -36.0, 19: -66.0},
+                'buy_to_cover': {13: 4.0, 14: 250.0, 15: 59.0, 16: 11.0, 17: 18.0, 18: 0.0, 19: 33.0},
+                'sell_short':{13: -46.0, 14: -33.0, 15: -32.0, 16: -21.0, 17: -58.0, 18: -36.0, 19: -66.0}}, 
+            'GOOG': {'buy': {13: 2.0, 14: 20.0, 15: 12.0, 16: 31.0, 17: 15.0, 18: 2.0, 19: 21.0},
+                'sell': {13: -337.0, 14: -33.0, 15: -475.0, 16: -28.0, 17: -40.0, 18: -10.0, 19: -446.0},
+                'buy_to_cover': {13: 1.0, 14: 19.0, 15: 12.0, 16: 9.0, 17: 23.0, 18: 6.0, 19: 61.0},
+                'sell_short':{13: -337.0, 14: -33.0, 15: -475.0, 16: -28.0, 17: -40.0, 18: -10.0, 19: -446.0}}}
+        policy_long = {'TSLA': {13: True, 14: False, 15: True, 16: True, 17: True, 18: True, 19: False},
+            'NVDA': {13: False, 14: True, 15: False, 16: True, 17: True, 18: False, 19: False}, 
+            'AMZN': {13: False, 14: False, 15: True, 16: False, 17: False, 18: False, 19: False}, 
+            'AAPL': {13: True, 14: False, 15: True, 16: False, 17: True, 18: False, 19: False}, 
+            'GOOG': {13: True, 14: True, 15: False, 16: True, 17: False, 18: False, 19: False}}
+        stop_losses = {'TSLA': 100, 'NVDA': 4.5, 'AMZN': 1.5, 'AAPL': 2.0, 'GOOG': 1.5}
+        quantities = {'TSLA': 40, 'NVDA': 1, 'AMZN': 1, 'AAPL': 1, 'GOOG': 1}
+        self.ts_trader = TS_Trader(self.account_id, thresholds, policy_long, stop_losses=stop_losses, quantities=quantities)
 
-    def calc_gain_long(self, hour, buy_threshold, sell_threshold, last_sell):
-        df = pd.read_csv(f"tradestation_data/TSLA_{hour}_test.csv")
-        df = df[(df["VolumeSum"] >= buy_threshold) | (df["VolumeSum"] <= sell_threshold)].reset_index(drop=True)
-        df["Long"] = df["VolumeSum"] >= buy_threshold
-        df["Short"] = df["VolumeSum"] <= sell_threshold
-        if len(df) < 1:
-            return 0, None
+    def calc_gain_long(self, arr, buy_threshold, sell_threshold):
+        # arr = [VolumeSum, Buy, Sell]
+        arr = arr[(arr[:, 0] >= buy_threshold) | (arr[:, 0] <= sell_threshold) | (arr[:, 3] == 1)]
+        if len(arr) < 2:
+            return 0
+        l = (arr[:, 0] >= buy_threshold) & (arr[:, 3] == 0)
+        s = (arr[:, 0] <= sell_threshold) | (arr[:, 3] == 1)
+        buy = l & np.roll(s, 1)
+        sell = s & np.roll(l, 1)
+        return arr[sell, 2].sum() - arr[buy, 1].sum() 
 
-        df["Buy Action"] = df["Long"] & df["Short"].shift()
-        if df.iloc[0, df.columns.get_loc("Long")]:
-            df.iloc[0, df.columns.get_loc("Buy Action")] = True
-        df["Sell Action"] = df["Short"] & df["Long"].shift()
-        df.loc[df["Buy Action"], "Gain"] = -pd.to_numeric(df.loc[df["Buy Action"], "BUY"]) 
-        df.loc[df["Sell Action"], "Gain"] = pd.to_numeric(df.loc[df["Sell Action"], "SELL"])
-
-        if df.iloc[len(df) - 1, df.columns.get_loc("Long")]:
-            df.loc[len(df)] = [0, 0, 0, 0, 0, 0, 0, 0, last_sell]
-        df = df.round(3)
-        return df["Gain"].sum(), df
-
-    def calc_gain_short(self, hour, buy_to_cover_threshold, sell_short_threshold, last_buy_to_cover):
-        df = pd.read_csv(f"tradestation_data/TSLA_{hour}_test.csv")
-        df = df[(df["VolumeSum"] >= buy_to_cover_threshold) | (df["VolumeSum"] <= sell_short_threshold)].reset_index(drop=True)
-        df["Long"] = df["VolumeSum"] >= buy_to_cover_threshold
-        df["Short"] = df["VolumeSum"] <= sell_short_threshold
-        if len(df) < 1:
-            return 0, None
-
-        df["Sell Action"] = df["Short"] & df["Long"].shift()
-        if df.iloc[0, df.columns.get_loc("Short")]:
-            df.iloc[0, df.columns.get_loc("Sell Action")] = True
-        df["Buy Action"] = df["Long"] & df["Short"].shift()
-        df.loc[df["Buy Action"], "Gain"] = -pd.to_numeric(df.loc[df["Buy Action"], "BUY"]) 
-        df.loc[df["Sell Action"], "Gain"] = pd.to_numeric(df.loc[df["Sell Action"], "SELL"])
-
-        if df.iloc[len(df) - 1, df.columns.get_loc("Short")]:
-            df.loc[len(df)] = [0, 0, 0, 0, 0, 0, 0, 0, -last_buy_to_cover]
-        df = df.round(3)
-        return df["Gain"].sum(), df
+    def calc_gain_short(self, arr, buy_to_cover_threshold, sell_short_threshold):
+        arr = arr[(arr[:, 0] >= buy_to_cover_threshold) | (arr[:, 0] <= sell_short_threshold) | (arr[:, 3] == 1)]
+        if len(arr) < 2:
+            return 0
+        s = (arr[:, 0] <= sell_short_threshold) & (arr[:, 3] == 0)
+        l = (arr[:, 0] >= buy_to_cover_threshold) | (arr[:, 3] == 1)
+        sell = s & np.roll(l, 1)
+        buy = l & np.roll(s, 1)
+        return arr[sell, 2].sum() - arr[buy, 1].sum() 
 
     def update_thresholds(self, symbol, date, hour):
         collection_1 = f"{symbol}_10sec_ts_lvl1"
@@ -86,16 +90,15 @@ class Lvl2Trader:
         df = pd.merge(df, df_3, on="Time")
         df = df[["Time", "Side", "TotalSize", "Dif", "BUY", "SELL"]]
         df = df[df["BUY"].notna() & df["SELL"].notna()].reset_index(drop=True)
-
-        last_sell = df.iloc[len(df) - 1, df.columns.get_loc("SELL")]
-        last_buy_to_cover = df.iloc[len(df) - 1, df.columns.get_loc("BUY")]
+        df["EoH"] = df["Time"] == f'{date}T{hour}:59:50Z'
 
         df = df.loc[((df["Side"] == "Bid") & (df["Dif"] > 0))
-                    | ((df["Side"] == "Ask") & (df["Dif"] < 0))]
+                | ((df["Side"] == "Ask") & (df["Dif"] < 0))
+                | df["EoH"]]
         df["VolumeSum"] = df["TotalSize"] * df["Dif"]
-        df = df[["Time", "VolumeSum", "BUY", "SELL"]]
-        df = df.groupby("Time").agg({"VolumeSum": "sum", "BUY": "first", "SELL": "first"})
-        df.to_csv(f"tradestation_data/TSLA_{hour}_test.csv")
+        df = df[["Time", "VolumeSum", "BUY", "SELL", "EoH"]]
+        df = df.groupby("Time").agg({"VolumeSum": "sum", "BUY": "first", "SELL": "first", "EoH": "first"})
+        arr = df.to_numpy().astype('float64')
 
         buy_arr = np.repeat(self.buy_threshold_range, len(self.sell_threshold_range))
         sell_arr = np.tile(self.sell_threshold_range, len(self.buy_threshold_range))
@@ -103,8 +106,8 @@ class Lvl2Trader:
         short_arr = np.zeros(len(self.buy_threshold_range) * len(self.sell_threshold_range))
         for i in range(len(long_arr)):
             buy_threshold, sell_threshold = buy_arr[i], sell_arr[i]
-            long_arr[i], _ = self.calc_gain_long(hour, buy_threshold, sell_threshold, last_sell)
-            short_arr[i], _ = self.calc_gain_short(hour, buy_threshold, sell_threshold, last_buy_to_cover)
+            long_arr[i] = self.calc_gain_long(arr.copy(), buy_threshold, sell_threshold)
+            short_arr[i] = self.calc_gain_short(arr.copy(), buy_threshold, sell_threshold)
         long_df[date] = long_arr
         long_df["Sum"] = long_df[dates].sum(axis=1)
         long_df = long_df[["Buy Threshold", "Sell Threshold"]+dates+["Sum"]]
@@ -129,22 +132,25 @@ class Lvl2Trader:
         with open(f"tradestation_data/{symbol}_thresholds.log", 'a') as f:
             date = datetime.now().strftime("%Y-%m-%d")
             f.write(f"{date}\n----------PREVIOUS THRESHOLDS----------\n")
-            f.write(f"{self.ts_trader.buy_thresholds}\n{self.ts_trader.sell_thresholds}\n")
-            f.write(f"{self.ts_trader.buy_to_cover_thresholds}\n{self.ts_trader.sell_short_thresholds}\n")
+            f.write(f"'prev policy_long': {self.ts_trader.policy_long[symbol]}\n")
+            f.write(f"{{'prev buy': {self.ts_trader.thresholds[symbol]['buy']},\n'prev sell': {self.ts_trader.thresholds[symbol]['sell']},\n")
+            f.write(f"'prev buy_to_cover': {self.ts_trader.thresholds[symbol]['buy_to_cover']},\n'prev sell_short':{self.ts_trader.thresholds[symbol]['sell']}}}\n")
             for hour in range(13, 20):
                 long_row, short_row = self.update_thresholds(symbol, date, hour)
                 prev_long_row, prev_short_row = self.test_thresholds(symbol, hour, \
-                    self.ts_trader.buy_thresholds[hour], self.ts_trader.sell_thresholds[hour], \
-                        self.ts_trader.buy_to_cover_thresholds[hour], self.ts_trader.sell_short_thresholds[hour])
-                f.write(f"Previous Long {hour}: {prev_long_row}\nPrevious Short {hour}: {prev_short_row}\n")
+                    self.ts_trader.thresholds[symbol]['buy'][hour], self.ts_trader.thresholds[symbol]['sell'][hour], \
+                        self.ts_trader.thresholds[symbol]['buy_to_cover'][hour], self.ts_trader.thresholds[symbol]['sell_short'][hour])
+                f.write(f"Prev Long {hour}: {prev_long_row}\nPrev Short {hour}: {prev_short_row}\n")
                 f.write(f"Long {hour}: {long_row}\nShort {hour}: {short_row}\n")
-                self.ts_trader.buy_thresholds[hour] = long_row[0]
-                self.ts_trader.sell_thresholds[hour] = long_row[1]
-                self.ts_trader.buy_to_cover_thresholds[hour] = short_row[0]
-                self.ts_trader.sell_short_thresholds[hour] = short_row[1]
+                self.ts_trader.thresholds[symbol]['buy'][hour] = long_row[0]
+                self.ts_trader.thresholds[symbol]['sell_short'][hour] = long_row[1]
+                self.ts_trader.thresholds[symbol]['buy_to_cover'][hour] = short_row[0]
+                self.ts_trader.thresholds[symbol]['sell_short'][hour] = short_row[1]
+                self.ts_trader.policy_long[symbol][hour] = long_row[-1] >= short_row[-1]
             f.write("----------NEW THRESHOLDS----------\n")
-            f.write(f"Buy Thresholds: {self.ts_trader.buy_thresholds}\nSell Thresholds: {self.ts_trader.sell_thresholds}\n")
-            f.write(f"Buy to Cover Thresholds: {self.ts_trader.buy_to_cover_thresholds}\nSell Short Thresholds: {self.ts_trader.sell_short_thresholds}\n")
+            f.write(f"'policy_long': {self.ts_trader.policy_long[symbol]}\n")
+            f.write(f"{{'buy': {self.ts_trader.thresholds[symbol]['buy']},\n'sell': {self.ts_trader.thresholds[symbol]['sell']},\n")
+            f.write(f"'buy_to_cover': {self.ts_trader.thresholds[symbol]['buy_to_cover']},\n'sell_short':{self.ts_trader.thresholds[symbol]['sell']}}}\n")
             f.write("\n")
 
     def start_scheduler(self, symbols):
@@ -161,20 +167,16 @@ class Lvl2Trader:
             self.ts_trader.hourly_stop_loss_hit[symbol] = False
             scheduler.add_job(self.ts_trader.reset_bod, 'cron', args=[symbol],
                 day_of_week='mon-fri', hour="13", minute="25")
-            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 13, True], 
+            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 13], 
                 day_of_week='mon-fri', hour="13", minute="30-59", second="*/10")
             scheduler.add_job(self.ts_trader.close_eoh, 'cron', args=[symbol], 
                 day_of_week='mon-fri', hour="13", minute="59", second="55")
-            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 14, False],
-                    day_of_week='mon-fri', hour="14", second="*/10")
-            scheduler.add_job(self.ts_trader.close_eoh, 'cron', args=[symbol], 
-                day_of_week='mon-fri', hour="14", minute="59", second="55")
-            for hr in range(15, 19):
-                scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, hr, True],
+            for hr in range(14, 19):
+                scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, hr],
                     day_of_week='mon-fri', hour=hr, second="*/10")
                 scheduler.add_job(self.ts_trader.close_eoh, 'cron', args=[symbol], 
                     day_of_week='mon-fri', hour=hr, minute="59", second="55")
-            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 19, False],
+            scheduler.add_job(self.ts_trader.trade, 'cron', args=[symbol, 19],
                 day_of_week='mon-fri', hour="19", minute="0-54", second="*/10")
             scheduler.add_job(self.ts_trader.close_eod, 'cron', args=[symbol], day_of_week='mon-fri', hour="19", minute="55")
             scheduler.add_job(self.update_all_thresholds, 'cron', args=[symbol], 
@@ -184,7 +186,7 @@ class Lvl2Trader:
 if __name__ == '__main__':
     logging.basicConfig(filename="tradestation_data/trading_exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
-    symbols = ["TSLA"]
+    symbols = ["TSLA", 'NVDA', 'AMZN', 'AAPL', 'GOOG']
     account_id="11655345"
     buy_threshold_range = np.arange(500)
     sell_threshold_range = -np.arange(500)

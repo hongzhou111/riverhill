@@ -62,12 +62,15 @@ class TS_Authenticator:
                     day_of_week='mon-fri', minute="14-59/15", second="55")
         scheduler.start()
 
+
+account_id = "11655345"
+auth_code = "e37HZhkr8HBokHSw"
+public_key = "r4bJ08Nbz9f8b6djDhoyCmazNnrrLFL4"
+private_key = "hFBk8xgV_UGJEUFnxVW-AFz6YToqZwdvM-48x5wLUQhzKiR99r2w780hL0giBfvd"
+refresh_token = "lzijZJe0VUnjFEzq6dqWK-Q3rqhzyoq7kkrDkqVoJvoYn"
+ts_authenticator = TS_Authenticator(account_id, auth_code, public_key, private_key, refresh_token)
+
 if __name__ == '__main__':
     logging.basicConfig(filename="tradestation_data/exceptions.log", format='%(asctime)s %(message)s')
-    account_id = "11655345"
-    auth_code = "e37HZhkr8HBokHSw"
-    public_key = "r4bJ08Nbz9f8b6djDhoyCmazNnrrLFL4"
-    private_key = "hFBk8xgV_UGJEUFnxVW-AFz6YToqZwdvM-48x5wLUQhzKiR99r2w780hL0giBfvd"
-    refresh_token = "lzijZJe0VUnjFEzq6dqWK-Q3rqhzyoq7kkrDkqVoJvoYn"
-    ts_authenticator = TS_Authenticator(account_id, auth_code, public_key, private_key, refresh_token)
+    ts_authenticator.refresh()
     ts_authenticator.start_scheduler()

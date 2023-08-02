@@ -9,19 +9,17 @@ from datetime import datetime
 import logging
 import time
 import numpy as np
+from tradestation_authenticator import ts_authenticator
 
 class TS_Trader:
-    def __init__(self, account_id, buy_thresholds, sell_thresholds, buy_to_cover_thresholds, sell_short_thresholds, size_threshold=0, stop_loss=100, quantity=1, simulator=False):
+    def __init__(self, account_id, thresholds, policy_long, stop_losses, quantities, simulator=False):
         self.mongo = MongoExplorer()
         self.account_id = account_id
 
-        self.buy_thresholds = buy_thresholds
-        self.sell_thresholds = sell_thresholds
-        self.buy_to_cover_thresholds = buy_to_cover_thresholds
-        self.sell_short_thresholds = sell_short_thresholds
-        self.size_threshold = size_threshold
-        self.stop_loss = stop_loss
-        self.quantity = quantity
+        self.thresholds = thresholds
+        self.policy_long = policy_long
+        self.stop_losses = stop_losses
+        self.quantities = quantities
 
         self.holding_long = {}
         self.holding_short = {}
@@ -46,7 +44,7 @@ class TS_Trader:
             df = pd.DataFrame(list(self.mongo.mongoDB[collection].find({"CurTime": time})))
         return df
 
-    def calc_volume_sum(self, symbol, time, hour):
+    def calc_volume_sum(self, symbol, time):
         lvl1 = self.read_lvl1(symbol, time)
         df = self.read_lvl2(symbol, time)
         print(lvl1["Last"])
@@ -78,10 +76,12 @@ class TS_Trader:
         response = requests.request("POST", url, json=payload, headers=headers)
         if response.status_code != 200:
             logging.warning(f"{symbol} {action} {response.text}")
+            ts_authenticator.refresh()
             return None, None
         response = response.json()
         if (self.simulator and "Confirmations" not in response) or (not self.simulator and "Orders" not in response):
             logging.warning(f"{symbol} {action} {response}")
+            ts_authenticator.refresh()
             return None, None
 
         if self.simulator:
@@ -112,13 +112,14 @@ class TS_Trader:
         
     def check_status(self, order_id):
         url = f"https://api.tradestation.com/v3/brokerage/accounts/{self.account_id}/orders/{order_id}"
-        for _ in range(5):
+        for _ in range(3):
             access_token = self.mongo.mongoDB["TS_auth"].find_one({"account_id": self.account_id})["access_token"]
             headers = {"Authorization": f"Bearer {access_token}"}
 
             response = requests.request("GET", url, headers=headers)
             if response.status_code != 200:
                 logging.warning(f"{order_id} {response.text}")
+                ts_authenticator.refresh()
             response = response.json()
             if response["Orders"][0]["Status"] == "FLL":
                 return response
@@ -126,35 +127,35 @@ class TS_Trader:
             time.sleep(.5)
         return False
     
-    def trade(self, symbol, hour, long):
+    def trade(self, symbol, hour):
         collection = f"{symbol}_ts_trades"
         time = datetime.utcnow()
         time = time.replace(second=time.second - time.second%10).strftime("%Y-%m-%dT%H:%M:%SZ")
         print(time)
-        last_price, volume_sum = self.calc_volume_sum(symbol, time, hour)
+        last_price, volume_sum = self.calc_volume_sum(symbol, time)
         print(volume_sum)
         if self.hourly_stop_loss_hit[symbol]:
             return
         action = None
-        if long:
-            if not self.holding_long[symbol] and volume_sum > self.buy_thresholds[hour]:
+        if self.policy_long[symbol][hour]:
+            if not self.holding_long[symbol] and volume_sum >= self.thresholds[symbol]['buy'][hour]:
                 action = "BUY"
-            elif self.holding_long[symbol] and self.boh_balance[symbol] - (self.balance[symbol] + (last_price * self.quantity)) >= self.stop_loss:
+            elif self.holding_long[symbol] and self.boh_balance[symbol] - (self.balance[symbol] + (last_price * self.quantities[symbol])) >= self.stop_losses[symbol]:
                 action = "SELL"
                 self.hourly_stop_loss_hit[symbol] = True
-            elif self.holding_long[symbol] and volume_sum < self.sell_thresholds[hour]:
+            elif self.holding_long[symbol] and volume_sum <= self.thresholds[symbol]['sell'][hour]:
                 action = "SELL"
         else:
-            if not self.holding_short[symbol] and volume_sum < self.sell_short_thresholds[hour]:
+            if not self.holding_short[symbol] and volume_sum <= self.thresholds[symbol]['sell_short'][hour]:
                 action = "SELLSHORT"
-            elif self.holding_short[symbol] and self.boh_balance[symbol] - (self.balance[symbol] - (last_price * self.quantity)) >= self.stop_loss:
+            elif self.holding_short[symbol] and self.boh_balance[symbol] - (self.balance[symbol] - (last_price * self.quantities[symbol])) >= self.stop_losses[symbol]:
                 action = "BUYTOCOVER"
                 self.hourly_stop_loss_hit[symbol] = True
-            elif self.holding_short[symbol] and volume_sum > self.buy_to_cover_thresholds[hour]:
+            elif self.holding_short[symbol] and volume_sum >= self.thresholds[symbol]['buy_to_cover'][hour]:
                 action = "BUYTOCOVER"
 
         if action is not None:
-            filled_time, price = self.trade_shares(symbol, action, self.quantity)
+            filled_time, price = self.trade_shares(symbol, action, self.quantities[symbol])
             dict = {"Time": time, "FilledTime": filled_time, "Action": action, "Price": price, "Balance": self.balance[symbol], "VolumeSum": volume_sum}
             with open(f"tradestation_data/{symbol}_trades.log", 'a') as f:
                 f.write(f"{dict}\n")
@@ -169,7 +170,7 @@ class TS_Trader:
         elif self.holding_short[symbol]:
             action = "BUYTOCOVER"
         if action is not None:
-            filled_time, price = self.trade_shares(symbol, action, self.quantity)
+            filled_time, price = self.trade_shares(symbol, action, self.quantities[symbol])
             dict = {"Time": time, "FilledTime": filled_time, "Action": action, "Price": price, "Balance": self.balance[symbol]}
             with open(f"tradestation_data/{symbol}_trades.log", 'a') as f:
                 f.write(f"{dict}\n")
@@ -186,7 +187,7 @@ class TS_Trader:
         with open(f"tradestation_data/{symbol}_trades.log", 'a') as f:
             start_price = pd.DataFrame(list(self.mongo.mongoDB[collection].find({"CurTime": start})))["Last"].loc[0]
             end_price = pd.DataFrame(list(self.mongo.mongoDB[collection].find({"CurTime": end})))["Last"].loc[0]
-            f.write(f"EOD Balance: {self.balance[symbol]} = {self.balance[symbol]/self.quantity} per share  = {self.balance[symbol] * (100/self.quantity) /start_price}%\n")
+            f.write(f"EOD Balance: {self.balance[symbol]} = {self.balance[symbol]/self.quantities[symbol]} per share  = {self.balance[symbol] * (100/self.quantities[symbol]) /start_price}%\n")
             f.write(f"Market Change: {end_price - start_price} = {(end_price - start_price) * 100 / (start_price)}%\n")
             f.write("\n")
     

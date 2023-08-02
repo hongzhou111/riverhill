@@ -9,6 +9,7 @@ from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 import logging
 from datetime import datetime
 from pytz import utc
+from tradestation_authenticator import ts_authenticator
 
 class TS_Reader:
     def __init__(self, account_id):   
@@ -31,6 +32,7 @@ class TS_Reader:
                 response = requests.get(url, headers=headers, stream=True)
                 if response.status_code != 200:
                     logging.warning(f"{symbol} {response} {response.text}")
+                    ts_authenticator.refresh()
                     continue   
 
                 for line in response.iter_lines():
@@ -48,6 +50,7 @@ class TS_Reader:
                         self.lvl1_getTime[symbol] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
             except Exception as e:
                 logging.exception(f"{symbol} {e}")
+                ts_authenticator.refresh()
                 continue
 
     def stream_lvl2_quotes(self, symbol):
@@ -59,6 +62,7 @@ class TS_Reader:
                 response = requests.get(url, headers=headers, stream=True)
                 if response.status_code != 200:
                     logging.warning(f"{symbol} {response} {response.text}")
+                    ts_authenticator.refresh()
                     continue            
                 
                 for line in response.iter_lines():
@@ -70,6 +74,7 @@ class TS_Reader:
                         self.lvl2_getTime[symbol] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
             except Exception as e:
                 logging.exception(f"{symbol} {e}")
+                ts_authenticator.refresh()
                 continue
 
     def get_lvl1_quote(self, symbol):
@@ -116,23 +121,29 @@ class TS_Reader:
 
     def get_price(self, symbol, action, quantity):
         url = "https://api.tradestation.com/v3/orderexecution/orderconfirm"
-        access_token = self.mongo.mongoDB["TS_auth"].find_one({"account_id": self.account_id})["access_token"]
-        payload = {
-            "AccountID": self.account_id,
-            "Symbol": symbol,
-            "Quantity": quantity,
-            "OrderType": "Market",
-            "TradeAction": action,
-            "TimeInForce": {"Duration": "DAY"},
-            "Route": "Intelligent"
-        }
-        headers = {"content-type": "application/json", "Authorization": f"Bearer {access_token}"}
-        response = requests.request("POST", url, json=payload, headers=headers)
-        if response.status_code != 200:
-            logging.warning(f"{symbol} {action} {response.text}")
-        response = response.json()
-        if "Confirmations" not in response:
-            logging.warning(f"{symbol} {action} {response}")
+        for _ in range(2):
+            access_token = self.mongo.mongoDB["TS_auth"].find_one({"account_id": self.account_id})["access_token"]
+            payload = {
+                "AccountID": self.account_id,
+                "Symbol": symbol,
+                "Quantity": quantity,
+                "OrderType": "Market",
+                "TradeAction": action,
+                "TimeInForce": {"Duration": "DAY"},
+                "Route": "Intelligent"
+            }
+            headers = {"content-type": "application/json", "Authorization": f"Bearer {access_token}"}
+            response = requests.request("POST", url, json=payload, headers=headers)
+            if response.status_code != 200:
+                logging.warning(f"{symbol} {action} {response.text}")
+                ts_authenticator.refresh()
+                continue
+            response = response.json()
+            if "Confirmations" not in response:
+                logging.warning(f"{symbol} {action} {response}")
+                ts_authenticator.refresh()
+                continue
+            break
             
         price = {action: float(response["Confirmations"][0]["EstimatedPrice"])}
         self.prices[symbol].update(price)
@@ -200,5 +211,5 @@ if __name__ == '__main__':
     logging.basicConfig(filename="tradestation_data/exceptions.log", format='%(asctime)s %(message)s')
     logging.getLogger('apscheduler').setLevel(logging.WARNING)
     ts_reader = TS_Reader(account_id="11655345")
-    # ts_reader.start_quotes_scheduler(['TSLA', 'NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'MDB', 'SMCI', 'COCO', 'RCM'])
-    ts_reader.start_prices_scheduler(['TSLA', 'NVDA', 'AMZN', 'AAPL', 'GOOG'])
+    ts_reader.start_quotes_scheduler(['TSLA', 'NVDA', 'AMZN', 'AAPL', 'GOOG', 'MSFT', 'MDB', 'SMCI', 'COCO', 'RCM'])
+    # ts_reader.start_prices_scheduler(['TSLA', 'NVDA', 'AMZN', 'AAPL', 'GOOG'])

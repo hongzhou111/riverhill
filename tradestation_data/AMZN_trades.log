@@ -1,0 +1,21 @@
+{'Time': '2023-08-01T14:14:00Z', 'FilledTime': '2023-08-01T14:14:01Z', 'Action': 'SELLSHORT', 'Price': 132.06, 'Balance': 132.06, 'VolumeSum': -66.49999999998215}
+{'Time': '2023-08-01T14:59:55Z', 'FilledTime': '2023-08-01T14:59:55Z', 'Action': 'BUYTOCOVER', 'Price': 132.27, 'Balance': -0.21000000000000796}
+{'Time': '2023-08-01T15:00:00Z', 'FilledTime': '2023-08-01T15:00:01Z', 'Action': 'BUY', 'Price': 132.28, 'Balance': -132.49, 'VolumeSum': 0.0}
+{'Time': '2023-08-01T15:59:55Z', 'FilledTime': '2023-08-01T15:59:55Z', 'Action': 'SELL', 'Price': 132.6301, 'Balance': 0.14009999999998968}
+{'Time': '2023-08-01T16:01:10Z', 'FilledTime': '2023-08-01T16:01:11Z', 'Action': 'SELLSHORT', 'Price': 132.6112, 'Balance': 132.7513, 'VolumeSum': -28.17999999997437}
+{'Time': '2023-08-01T16:59:55Z', 'FilledTime': '2023-08-01T16:59:55Z', 'Action': 'BUYTOCOVER', 'Price': 132.419, 'Balance': 0.33229999999997517}
+{'Time': '2023-08-01T17:00:40Z', 'FilledTime': '2023-08-01T17:00:41Z', 'Action': 'BUY', 'Price': 132.4799, 'Balance': -132.1476, 'VolumeSum': 21.269999999980655}
+{'Time': '2023-08-01T17:06:30Z', 'FilledTime': '2023-08-01T17:06:31Z', 'Action': 'SELL', 'Price': 132.6001, 'Balance': 0.45249999999998636, 'VolumeSum': -68.0000000000149}
+{'Time': '2023-08-01T17:13:10Z', 'FilledTime': '2023-08-01T17:13:11Z', 'Action': 'BUY', 'Price': 132.5, 'Balance': -132.0475, 'VolumeSum': 22.049999999979946}
+{'Time': '2023-08-01T17:18:30Z', 'FilledTime': '2023-08-01T17:18:31Z', 'Action': 'SELL', 'Price': 132.481, 'Balance': 0.4334999999999809, 'VolumeSum': -58.64640000003695}
+{'Time': '2023-08-01T17:20:00Z', 'FilledTime': '2023-08-01T17:20:01Z', 'Action': 'BUY', 'Price': 132.415, 'Balance': -131.9815, 'VolumeSum': 12.249999999997385}
+{'Time': '2023-08-01T17:59:55Z', 'FilledTime': '2023-08-01T17:59:55Z', 'Action': 'SELL', 'Price': 132.0901, 'Balance': 0.10859999999999559}
+{'Time': '2023-08-01T18:02:20Z', 'FilledTime': '2023-08-01T18:02:21Z', 'Action': 'BUY', 'Price': 132.099, 'Balance': -131.9904, 'VolumeSum': 36.000000000069576}
+{'Time': '2023-08-01T18:21:10Z', 'FilledTime': '2023-08-01T18:21:11Z', 'Action': 'SELL', 'Price': 131.8709, 'Balance': -0.11949999999998795, 'VolumeSum': -274.9999999997499}
+{'Time': '2023-08-01T18:21:20Z', 'FilledTime': '2023-08-01T18:21:21Z', 'Action': 'BUY', 'Price': 131.899, 'Balance': -132.0185, 'VolumeSum': 31.00000000005707}
+{'Time': '2023-08-01T18:59:55Z', 'FilledTime': '2023-08-01T18:59:55Z', 'Action': 'SELL', 'Price': 131.7301, 'Balance': -0.28839999999999577}
+{'Time': '2023-08-01T19:34:30Z', 'FilledTime': '2023-08-01T19:34:31Z', 'Action': 'SELLSHORT', 'Price': 132.05, 'Balance': 131.76160000000002, 'VolumeSum': -67.18999999993889}
+{'Time': '2023-08-01T19:55:00Z', 'FilledTime': '2023-08-01T19:55:00Z', 'Action': 'BUYTOCOVER', 'Price': 131.86, 'Balance': -0.09839999999999804}
+EOD Balance: -0.09839999999999804 = -0.09839999999999804 per share  = -0.07367254649456294%
+Market Change: -1.6189999999999998 = -1.2121529753526399%
+
