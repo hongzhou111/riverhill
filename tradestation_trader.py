@@ -47,13 +47,13 @@ class TS_Trader:
     def calc_volume_sum(self, symbol, time):
         lvl1 = self.read_lvl1(symbol, time)
         df = self.read_lvl2(symbol, time)
-        print(lvl1["Last"])
         df["Dif"] = (df["Price"] - lvl1["Last"])
         df = df[["GetTime", "Side", "Price", "Dif", "TotalSize"]]
         df = df.loc[((df["Side"] == "Bid") & (df["Dif"] > 0))
                     | ((df["Side"] == "Ask") & (df["Dif"] < 0))]
         df["VolumeSum"]= df["TotalSize"] * df["Dif"]
         if not df.empty:
+            print(f"{symbol} {time} {lvl1['Last']} {df['VolumeSum'].sum()}")
             print(df)
         return lvl1["Last"], df["VolumeSum"].sum()
 
@@ -112,7 +112,7 @@ class TS_Trader:
         
     def check_status(self, order_id):
         url = f"https://api.tradestation.com/v3/brokerage/accounts/{self.account_id}/orders/{order_id}"
-        for _ in range(3):
+        for _ in range(5):
             access_token = self.mongo.mongoDB["TS_auth"].find_one({"account_id": self.account_id})["access_token"]
             headers = {"Authorization": f"Bearer {access_token}"}
 
@@ -124,16 +124,14 @@ class TS_Trader:
             if response["Orders"][0]["Status"] == "FLL":
                 return response
             print(response)
-            time.sleep(.5)
+            time.sleep(1)
         return False
     
     def trade(self, symbol, hour):
         collection = f"{symbol}_ts_trades"
         time = datetime.utcnow()
         time = time.replace(second=time.second - time.second%10).strftime("%Y-%m-%dT%H:%M:%SZ")
-        print(time)
         last_price, volume_sum = self.calc_volume_sum(symbol, time)
-        print(volume_sum)
         if self.hourly_stop_loss_hit[symbol]:
             return
         action = None

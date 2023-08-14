@@ -17,31 +17,31 @@ class Lvl2Trader:
         self.buy_threshold_range = buy_threshold_range
         self.sell_threshold_range = sell_threshold_range
 
-        thresholds = {'TSLA': {'buy': {13: 4.0, 14: 78.0, 15: 2.0, 16: 8.0, 17: 20.0, 18: 6.0, 19: 42.0},
+        thresholds = {'TSLA': {'buy': {13: 189.0, 14: 94.0, 15: 2.0, 16: 8.0, 17: 0.0, 18: 6.0, 19: 42.0},
                 'sell': {13: -224.0, 14: -43.0, 15: -68.0, 16: -69.0, 17: -47.0, 18: -70.0, 19: -498.0},
-                'buy_to_cover': {13: 25.0, 14: 253.0, 15: 0.0, 16: 14.0, 17: 41.0, 18: 32.0, 19: 109.0},
+                'buy_to_cover': {13: 219.0, 14: 74.0, 15: 0.0, 16: 14.0, 17: 40.0, 18: 107.0, 19: 109.0},
                 'sell_short':{13: -224.0, 14: -43.0, 15: -68.0, 16: -69.0, 17: -47.0, 18: -70.0, 19: -498.0}},
-            'NVDA': {'buy': {13: 70.0, 14: 11.0, 15: 53.0, 16: 6.0, 17: 6.0, 18: 13.0, 19: 4.0},
+            'NVDA': {'buy': {13: 44.0, 14: 38.0, 15: 69.0, 16: 13.0, 17: 8.0, 18: 15.0, 19: 8.0},
                 'sell': {13: -440.0, 14: -5.0, 15: -288.0, 16: 0.0, 17: -240.0, 18: -17.0, 19: -40.0},
-                'buy_to_cover': {13: 15.0, 14: 499.0, 15: 45.0, 16: 6.0, 17: 499.0, 18: 217.0, 19: 345.0},
+                'buy_to_cover': {13: 34.0, 14: 28.0, 15: 69.0, 16: 9.0, 17: 8.0, 18: 15.0, 19: 27.0},
                 'sell_short':{13: -440.0, 14: -5.0, 15: -288.0, 16: 0.0, 17: -240.0, 18: -17.0, 19: -40.0}}, 
-            'AMZN': {'buy': {13: 108.0, 14: 27.0, 15: 23.0, 16: 34.0, 17: 20.0, 18: 39.0, 19: 18.0},
+            'AMZN': {'buy': {13: 29.0, 14: 46.0, 15: 41.0, 16: 34.0, 17: 71.0, 18: 41.0, 19: 23.0},
                 'sell': {13: -76.0, 14: -59.0, 15: -358.0, 16: -33.0, 17: -57.0, 18: -45.0, 19: -85.0},
-                'buy_to_cover': {13: 250.0, 14: 26.0, 15: 54.0, 16: 31.0, 17: 279.0, 18: 40.0, 19: 441.0},
+                'buy_to_cover': {13: 29.0, 14: 6.0, 15: 24.0, 16: 34.0, 17: 71.0, 18: 37.0, 19: 23.0},
                 'sell_short':{13: -76.0, 14: -59.0, 15: -358.0, 16: -33.0, 17: -57.0, 18: -45.0, 19: -85.0}}, 
-            'AAPL': {'buy': {13: 11.0, 14: 79.0, 15: 53.0, 16: 11.0, 17: 36.0, 18: 0.0, 19: 35.0},
+            'AAPL': {'buy': {13: 97.0, 14: 39.0, 15: 56.0, 16: 25.0, 17: 19.0, 18: 250.0, 19: 36.0},
                 'sell': {13: -46.0, 14: -33.0, 15: -32.0, 16: -21.0, 17: -58.0, 18: -36.0, 19: -66.0},
-                'buy_to_cover': {13: 4.0, 14: 250.0, 15: 59.0, 16: 11.0, 17: 18.0, 18: 0.0, 19: 33.0},
+                'buy_to_cover': {13: 94.0, 14: 39.0, 15: 479.0, 16: 5.0, 17: 19.0, 18: 135.0, 19: 11.0},
                 'sell_short':{13: -46.0, 14: -33.0, 15: -32.0, 16: -21.0, 17: -58.0, 18: -36.0, 19: -66.0}}, 
-            'GOOG': {'buy': {13: 2.0, 14: 20.0, 15: 12.0, 16: 31.0, 17: 15.0, 18: 2.0, 19: 21.0},
+            'GOOG': {'buy': {13: 6.0, 14: 20.0, 15: 34.0, 16: 19.0, 17: 46.0, 18: 53.0, 19: 39.0},
                 'sell': {13: -337.0, 14: -33.0, 15: -475.0, 16: -28.0, 17: -40.0, 18: -10.0, 19: -446.0},
-                'buy_to_cover': {13: 1.0, 14: 19.0, 15: 12.0, 16: 9.0, 17: 23.0, 18: 6.0, 19: 61.0},
+                'buy_to_cover': {13: 124.0, 14: 413.0, 15: 34.0, 16: 27.0, 17: 250.0, 18: 32.0, 19: 41.0},
                 'sell_short':{13: -337.0, 14: -33.0, 15: -475.0, 16: -28.0, 17: -40.0, 18: -10.0, 19: -446.0}}}
         policy_long = {'TSLA': {13: True, 14: False, 15: True, 16: True, 17: True, 18: True, 19: False},
-            'NVDA': {13: False, 14: True, 15: False, 16: True, 17: True, 18: False, 19: False}, 
-            'AMZN': {13: False, 14: False, 15: True, 16: False, 17: False, 18: False, 19: False}, 
-            'AAPL': {13: True, 14: False, 15: True, 16: False, 17: True, 18: False, 19: False}, 
-            'GOOG': {13: True, 14: True, 15: False, 16: True, 17: False, 18: False, 19: False}}
+            'NVDA': {13: True, 14: True, 15: False, 16: True, 17: False, 18: False, 19: True}, 
+            'AMZN': {13: False, 14: True, 15: True, 16: True, 17: False, 18: False, 19: False}, 
+            'AAPL': {13: False, 14: False, 15: True, 16: True, 17: False, 18: False, 19: False}, 
+            'GOOG': {13: True, 14: True, 15: True, 16: True, 17: False, 18: False, 19: False}}
         stop_losses = {'TSLA': 100, 'NVDA': 4.5, 'AMZN': 1.5, 'AAPL': 2.0, 'GOOG': 1.5}
         quantities = {'TSLA': 40, 'NVDA': 1, 'AMZN': 1, 'AAPL': 1, 'GOOG': 1}
         self.ts_trader = TS_Trader(self.account_id, thresholds, policy_long, stop_losses=stop_losses, quantities=quantities)
@@ -143,14 +143,14 @@ class Lvl2Trader:
                 f.write(f"Prev Long {hour}: {prev_long_row}\nPrev Short {hour}: {prev_short_row}\n")
                 f.write(f"Long {hour}: {long_row}\nShort {hour}: {short_row}\n")
                 self.ts_trader.thresholds[symbol]['buy'][hour] = long_row[0]
-                self.ts_trader.thresholds[symbol]['sell_short'][hour] = long_row[1]
+                self.ts_trader.thresholds[symbol]['sell'][hour] = long_row[1]
                 self.ts_trader.thresholds[symbol]['buy_to_cover'][hour] = short_row[0]
                 self.ts_trader.thresholds[symbol]['sell_short'][hour] = short_row[1]
                 self.ts_trader.policy_long[symbol][hour] = long_row[-1] >= short_row[-1]
             f.write("----------NEW THRESHOLDS----------\n")
             f.write(f"'policy_long': {self.ts_trader.policy_long[symbol]}\n")
             f.write(f"{{'buy': {self.ts_trader.thresholds[symbol]['buy']},\n'sell': {self.ts_trader.thresholds[symbol]['sell']},\n")
-            f.write(f"'buy_to_cover': {self.ts_trader.thresholds[symbol]['buy_to_cover']},\n'sell_short':{self.ts_trader.thresholds[symbol]['sell']}}}\n")
+            f.write(f"'buy_to_cover': {self.ts_trader.thresholds[symbol]['buy_to_cover']},\n'sell_short':{self.ts_trader.thresholds[symbol]['sell_short']}}}\n")
             f.write("\n")
 
     def start_scheduler(self, symbols):
@@ -191,5 +191,7 @@ if __name__ == '__main__':
     buy_threshold_range = np.arange(500)
     sell_threshold_range = -np.arange(500)
     lvl2_trader = Lvl2Trader(account_id, buy_threshold_range, sell_threshold_range)
+    for symbol in symbols:
+        lvl2_trader.update_all_thresholds(symbol)
     lvl2_trader.start_scheduler(symbols)
     

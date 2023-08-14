@@ -1,5 +1,4 @@
 import requests
-import json
 from test_mongo import MongoExplorer
 import logging
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
